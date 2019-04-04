@@ -11,9 +11,7 @@ Clone to your machine and /cd in
 
 Run the following:
 
-`npm install`
-
-Then:
+### `npm install`
 
 ### `npm start`
 
