@@ -1,3 +1,28 @@
+// IMPORT
+@import "variables";
+@import "mixins";
+
+* {
+  @include reset(0, 0, border-box, none, none);
+  font-family: $font;
+}
+
 body {
-    background: #1a1a1a;
+  background: $methodBlack;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-weight: $regular;
+}
+
+h1 {
+  font-weight: $bold;
+}
+
+.container-fluid {
+  max-width: 1200px;
+  margin-top: 200px;
+  margin-bottom: 200px;
 }

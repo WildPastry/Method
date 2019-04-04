@@ -1,0 +1,28 @@
+// IMPORT
+@import "variables";
+@import "mixins";
+
+// BACKGROUNDS
+.bgLight {
+  background: $cream;
+}
+
+.bgDark {
+  background: $grey;
+}
+
+.bgLightPink {
+  background: $lightPink;
+}
+
+.bgDarkPink {
+  background: $darkPink;
+}
+
+.bgLightGreen {
+  background: $lightGreen;
+}
+
+.bgDarkGreen {
+  background: $darkGreen;
+}

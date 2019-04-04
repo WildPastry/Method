@@ -1,0 +1,28 @@
+// IMPORT
+@import "variables";
+@import "mixins";
+
+// TEXT
+.textLight {
+  color: $cream;
+}
+
+.textDark {
+  color: $grey;
+}
+
+.textLightPink {
+  color: $lightPink;
+}
+
+.textDarkPink {
+  color: $darkPink;
+}
+
+.textLightGreen {
+  color: $lightGreen;
+}
+
+.textDarkGreen {
+  color: $darkGreen;
+}
