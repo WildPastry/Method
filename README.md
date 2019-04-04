@@ -9,7 +9,11 @@ Functionality and design are combined to bring you a simple yet powerful portfol
 
 Clone to your machine and /cd in
 
+Run the following:
+
 `npm install`
+
+Then:
 
 ### `npm start`
 
@@ -22,16 +26,16 @@ Create your local version of the master-dev `git checkout -b master-dev`
 Once you have finished 'milestone' sections of code and components: first push to your remote branch, then switch to master-dev `pull >> merge >> push` then switch back to your branch
 
 Every time you merge to the master-dev branch, let the other team members know.
-<br> They MUST switch to the master-dev branch and pull `git checkout master-dev` + `git pull` then switch back to your branch
+<br> They MUST switch to the master-dev branch and pull `git checkout master-dev` + `git pull` then switch back
 
 **Merge to master-dev often to keep conflicts resolved**
 
 # Design and Development
-Method is a collaborative student project designed and developed by **Michael Parker, Maria Rose and Daniel Clarke** `@ Yoobee School of Design`
+Method is a collaborative project designed and developed by **Michael Parker, Maria Rose and Daniel Clarke** `@ Yoobee School of Design`
 
 # Copyrights
-Data and API service provided by Behance `(https://www.behance.net/)`
+Data and API service provided by [Behance](https://www.behance.net/)
 
-Grid framework using Bootstrap `(https://getbootstrap.com/)`
+Grid framework using [Bootstrap](https://getbootstrap.com/)
 
-Application built using React `(https://reactjs.org/)`
+Application built using [React](https://reactjs.org/)
