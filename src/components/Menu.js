@@ -3,9 +3,17 @@ import React, { Component } from "react";
 
 // USER DATA
 class Menu extends Component {
-  changePageDisplay(value){
-    this.props.menuValue(value)
+	constructor(props) {
+    super(props);
+    this.changePageDisplay = this.changePageDisplay.bind(this);
+	}
+  componentDidMount() {
+    console.log(this.props);
   }
+  changePageDisplay(value){
+    this.props.changeState(value)
+	}
+
 	render() {
 		console.log("Menu Component");
 		return (
