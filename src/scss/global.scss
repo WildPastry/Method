@@ -3,48 +3,56 @@
 @import "mixins";
 
 * {
-  @include reset(0, 0, border-box, none, none);
-  font-family: $font;
+	@include reset(0, 0, border-box, none, none);
+	font-family: $font;
 }
 
 body {
-  background: $grey;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	background: $grey;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 p {
-  font-weight: $regular;
+	font-weight: $regular;
 }
 
 h1 {
-  font-weight: $bold;
+	font-weight: $bold;
 }
 
 .container-fluid {
-  max-width: 1200px;
-  margin-top: 200px;
-  margin-bottom: 200px;
+	max-width: 1200px;
+	margin-top: 200px;
+	margin-bottom: 200px;
 }
 
 #methodHeader {
-  width: 100%;
-  height: 3rem;
+	width: 100%;
+	height: 3rem;
 }
 
 #methodFooter {
-  width: 100%;
-  height: 3rem;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 3rem;
+}
+
+#methodLogo {
+	width: 30px;
+	height: auto;
+	margin: 6.825px auto;
 }
 
 .button {
-width: 120px;
-height: 35px;
+	width: 120px;
+	height: 35px;
 }
 
 .buttonDesigner,
 .buttonProjects,
 .buttonSearch {
-
-  color: $white;
+	color: $white;
 }
