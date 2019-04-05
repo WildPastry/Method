@@ -22,32 +22,9 @@ console.log(behanceDataFROMJSON);
 console.log(" ");
 
 class App extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			currentPage: "designers"
-		};
-		this.menuValue = this.menuValue.bind(this);
-	}
-
-	menuValue(value) {
-		console.log(value);
-		this.setState({
-			currentPage: value
-		});
-	}
 
 	render() {
-		var currentPage = this.state.currentPage;
-		let display;
 
-		if (currentPage === "designers") {
-			display = <Designers />;
-		} else if (currentPage === "projects") {
-			display = <Projects />;
-		} else if (currentPage === "search") {
-			display = <Search />;
-		}
 		return (
 			<div className="container-fluid">
 				<div className="row">
@@ -55,7 +32,7 @@ class App extends Component {
 						<h1 className="textLightPink text-center">Main</h1>
 					</div>
 				</div>
-				<Menu changeState={this.menuValue} />
+				<Menu />
 				<Designers />
 				<DesignerProfile />
 				<Projects />

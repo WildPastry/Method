@@ -38,15 +38,13 @@ h1 {
 }
 
 .button {
-width: 120px; 
+width: 120px;
 height: 35px;
-margin-left: 0.3em;
 }
 
 .buttonDesigner,
 .buttonProjects,
 .buttonSearch {
 
-  background-color: blue;
-  color: white;
+  color: $white;
 }
