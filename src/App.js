@@ -52,14 +52,14 @@ class App extends Component {
 			behanceData: behanceDataFromJSON,
 			loaded: true
 		});
-		for (var i = 0; i < behanceDataFromJSON.length; i++) {
-			this.state.users.push(behanceDataFromJSON[i].user);
-			this.state.projects.push(behanceDataFromJSON[i].projects);
-		}
-		console.log("Users only...");
-		console.log(this.state.users);
-		console.log("Projects only...");
-		console.log(this.state.projects);
+		// for (var i = 0; i < behanceDataFromJSON.length; i++) {
+		// 	this.state.users.push(behanceDataFromJSON[i].user);
+		// 	this.state.projects.push(behanceDataFromJSON[i].projects);
+		// }
+		// console.log("Users only...");
+		// console.log(this.state.users);
+		// console.log("Projects only...");
+		// console.log(this.state.projects);
 	}
 
 	render() {
@@ -92,7 +92,6 @@ class App extends Component {
 
 					{/* CURRENT PAGE*/}
 					<div className="row">{display}</div>
-
 				</div>
 			);
 		}
@@ -128,6 +127,14 @@ class LiveDataClass extends React.Component {
 				}
 				console.log(error.config);
 			});
+		// for (var i = 0; i < behanceDataFromAPI.length; i++) {
+		// 	this.state.users.push(behanceDataFromAPI[i].user);
+		// 	this.state.projects.push(behanceDataFromAPI[i].projects);
+		// }
+		// console.log("Live Users only...");
+		// console.log(this.state.users);
+		// console.log("Live Projects only...");
+		// console.log(this.state.projects);
 	}
 
 	render() {
@@ -143,7 +150,14 @@ class LiveDataClass extends React.Component {
 			console.log(" ");
 			console.log("Live data successfully loaded");
 			console.log(dataLive);
-
+			for (var i = 0; i < dataLive.length; i++) {
+				this.state.users.push(dataLive[i].user);
+				this.state.projects.push(dataLive[i].projects);
+			}
+			console.log("Live Users only...");
+			console.log(this.state.users);
+			console.log("Live Projects only...");
+			console.log(this.state.projects);
 			return (
 				<div>
 					<p className="textLightGreen text-center">
