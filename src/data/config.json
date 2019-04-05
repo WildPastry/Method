@@ -1,6 +1,0 @@
-{
-  "OAUTH": "?api_key=JoI9j5mk8tEfLB81PQeEMKhDSTjVNewT",
-  "CORS": "https://cors-anywhere.herokuapp.com/",
-  "BEHANCE": "https://www.behance.net/v2/users/",
-  "SCOPE": "&per_page=10"
-}
