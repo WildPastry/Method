@@ -40,7 +40,7 @@ class App extends Component {
 		this.state = {
 			loaded: false,
 			behanceData: [],
-			users: [],
+			designers: [],
 			projects: [],
 			currentPage: "designers",
 			light: false
@@ -53,11 +53,11 @@ class App extends Component {
 			loaded: true
 		});
 		// for (var i = 0; i < behanceDataFromJSON.length; i++) {
-		// 	this.state.users.push(behanceDataFromJSON[i].user);
+		// 	this.state.designers.push(behanceDataFromJSON[i].user);
 		// 	this.state.projects.push(behanceDataFromJSON[i].projects);
 		// }
 		// console.log("Users only...");
-		// console.log(this.state.users);
+		// console.log(this.state.designers);
 		// console.log("Projects only...");
 		// console.log(this.state.projects);
 	}
@@ -67,7 +67,7 @@ class App extends Component {
 		let display;
 
 		if (currentPage === "designers") {
-			display = <Designers usersState={this.state} />;
+			display = <Designers designersState={this.state} />;
 		} else if (currentPage === "designerProfile") {
 			display = <DesignerProfile designerProfileState={this.state} />;
 		} else if (currentPage === "projects") {
@@ -104,6 +104,8 @@ class LiveDataClass extends React.Component {
 		super(props);
 		this.state = {
 			behanceDataFromAPI: [],
+			designers: [],
+			projects: [],
 			isLoaded: false
 		};
 	}
@@ -127,18 +129,27 @@ class LiveDataClass extends React.Component {
 				}
 				console.log(error.config);
 			});
-		// for (var i = 0; i < behanceDataFromAPI.length; i++) {
-		// 	this.state.users.push(behanceDataFromAPI[i].user);
-		// 	this.state.projects.push(behanceDataFromAPI[i].projects);
+		// console.log(this.state.behanceDataFromAPI);
+		// var dataLive = this.state.behanceDataFromAPI;
+		// console.log(dataLive);
+		// for (var i = 0; i < dataLive.length; i++) {
+		// 	this.state.designers.push(dataLive.users[i].id);
 		// }
 		// console.log("Live Users only...");
-		// console.log(this.state.users);
-		// console.log("Live Projects only...");
-		// console.log(this.state.projects);
+		// console.log(this.state.designers);
 	}
 
 	render() {
-		var dataLive = this.state.behanceDataFromAPI;
+		// console.log(this.state.behanceDataFromAPI);
+		// console.log(this.state.behanceDataFromAPI.length);
+		// 			var dataLive = this.state.behanceDataFromAPI;
+		// 	console.log(dataLive);
+		// 	console.log(dataLive.length);
+		// for (var i = 0; i < dataLive.length; i++) {
+		// 	this.state.designers.push(dataLive.users[i].id);
+		// }
+		// console.log("Live Users only...");
+		// console.log(this.state.designers);
 		var { isLoaded } = this.state;
 		if (!isLoaded) {
 			return (
@@ -149,15 +160,19 @@ class LiveDataClass extends React.Component {
 		} else {
 			console.log(" ");
 			console.log("Live data successfully loaded");
+			// console.log(this.state.behanceDataFromAPI);
+			// console.log(this.state.behanceDataFromAPI.users.length);
+			var dataLive = this.state.behanceDataFromAPI;
 			console.log(dataLive);
-			for (var i = 0; i < dataLive.length; i++) {
-				this.state.users.push(dataLive[i].user);
-				this.state.projects.push(dataLive[i].projects);
+			console.log(dataLive.users.length);
+			for (var i = 0; i < dataLive.users.length; i++) {
+				this.state.designers.push(
+					dataLive.users[i].first_name + ' ' + dataLive.users[i].last_name
+				);
+				// this.state.designers.push(dataLive.users[i].last_name);
 			}
 			console.log("Live Users only...");
-			console.log(this.state.users);
-			console.log("Live Projects only...");
-			console.log(this.state.projects);
+			console.log(this.state.designers);
 			return (
 				<div>
 					<p className="textLightGreen text-center">
