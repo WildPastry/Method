@@ -49,11 +49,11 @@ class App extends Component {
 		this.changePage = this.changePage.bind(this);
 	}
 
-  changePage(value) {
-    // console.log(value);
-    this.setState({
-      currentPage: value
-    });
+	changePage(value) {
+		// console.log(value);
+		this.setState({
+			currentPage: value
+		});
 	}
 
 	componentDidMount() {
@@ -94,8 +94,15 @@ class App extends Component {
 
 		if (this.state.loaded === false) {
 			return (
-				<div>
-					<h1 className="textLightPink text-center">...LOADING...</h1>
+				<div
+					id="methodLoader"
+					// className={this.state.visible ? "fadeIn" : "fadeOut"}
+				>
+					<img
+						className="methodLoader--img"
+						src={require("./icons/logo/methodCreamTrans.svg")}
+						alt="Method Loader"
+					/>
 				</div>
 			);
 		} else {
@@ -121,6 +128,7 @@ class LiveDataClass extends React.Component {
 			designers: [],
 			projects: [],
 			isLoaded: false
+			// visible: false
 		};
 	}
 
@@ -167,13 +175,20 @@ class LiveDataClass extends React.Component {
 		var { isLoaded } = this.state;
 		if (!isLoaded) {
 			return (
-				<div>
-					<h1 className="textLightPink text-center">...LOADING...</h1>
+				<div
+					id="methodLoader"
+					// className={this.state.visible ? "fadeIn" : "fadeOut"}
+				>
+					<img
+						className="methodLoader--img"
+						src={require("./icons/logo/methodCreamTrans.svg")}
+						alt="Method Loader"
+					/>
 				</div>
 			);
 		} else {
 			// console.log(" ");
-			console.log("Live data successfully loaded...");
+			// console.log("Live data successfully loaded...");
 			// console.log(this.state.behanceDataFromAPI);
 			// console.log(this.state.behanceDataFromAPI.users.length);
 			var dataLive = this.state.behanceDataFromAPI;
@@ -188,6 +203,7 @@ class LiveDataClass extends React.Component {
 			// console.log("Live Users only...");
 			// console.log(this.state.designers);
 			return (
+				// <div>{console.log("Live data successfully loaded...")}</div>
 				<div>
 					<p className="textLightGreen text-center">
 						Live data successfully loaded

@@ -28,7 +28,7 @@ class Designers extends Component {
 				className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
 				<div
-					className="cardDesigner bgDarkGreen"
+					className="cardDesigner bgLightPink"
 					onClick={this.changePageFromDesigners.bind(this, "designerProfile")}
 				>
 					<div className="wrapperHexagon">
@@ -55,7 +55,7 @@ class Designers extends Component {
 						<div
 							style={{
 								backgroundImage:
-									"url(" + designers.projects[5].covers.max_808 + ")",
+									"url(" + designers.projects[6].covers.max_808 + ")",
 								backgroundPosition: "center",
 								backgroundSize: "cover",
 								backgroundRepeat: "no-repeat"
@@ -64,12 +64,12 @@ class Designers extends Component {
 						/>
 						<div className="wrapperDesignerDetails">
 							<div className="paraStyle--DesignerName">
-								<h5 className="textLight text-center">
+								<h5 className="textDark text-center">
 									{designers.user.username}
 								</h5>
 							</div>
 							<div className="paraStyle--DesignerDiscipline">
-								<p className="caption textLight text-center">
+								<p className="caption textDark text-center">
 									{designers.user.fields[0] +
 										" | " +
 										designers.user.fields[1] +
