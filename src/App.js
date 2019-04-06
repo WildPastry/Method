@@ -20,9 +20,10 @@ import configData from "./data/config.json";
 
 // IMPORT LOCAL DATA
 import behanceDataFromJSON from "./data/behanceData";
+// console.log(" ");
 console.log("Data from JSON loaded...");
-console.log(behanceDataFromJSON);
-console.log(" ");
+// console.log(behanceDataFromJSON);
+// console.log(" ");
 
 // DEFINE CONFIG
 const key = configData.OAUTH;
@@ -45,6 +46,14 @@ class App extends Component {
 			currentPage: "designers",
 			light: false
 		};
+		this.changePage = this.changePage.bind(this);
+	}
+
+  changePage(value) {
+    // console.log(value);
+    this.setState({
+      currentPage: value
+    });
 	}
 
 	componentDidMount() {
@@ -52,10 +61,10 @@ class App extends Component {
 			behanceData: behanceDataFromJSON,
 			loaded: true
 		});
-		// for (var i = 0; i < behanceDataFromJSON.length; i++) {
-		// 	this.state.designers.push(behanceDataFromJSON[i].user);
-		// 	this.state.projects.push(behanceDataFromJSON[i].projects);
-		// }
+		for (var i = 0; i < behanceDataFromJSON.length; i++) {
+			this.state.designers.push(behanceDataFromJSON[i]);
+			this.state.projects.push(behanceDataFromJSON[i].projects);
+		}
 		// console.log("Users only...");
 		// console.log(this.state.designers);
 		// console.log("Projects only...");
@@ -67,7 +76,12 @@ class App extends Component {
 		let display;
 
 		if (currentPage === "designers") {
-			display = <Designers designersState={this.state} />;
+			display = (
+				<Designers
+					designersState={this.state.designers}
+					changePage={this.changePage}
+				/>
+			);
 		} else if (currentPage === "designerProfile") {
 			display = <DesignerProfile designerProfileState={this.state} />;
 		} else if (currentPage === "projects") {
@@ -158,21 +172,21 @@ class LiveDataClass extends React.Component {
 				</div>
 			);
 		} else {
-			console.log(" ");
-			console.log("Live data successfully loaded");
+			// console.log(" ");
+			console.log("Live data successfully loaded...");
 			// console.log(this.state.behanceDataFromAPI);
 			// console.log(this.state.behanceDataFromAPI.users.length);
 			var dataLive = this.state.behanceDataFromAPI;
-			console.log(dataLive);
-			console.log(dataLive.users.length);
+			// console.log(dataLive);
+			// console.log(dataLive.users.length);
 			for (var i = 0; i < dataLive.users.length; i++) {
-				this.state.designers.push(
-					dataLive.users[i].first_name + ' ' + dataLive.users[i].last_name
-				);
-				// this.state.designers.push(dataLive.users[i].last_name);
+				// this.state.designers.push(
+				// 	dataLive.users[i].first_name + ' ' + dataLive.users[i].last_name
+				// );
+				this.state.designers.push(dataLive.users[i].id);
 			}
-			console.log("Live Users only...");
-			console.log(this.state.designers);
+			// console.log("Live Users only...");
+			// console.log(this.state.designers);
 			return (
 				<div>
 					<p className="textLightGreen text-center">

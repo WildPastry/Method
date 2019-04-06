@@ -2,31 +2,69 @@
 @import "variables";
 @import "mixins";
 
+// RESET
 * {
 	@include reset(0, 0, border-box, none, none);
 	font-family: $font;
 }
 
+// BODY
 body {
+	position: relative;
 	background: $grey;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
 
-p {
-	font-weight: $regular;
+// MAIN TYPOGRAHPY
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+a {
+	font-family: $font;
 }
 
 h1 {
 	font-weight: $bold;
 }
 
-.container-fluid {
-	max-width: 1200px;
-	margin-top: 200px;
-	margin-bottom: 200px;
+p {
+	font-weight: $regular;
 }
 
+// TYPOGRAPHY MODIFICATIONS
+.pSmall {
+	font-size: 0.9em;
+}
+
+.caption {
+	font-family: "Heebo", sans-serif;
+	font-size: 0.7em;
+	font-weight: $light;
+}
+
+// MAIN CONTAINER
+.container-fluid {
+	position: relative;
+	max-width: 1200px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+// COL
+.col {
+	padding: 0;
+}
+
+// APP
+#root {
+	padding-bottom: 3rem;
+}
+
+// HEADER & FOOTER
 #methodHeader {
 	width: 100%;
 	height: 3rem;
@@ -34,24 +72,19 @@ h1 {
 
 #methodFooter {
 	position: absolute;
-	left: 0;
 	bottom: 0;
 	width: 100%;
 	height: 3rem;
 }
 
+// LOGO
 #methodLogo {
 	width: 30px;
 	height: auto;
 	margin: 6.825px auto;
 }
 
-// .cardDark
-
-// .cardLight
-
-// .cardDesigner
-
+// MENU
 .button {
 	width: 120px;
 	height: 35px;

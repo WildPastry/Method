@@ -4,7 +4,7 @@ import React, { Component } from "react";
 // USER DATA
 class Menu extends Component {
   render() {
-    console.log("Menu Component");
+    // console.log("Menu Component");
     return (
       <div className="row">
         <div className="col-12">
