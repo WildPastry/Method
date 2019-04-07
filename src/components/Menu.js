@@ -7,7 +7,7 @@ class Menu extends Component {
     // console.log("Menu Component");
     return (
         <div className="col-12">
-          <h5 className="textLight text-center">Menu</h5>
+          <h5 className={this.props.menuStateClass}>Menu</h5>
         </div>
     );
   }

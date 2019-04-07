@@ -19,16 +19,13 @@ class Designers extends Component {
 	}
 
 	render() {
-		console.log(this.props.designersState);
-		// console.log(this.props.designersState[0].user.images[50]);
-		// console.log(this.state.profilePosition);
-		return this.props.designersState.map(designers => (
+		return this.props.designersState.designers.map(designers => (
 			<div
 				key={designers.user.id}
 				className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
 				<div
-					className="cardDesigner bgLightPink"
+					className={this.props.designersState.cardClass}
 					onClick={this.changePageFromDesigners.bind(this, "designerProfile")}
 				>
 					<div className="wrapperHexagon">
@@ -47,11 +44,6 @@ class Designers extends Component {
 						</div>
 					</div>
 					<div className="wrapperCard">
-						{/* <img
-							className="cardDesigner--Img"
-							src={designers.projects[9].covers.max_808}
-							alt="Designer profile loading..."
-						/> */}
 						<div
 							style={{
 								backgroundImage:
@@ -64,12 +56,12 @@ class Designers extends Component {
 						/>
 						<div className="wrapperDesignerDetails">
 							<div className="paraStyle--DesignerName">
-								<h5 className="textDark text-center">
+								<h5 className={this.props.designersState.hClass}>
 									{designers.user.username}
 								</h5>
 							</div>
 							<div className="paraStyle--DesignerDiscipline">
-								<p className="caption textDark text-center">
+								<p className={this.props.designersState.captionClass}>
 									{designers.user.fields[0] +
 										" | " +
 										designers.user.fields[1] +
