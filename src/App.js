@@ -2,12 +2,12 @@
 import React, { Component } from "react";
 
 // IMPORT COMPONENTS
-import Menu from "./components/Menu";
+// import Menu from "./components/Menu";
 import Modal from "./components/Modal";
-import Search from "./components/Search";
-import Designers from "./components/designers/Designers";
+// import Search from "./components/Search";
+// import Designers from "./components/designers/Designers";
 import DesignerProfile from "./components/designers/DesignerProfile";
-import Projects from "./components/projects/Projects";
+// import Projects from "./components/projects/Projects";
 
 // IMPORT SASS
 import "./scss/main.scss";
@@ -32,12 +32,15 @@ class App extends Component {
 						<h1 className="textLightPink text-center">Main</h1>
 					</div>
 				</div>
-				<Menu />
-				<Designers />
+				{/* <Menu />
+				<Designers /> */}
 				<DesignerProfile />
-				<Projects />
-				<Search />
+				{/* <Projects />
+				<Search /> */}
 				<Modal />
+
+				<button type="button" className="btn bgLightPink" data-toggle="modal" data-target="#projectModal">Show Modal</button>
+
 			</div>
 		);
 	}
