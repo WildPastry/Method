@@ -18,10 +18,6 @@ import axios from "axios";
 // IMPORT CONFIG
 import configData from "./data/config.json";
 
-// IMPORT LOGOS
-// import methodLogoGreen from "./icons/logo/methodLightGreenTrans.svg";
-// import methodLogoPink from "./icons/logo/methodPinkTrans.svg";
-
 // IMPORT LOCAL DATA
 import behanceDataFromJSON from "./data/behanceData";
 console.log("Data from JSON loaded...");
@@ -37,7 +33,6 @@ const API = cors + behance + key + scope;
 
 // DEFINE ELEMENTS
 var htmlBody = document.getElementById("bg");
-// var htmlHeader = document.getElementById("methodLogo");
 
 // MAIN APP
 class App extends Component {
@@ -55,7 +50,7 @@ class App extends Component {
 			cardClass: "cardDesigner bgLightPink",
 			pClass: "textDark",
 			hClass: "textDark",
-			captionClass: "caption textDark"
+			captionClass: "caption textDark text-center"
 		};
 		this.changePage = this.changePage.bind(this);
 		this.changeTheme = this.changeTheme.bind(this);
@@ -158,8 +153,8 @@ class LiveDataClass extends React.Component {
 		super(props);
 		this.state = {
 			behanceDataFromAPI: [],
-			designers: [],
-			projects: [],
+			designersFromAPI: [],
+			projectsFromAPI: [],
 			isLoaded: false
 		};
 	}
@@ -199,9 +194,16 @@ class LiveDataClass extends React.Component {
 			);
 		} else {
 			var dataLive = this.state.behanceDataFromAPI;
-			for (var i = 0; i < dataLive.users.length; i++) {
-				this.state.designers.push(dataLive.users[i].id);
+			for (var i = 0; i < dataLive.projects.length; i++) {
+				this.state.designersFromAPI.push(dataLive.projects[i].owners[0]);
+				this.state.projectsFromAPI.push(dataLive.projects[i]);
 			}
+			console.log("Live data loaded...");
+			console.log(dataLive);
+			console.log("Live designers array...");
+			console.log(this.state.designersFromAPI);
+			console.log("Live projects array...");
+			console.log(this.state.projectsFromAPI);
 			return (
 				<div>
 					<h1
