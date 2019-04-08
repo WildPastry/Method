@@ -6,7 +6,7 @@ import React, { Component } from "react";
 import Modal from "./components/Modal";
 // import Search from "./components/Search";
 // import Designers from "./components/designers/Designers";
-import DesignerProfile from "./components/designers/DesignerProfile";
+// import DesignerProfile from "./components/designers/DesignerProfile";
 // import Projects from "./components/projects/Projects";
 
 // IMPORT SASS
@@ -34,13 +34,12 @@ class App extends Component {
 				</div>
 				{/* <Menu />
 				<Designers /> */}
-				<DesignerProfile />
+				{/* <DesignerProfile /> */}
 				{/* <Projects />
 				<Search /> */}
 				<Modal />
 
-				<button type="button" className="btn bgLightPink" data-toggle="modal" data-target="#projectModal">Show Modal</button>
-
+				   
 			</div>
 		);
 	}
