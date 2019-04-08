@@ -2,34 +2,34 @@
 import React, { Component } from "react";
 
 // IMPORT COMPONENTS
-// import Menu from "./components/Menu";
+import Menu from "./components/Menu";
 import Modal from "./components/Modal";
-// import Search from "./components/Search";
-// import Designers from "./components/designers/Designers";
-// import DesignerProfile from "./components/designers/DesignerProfile";
-// import Projects from "./components/projects/Projects";
+import Search from "./components/Search";
+import Designers from "./components/designers/Designers";
+import DesignerProfile from "./components/designers/DesignerProfile";
+import Projects from "./components/projects/Projects";
 
 // IMPORT SASS
 import "./scss/main.scss";
 
 // IMPORT AXIOS
-import axios from "axios";
+// import axios from "axios";
 
 // IMPORT CONFIG
-import configData from "./data/config.json";
+// import configData from "./data/config.json";
 
 // IMPORT LOCAL DATA
 import behanceDataFromJSON from "./data/behanceData";
 console.log("Data from JSON loaded...");
 
 // DEFINE CONFIG
-const key = configData.OAUTH;
-const cors = configData.CORS;
-const behance = configData.BEHANCE;
-const scope = configData.SCOPE;
+// const key = configData.OAUTH;
+// const cors = configData.CORS;
+// const behance = configData.BEHANCE;
+// const scope = configData.SCOPE;
 
 // DEFINE API DATA
-const API = cors + behance + key + scope;
+// const API = cors + behance + key + scope;
 
 // DEFINE ELEMENTS
 var htmlBody = document.getElementById("bg");
@@ -44,7 +44,7 @@ class App extends Component {
 			behanceData: [],
 			designers: [],
 			projects: [],
-			currentPage: "designers",
+			currentPage: "modal",
 			mainHeadingClass: "textLightPink",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
@@ -131,104 +131,91 @@ class App extends Component {
 			return (
 				<div className={this.state.bgClass}>
 					<div className="container-fluid">
-						<LiveDataClass
+						{/* <LiveDataClass
 							liveDataStateClass={this.state}
 							changeTheme={this.changeTheme}
 							changeBodyTheme={this.changeBodyTheme}
-						/>
+						/> */}
 						<Menu menuStateClass={this.state.headingClass} />
 
 						{/* CURRENT PAGE*/}
 						<div className="row">{display}</div>
 					</div>
 				</div>
-<<<<<<< HEAD
-				{/* <Menu />
-				<Designers /> */}
-				{/* <DesignerProfile /> */}
-				{/* <Projects />
-				<Search /> */}
-				<Modal />
-
-				   
-			</div>
-		);
-=======
 			);
 		}
 	}
 }
 
 // LIVE DATA COMPONENT
-class LiveDataClass extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			behanceDataFromAPI: [],
-			designersFromAPI: [],
-			projectsFromAPI: [],
-			isLoaded: false
-		};
-	}
+// class LiveDataClass extends React.Component {
+// 	constructor(props) {
+// 		super(props);
+// 		this.state = {
+// 			behanceDataFromAPI: [],
+// 			designersFromAPI: [],
+// 			projectsFromAPI: [],
+// 			isLoaded: false
+// 		};
+// 	}
 
-	componentDidMount() {
-		axios
-			.get(API)
-			.then(res => {
-				const behanceDataFromAPI = res.data;
-				this.setState({
-					isLoaded: true,
-					behanceDataFromAPI
-				});
-			})
-			.catch(error => {
-				if (error.res) {
-				} else if (error.request) {
-					console.log(error.request);
-				} else {
-					console.log("Error", error.message);
-				}
-				console.log(error.config);
-			});
-	}
+// 	componentDidMount() {
+// 		axios
+// 			.get(API)
+// 			.then(res => {
+// 				const behanceDataFromAPI = res.data;
+// 				this.setState({
+// 					isLoaded: true,
+// 					behanceDataFromAPI
+// 				});
+// 			})
+// 			.catch(error => {
+// 				if (error.res) {
+// 				} else if (error.request) {
+// 					console.log(error.request);
+// 				} else {
+// 					console.log("Error", error.message);
+// 				}
+// 				console.log(error.config);
+// 			});
+// 	}
 
-	render() {
-		var { isLoaded } = this.state;
-		if (!isLoaded) {
-			return (
-				<div id="methodLoader">
-					<img
-						className="methodLoader--img"
-						src={require("./icons/logo/methodCreamTrans.svg")}
-						alt="Method Loader"
-					/>
-				</div>
-			);
-		} else {
-			var dataLive = this.state.behanceDataFromAPI;
-			for (var i = 0; i < dataLive.projects.length; i++) {
-				this.state.designersFromAPI.push(dataLive.projects[i].owners[0]);
-				this.state.projectsFromAPI.push(dataLive.projects[i]);
-			}
-			console.log("Live data loaded...");
-			console.log(dataLive);
-			console.log("Live designers array...");
-			console.log(this.state.designersFromAPI);
-			console.log("Live projects array...");
-			console.log(this.state.projectsFromAPI);
-			return (
-				<div>
-					<h1
-						className={this.props.liveDataStateClass.mainHeadingClass}
-						onClick={this.props.changeTheme}
-					>
-						Method
-					</h1>
-				</div>
-			);
-		}
->>>>>>> master-dev
-	}
-}
+// 	render() {
+// 		var { isLoaded } = this.state;
+// 		if (!isLoaded) {
+// 			return (
+// 				<div id="methodLoader">
+// 					<img
+// 						className="methodLoader--img"
+// 						src={require("./icons/logo/methodCreamTrans.svg")}
+// 						alt="Method Loader"
+// 					/>
+// 				</div>
+// 			);
+// 		} else {
+// 			var dataLive = this.state.behanceDataFromAPI;
+// 			for (var i = 0; i < dataLive.projects.length; i++) {
+// 				this.state.designersFromAPI.push(dataLive.projects[i].owners[0]);
+// 				this.state.projectsFromAPI.push(dataLive.projects[i]);
+// 			}
+// 			console.log("Live data loaded...");
+// 			console.log(dataLive);
+// 			console.log("Live designers array...");
+// 			console.log(this.state.designersFromAPI);
+// 			console.log("Live projects array...");
+// 			console.log(this.state.projectsFromAPI);
+// 			return (
+// 				<div>
+// 					<h1
+// 						className={this.props.liveDataStateClass.mainHeadingClass}
+// 						onClick={this.props.changeTheme}
+// 					>
+// 						Method
+// 					</h1>
+// 				</div>
+// 			);
+// 		}
+// 	}
+// }
 
 export default App;

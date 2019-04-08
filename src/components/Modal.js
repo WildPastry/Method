@@ -3,9 +3,12 @@ import React, { Component } from "react";
 
 // USER DATA
 class Modal extends Component {
-<<<<<<< HEAD
 	render() {
-		console.log("Modal Component");
+		console.log(this.props.modalState.behanceData);
+    console.log(this.props.modalState.behanceData[0].projects[0].covers[808]);
+    
+
+
 		return (
 			<div>
 				<button
@@ -28,9 +31,12 @@ class Modal extends Component {
 					<div className="modal-dialog" role="document">
 						<div className="modal-content bgDark">
 							<div className="modal-header">
-								<h5 className="modal-title textLight modalProject" id="exampleModalLabel">
+								<h4
+									className="modal-title textLight modalProjectName"
+									id="exampleModalLabel"
+								>
 									project title
-								</h5>
+								</h4>
 								<button
 									type="button"
 									className="close"
@@ -41,25 +47,17 @@ class Modal extends Component {
 								</button>
 							</div>
 							<div className="modal-body">
-								<div />
+								<img className="modalImage" src={this.props.modalState.behanceData[0].projects[0].covers.max_808} alt="loading...." />
 							</div>
-							<div className="modal-footer" />
+							<div className="modal-footer">
+								<h4 className="modalProjectName textLight">Designer name</h4>
+							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		);
 	}
-=======
-  render() {
-    console.log("Modal Component");
-    return (
-        <div className="col-12">
-          <h5 className="textLight text-center">Modal</h5>
-        </div>
-    );
-  }
->>>>>>> master-dev
 }
 
 export default Modal;

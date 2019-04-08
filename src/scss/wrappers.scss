@@ -1,20 +1,4 @@
-<<<<<<< HEAD
-.modal-dialog{
-    max-width: 90%;
-}
-.close{
-    color: $lightPink;
-    text-shadow: none;
-    opacity: 1;
-}
-.close:hover{
-    color: $lightPink;
-    opacity: .5;
-}
-.modalProjectName{
 
-}
-=======
 // IMPORT
 @import "variables";
 @import "mixins";
@@ -65,4 +49,31 @@
 	justify-content: center;
 	align-items: center;
 }
->>>>>>> master-dev
+
+// daniels css
+.modal-dialog{
+    max-width: 90%;
+}
+.close{
+    color: $lightPink;
+    text-shadow: none;
+    opacity: 1;
+    font-size: 2.5rem;
+}
+.close:hover{
+    color: $lightPink;
+    opacity: .5;
+}
+.modalProjectName{
+    font-family: $font;
+    font-weight: $bold;
+    letter-spacing: 1px;
+}
+.modal-body{
+    max-width: 100%;
+}
+.modalImage{
+    width: 100%;
+}
+
+
