@@ -3,6 +3,7 @@ import React, { Component } from "react";
 
 // USER DATA
 class Modal extends Component {
+<<<<<<< HEAD
 	render() {
 		console.log("Modal Component");
 		return (
@@ -49,6 +50,16 @@ class Modal extends Component {
 			</div>
 		);
 	}
+=======
+  render() {
+    console.log("Modal Component");
+    return (
+        <div className="col-12">
+          <h5 className="textLight text-center">Modal</h5>
+        </div>
+    );
+  }
+>>>>>>> master-dev
 }
 
 export default Modal;
