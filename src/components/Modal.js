@@ -6,8 +6,8 @@ class Modal extends Component {
   render() {
     console.log("Modal Component");
     return (
-        <div className="col-12">
-          <h5 className="textLight text-center">Modal</h5>
+        <div className={this.props.modalState.cardClass}>
+          <h5 className={this.props.modalState.hClass}>Modal</h5>
         </div>
     );
   }

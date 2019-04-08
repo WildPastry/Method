@@ -6,9 +6,9 @@ class Projects extends Component {
 	render() {
 		console.log("Projects Component");
 		return (
-			<div className="col-12">
-				<h5 className="textLight text-center">Projects</h5>
-			</div>
+				<div className={this.props.projectsState.cardClass}>
+					<h5 className={this.props.projectsState.hClass}>Projects</h5>
+				</div>
 		);
 	}
 }

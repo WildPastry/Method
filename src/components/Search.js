@@ -6,8 +6,8 @@ class Search extends Component {
   render() {
     console.log("Search Component");
     return (
-        <div className="col-12">
-          <h5 className="textLight text-center">Search</h5>
+        <div className={this.props.searchState.cardClass}>
+          <h5 className={this.props.searchState.hClass}>Search</h5>
         </div>
     );
   }

@@ -1,7 +1,7 @@
 // IMPORT
 import React, { Component } from "react";
 
-// USER DATA
+// DESIGNER DATA
 class Designers extends Component {
 	constructor(props) {
 		super(props);

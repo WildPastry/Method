@@ -28,8 +28,6 @@ p {
 
 h1 {
 	font-weight: $bold;
-	text-align: center;
-	cursor: pointer;
 }
 
 a:hover {
@@ -102,7 +100,7 @@ p {
 	z-index: 50;
 }
 
-.methodLoader--img {
+.methodLoaderImg {
 	height: 233px;
 	left: 50%;
 	margin-left: -100px;
@@ -117,8 +115,31 @@ p {
 	height: 35px;
 }
 
+.menuImg {
+width: 17px;
+height: auto;
+margin-right: 5px;
+}
+
 .menuDesigner,
 .menuProjects,
-.menuSearch {
-	color: $white;
+.menuSearch,
+.menuTheme {
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	margin: 0px 10px;
 }
+
+// .menuDesigner {
+// 	width: 126px;
+// }
+// .menuProjects {
+// 	width: 119px;
+// }
+// .menuSearch {
+// 	width: 102px;
+// }
+// .menuTheme {
+// 	width: 94px;
+// }

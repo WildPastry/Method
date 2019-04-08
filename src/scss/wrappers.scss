@@ -49,5 +49,7 @@
 .wrapperMenu {
 	margin-top: 20px;
 	margin-bottom: 20px;
-	// border: 0.5px solid $cream;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
