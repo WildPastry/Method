@@ -1,0 +1,50 @@
+// IMPORT
+@import "variables";
+@import "mixins";
+
+/* WRAPPERS */
+// .wrapper {
+// 	margin: 10px;
+// }
+
+.wrapperCol {
+	padding: 15px;
+}
+
+.wrapperLogo {
+	width: 30px;
+	margin: 0 auto;
+}
+
+.wrapperCard {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+
+.wrapperHexagon {
+	height: 200px;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -50px;
+	position: absolute;
+	top: 50%;
+	width: 100px;
+	z-index: 5;
+}
+
+.wrapperDesignerDetails {
+	margin: 10px;
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapperProjectsDetails {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

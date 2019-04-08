@@ -1,8 +1,6 @@
 // IMPORT
 import React, { Component } from "react";
 
-// IMPORT LOCAL DATA
-import behanceDataFROMJSON from "../data/behanceData.json";
 
 // USER DATA
 class Projects extends Component {
@@ -12,46 +10,63 @@ class Projects extends Component {
 
 		this.state = {
 			behanceData: [],
-			projects: [],
+      projects: [],
 		};
 	}
 
-	componentDidMount() {
-		this.setState({
-			behanceData : behanceDataFROMJSON,
-		});
-		for (var i = 0; i < behanceDataFROMJSON.length; i++) {
-			this.state.projects.push(behanceDataFROMJSON[i].projects);
-		};
-		console.log('projects only');
-		console.log(this.state.projects);
-	}
+
+
 
   render() {
+    var projectDetails = this.props.projectsState.behanceData;
+    console.log(projectDetails); 
+    console.log("...");
+    console.log(projectDetails[0].projects[0].name);
+    console.log('...hello');
+    console.log(projectDetails[0].projects[0].covers[202]);
+    console.log("...");
+    console.log(projectDetails[0].projects[0].stats.views);
+
+
+
+
     // let projects = this.state.projects;
-    console.log(this.state.projects[0]);
-    console.log(this.state.projects[0].name[0]);
-    console.log("Projects Component");
+    // console.log(this.state.projects[0]);
+    // console.log(this.state.projects[0].name[0]);
+    // console.log("Projects Component");
 
     return (
-    // <div className="row">
-        // <h5 className="textLight text-center">Projects</h5>
-        // {projects.map( (projects)=> (
-        //       <div className="col-12" key = {projects.id}>
-        //         <p> {projects.name}</p>
-        //       </div>
-        //     ))}
-      // </div>
+      projectDetails.map((projectDetailsMapped => (
+           <div className="col-3">
+           <p className = "textLight text-center">{projectDetails[0].projects[0].name}</p>
+           <p className = "textLight text-center">{projectDetails[0].projects[0].stats.views}</p>
 
+           <img src = {projectDetails[0].projects[0].covers[202]}/>
 
-      this.state.projects.map (projectDetails =>(
-      <div className = "col"
-      key = {projectDetails.id}>
-      <p>{projectDetails.name}</p>
-      </div>
-      )
-       ) );
+    </div>
+        )
+      ))
+    ) 
   }
 }
 
 export default Projects;
+
+{/* <div className="row">
+<h5 className="textLight text-center">Projects</h5>
+{projects.map( (projects)=> (
+      <div className="col-12" key = {projects.id}>
+        <p> {projects.name}</p>
+      </div>
+    ))}
+</div> */}
+
+// return (
+//   projectDetails.projects.map(projectDetailsMapped => (
+    
+//     <div
+//     key = {projectDetailsMapped.projects.id}
+//     className="col-3">
+//     <p className = "textLight text-center">{projectDetailsMapped.projects.name}</p>
+//     </div>
+//   ))

@@ -2,49 +2,125 @@
 @import "variables";
 @import "mixins";
 
+// RESET
 * {
-  @include reset(0, 0, border-box, none, none);
-  font-family: $font;
+	@include reset(0, 0, border-box, none, none);
+	font-family: $font;
 }
 
+// BODY
 body {
-  background: $grey;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	position: relative;
+	background: $grey;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
+// MAIN TYPOGRAHPY
+h1,
+h2,
+h3,
+h4,
+h5,
 p {
-  font-weight: $regular;
+	font-family: $font;
 }
 
 h1 {
-  font-weight: $bold;
+	font-weight: $bold;
+	text-align: center;
+	cursor: pointer;
 }
 
+a:hover {
+	text-decoration: none;
+	color: $cream;
+}
+
+p {
+	font-weight: $regular;
+	margin: 0;
+}
+
+// TYPOGRAPHY MODIFICATIONS
+.pSmall {
+	font-size: 0.9em;
+}
+
+.caption {
+	font-family: "Heebo", sans-serif;
+	font-size: 0.7em;
+	font-weight: $light;
+}
+
+// MAIN CONTAINER
 .container-fluid {
-  max-width: 1200px;
-  margin-top: 200px;
-  margin-bottom: 200px;
+	position: relative;
+	max-width: 1200px;
+	margin-top: 50px;
+	margin-bottom: 50px;
 }
 
+// COL
+.col {
+	padding: 0;
+}
+
+// APP
+#root {
+	padding-bottom: 3rem;
+}
+
+// HEADER & FOOTER
 #methodHeader {
-  width: 100%;
-  height: 3rem;
+	width: 100%;
+	height: 3rem;
 }
 
 #methodFooter {
-  width: 100%;
-  height: 3rem;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 3rem;
+	line-height: 48px;
 }
 
+// LOGO
+#methodLogo {
+	width: 30px;
+	height: auto;
+	margin: 6.825px auto;
+}
+
+// MENU
 .button {
-width: 120px;
-height: 35px;
+	width: 120px;
+	height: 35px;
 }
 
 .buttonDesigner,
 .buttonProjects,
 .buttonSearch {
+	color: $white;
+}
 
-  color: $white;
+// LOADER
+#methodLoader {
+	background: $methodBlack--trans;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 50;
+}
+
+.methodLoader--img {
+	height: 233px;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: -116.5px;
+	position: absolute;
+	top: 50%;
+	width: 200px;
 }

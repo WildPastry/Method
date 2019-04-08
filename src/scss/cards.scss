@@ -1,3 +1,47 @@
 // IMPORT
 @import "variables";
 @import "mixins";
+
+// CARDS
+.cardDark {
+	background-color: $methodBlack;
+}
+
+.cardLight {
+	background-color: cream;
+}
+
+.cardDesigner {
+	cursor: pointer;
+	width: 100%;
+	height: 350px;
+}
+
+.cardDesigner--Img {
+	width: 100%;
+	height: 50%;
+}
+
+// HEXAGON
+.hexagonDesigner {
+	width: 100px;
+	height: 200px;
+	overflow: hidden;
+	visibility: hidden;
+	transform: rotate(120deg);
+}
+
+.hexagonDesigner--in1 {
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+	transform: rotate(-60deg);
+}
+
+.hexagonDesigner--in2 {
+	width: 100%;
+	height: 100%;
+	visibility: visible;
+	transform: rotate(-60deg);
+	background: $methodBlack;
+}
