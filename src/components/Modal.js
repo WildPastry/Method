@@ -5,9 +5,7 @@ import React, { Component } from "react";
 class Modal extends Component {
 	render() {
 		console.log(this.props.modalState.behanceData);
-    console.log(this.props.modalState.behanceData[0].projects[0].covers[808]);
-    
-
+		console.log(this.props.modalState.behanceData[0].projects[0].covers[808]);
 
 		return (
 			<div>
@@ -47,7 +45,14 @@ class Modal extends Component {
 								</button>
 							</div>
 							<div className="modal-body">
-								<img className="modalImage" src={this.props.modalState.behanceData[0].projects[0].covers.max_808} alt="loading...." />
+								<img
+									className="modalImage"
+									src={
+										this.props.modalState.behanceData[0].projects[0].covers
+											.max_808
+									}
+									alt="loading...."
+								/>
 							</div>
 							<div className="modal-footer">
 								<h4 className="modalProjectName textLight">Designer name</h4>

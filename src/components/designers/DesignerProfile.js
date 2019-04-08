@@ -4,10 +4,16 @@ import React, { Component } from "react";
 // USER DATA
 class DesignerProfile extends Component {
   render() {
-    console.log("DesignerProfile Component");
+    console.log(this.props.designerProfileState.behanceData);
+
+
     return (
-        <div className="col-12">
-          <h5 className="textLight text-center">DesignerProfile</h5>
+        <div>
+         <div className="row">
+          <div classname="col-4">
+            <h1>yoyoyoyyo</h1>
+          </div>
+         </div>
         </div>
     );
   }
