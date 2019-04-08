@@ -85,26 +85,13 @@ p {
 	line-height: 48px;
 }
 
-// LOGO
+// MIKES SCSS
 #methodLogo {
 	width: 30px;
 	height: auto;
 	margin: 6.825px auto;
 }
 
-// MENU
-.button {
-	width: 120px;
-	height: 35px;
-}
-
-.buttonDesigner,
-.buttonProjects,
-.buttonSearch {
-	color: $white;
-}
-
-// LOADER
 #methodLoader {
 	background: $methodBlack--trans;
 	bottom: 0;
@@ -123,4 +110,15 @@ p {
 	position: absolute;
 	top: 50%;
 	width: 200px;
+}
+
+.menu {
+	width: 120px;
+	height: 35px;
+}
+
+.menuDesigner,
+.menuProjects,
+.menuSearch {
+	color: $white;
 }

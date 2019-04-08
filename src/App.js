@@ -50,6 +50,7 @@ class App extends Component {
 			cardClass: "cardDesigner bgLightPink",
 			pClass: "textDark",
 			hClass: "textDark",
+			mClass: "textLight",
 			captionClass: "caption textDark text-center"
 		};
 		this.changePage = this.changePage.bind(this);
@@ -72,6 +73,7 @@ class App extends Component {
 				cardClass: "cardDesigner bgDarkGreen",
 				pClass: "textLight text-center",
 				hClass: "textLight text-center",
+				mClass: "textDark",
 				captionClass: "caption textLight"
 			});
 		} else {
@@ -83,6 +85,7 @@ class App extends Component {
 				cardClass: "cardDesigner bgLightPink",
 				pClass: "textDark text-center",
 				hClass: "textDark text-center",
+				mClass: "textLight",
 				captionClass: "caption textDark"
 			});
 		}
@@ -136,9 +139,7 @@ class App extends Component {
 							changeTheme={this.changeTheme}
 							changeBodyTheme={this.changeBodyTheme}
 						/>
-						<Menu menuStateClass={this.state.headingClass} />
-
-						{/* CURRENT PAGE*/}
+						<Menu menuStateClass={this.state} changePage={this.changePage} />
 						<div className="row">{display}</div>
 					</div>
 				</div>
@@ -193,25 +194,27 @@ class LiveDataClass extends React.Component {
 				</div>
 			);
 		} else {
-			var dataLive = this.state.behanceDataFromAPI;
-			for (var i = 0; i < dataLive.projects.length; i++) {
-				this.state.designersFromAPI.push(dataLive.projects[i].owners[0]);
-				this.state.projectsFromAPI.push(dataLive.projects[i]);
-			}
-			console.log("Live data loaded...");
-			console.log(dataLive);
-			console.log("Live designers array...");
-			console.log(this.state.designersFromAPI);
-			console.log("Live projects array...");
-			console.log(this.state.projectsFromAPI);
+			// var dataLive = this.state.behanceDataFromAPI;
+			// for (var i = 0; i < dataLive.projects.length; i++) {
+			// 	this.state.designersFromAPI.push(dataLive.projects[i].owners[0]);
+			// 	this.state.projectsFromAPI.push(dataLive.projects[i]);
+			// }
+			// console.log("Live data loaded...");
+			// console.log(dataLive);
+			// console.log("Live designers array...");
+			// console.log(this.state.designersFromAPI);
+			// console.log("Live projects array...");
+			// console.log(this.state.projectsFromAPI);
 			return (
-				<div>
-					<h1
-						className={this.props.liveDataStateClass.mainHeadingClass}
-						onClick={this.props.changeTheme}
-					>
-						Method
-					</h1>
+				<div className="row">
+					<div className="col-12">
+						<h1
+							className={this.props.liveDataStateClass.mainHeadingClass}
+							onClick={this.props.changeTheme}
+						>
+							Method
+						</h1>
+					</div>
 				</div>
 			);
 		}
