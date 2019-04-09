@@ -1,7 +1,7 @@
 // IMPORT
 import React, { Component } from "react";
 
-// USER DATA
+// MENU
 class Menu extends Component {
 	constructor(props) {
 		super(props);
@@ -28,7 +28,6 @@ class Menu extends Component {
 						DESIGNERS
 					</p>
 				</div>
-
 				<div className="menuProjects">
 					<img
 						className="menuImg"
@@ -42,7 +41,6 @@ class Menu extends Component {
 						PROJECTS
 					</p>
 				</div>
-
 				<div className="menuSearch">
 					<img
 						className="menuImg"

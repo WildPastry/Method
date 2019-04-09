@@ -44,6 +44,7 @@ class App extends Component {
 			behanceData: [],
 			designers: [],
 			projects: [],
+			profileIcon: "../icons/menu/profileCream.svg",
 			currentPage: "designers",
 			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
