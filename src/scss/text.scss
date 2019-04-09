@@ -27,11 +27,15 @@
   color: $darkGreen;
 }
 
+// MIKES SCSS
+.paraStyle--DesignerName{
+  margin-top: 50px;
+}
+
 // MARIAS SCSS
 .paraStyle--DesignerProject {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 3em;
-  // text-transform: uppercase;
 }

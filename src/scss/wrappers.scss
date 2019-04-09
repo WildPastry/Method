@@ -3,7 +3,6 @@
 @import "mixins";
 
 /* WRAPPERS */
-
 .wrapper {
 	margin: 10px;
 }
@@ -23,18 +22,7 @@
 	position: relative;
 }
 
-.wrapperDesignerDetails {
-	margin: 10px;
-	height: 50%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
 .wrapperProjects--Details {
-	// padding-bottom: 10px;
-	// height: 5em;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -45,10 +33,10 @@
 .wrapperHexagon {
 	height: 200px;
 	left: 50%;
-	margin-top: -100px;
+	margin-top: -105px;
 	margin-left: -50px;
 	position: absolute;
-	top: 50%;
+	top: 60%;
 	width: 100px;
 	z-index: 5;
 }
@@ -59,4 +47,12 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+.wrapperDesignerDetails {
+	height: 40%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }

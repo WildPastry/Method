@@ -48,6 +48,7 @@ class App extends Component {
 			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
+			projectCardClass: "cardProject cardWrapper bgLightPink",
 			pClass: "textDark",
 			hClass: "textDark",
 			mClass: "textLight",
@@ -71,6 +72,7 @@ class App extends Component {
 				mainHeadingClass: "textDarkGreen text-center",
 				headingClass: "textDark text-center",
 				cardClass: "cardDesigner bgDarkGreen",
+				projectCardClass: "cardProject cardWrapper bgDarkGreen",
 				pClass: "textLight",
 				hClass: "textLight",
 				mClass: "textDark",
@@ -83,6 +85,7 @@ class App extends Component {
 				mainHeadingClass: "textLightPink text-center",
 				headingClass: "textLight text-center",
 				cardClass: "cardDesigner bgLightPink",
+				projectCardClass: "cardProject cardWrapper bgLightPink",
 				pClass: "textDark",
 				hClass: "textDark",
 				mClass: "textLight",
@@ -98,7 +101,7 @@ class App extends Component {
 		});
 		for (var i = 0; i < behanceDataFromJSON.length; i++) {
 			this.state.designers.push(behanceDataFromJSON[i]);
-			this.state.projects.push(behanceDataFromJSON[i].projects);
+			this.state.projects.push(behanceDataFromJSON[i]);
 		}
 	}
 

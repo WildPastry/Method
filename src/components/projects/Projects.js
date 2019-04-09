@@ -1,58 +1,46 @@
 // IMPORT
 import React, { Component } from "react";
 
-// USER DATA
+// PROJECT DATA
 class Projects extends Component {
+	render() {
+		var projectDetails = this.props.projectsState.behanceData;
 
-	constructor(props) {
-		super(props);
+		return projectDetails.map(projectDetailsMapped => (
+			<div
+				key={projectDetailsMapped.user.id}
+				className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
+			>
+				{projectDetailsMapped["projects"].map(singleProject => {
+					return (
+						<div
+							key={singleProject.id}
+							className={this.props.projectsState.projectCardClass}
+						>
+							<div className="cardProject--Img">
+								<img
+									className="designerProject--Img"
+									src={singleProject.covers["max_808"]}
+									alt="Behance Project"
+								/>
+							</div>
 
-		this.state = {
-			behanceData: [],
-      projects: [],
-		};
+							<div className="wrapperProject--Details">
+								<div className="wrapper paraStyle--DesignerProject">
+									<p className={this.props.projectsState.pClass}>
+										{singleProject.name}
+									</p>
+									<p className={this.props.projectsState.captionClass}>
+										Views: {singleProject.stats.views}
+									</p>
+								</div>
+							</div>
+						</div>
+					);
+				})}
+			</div>
+		));
 	}
-
-  render() {
-    var projectDetails = this.props.projectsState.behanceData;
-    // here it's defined
-
-    // console.log(projectDetails);
-    // for (let index = 0; index < projectDetails.length; index++) {
-    //   const element = projectDetails[index];
-    //   console.log(element['projects'])
-      
-    // }
-
-return (
-  projectDetails.map((projectDetailsMapped => (
-       <div
-        key={projectDetailsMapped.id}
-        className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
-       >
-        {
-          projectDetailsMapped['projects'].map((singleProject, i) => {
-            return <div className = "cardProject cardWrapper bgLightPink textDark"
-            // key={['projects']}
-            >
-                <div className = "cardProject--Img">
-                <img className = "designerProject--Img" src = {singleProject.covers['max_808']} alt="Behance Project"/>
-                </div>
-                
-                <div className = "wrapperProject--Details">
-                  <div className = "wrapper paraStyle--DesignerProject">
-                    <p className = "textDark">{singleProject.name}</p>
-                    <p className = "caption textDark">Views: {singleProject.stats.views}</p>
-                  </div>
-                </div>
-              </div>
-            })
-          }
-          </div>
-          )
-        )) 
-      )
-    }
-  }
+}
 
 export default Projects;
