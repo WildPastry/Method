@@ -71,20 +71,20 @@ class Modal extends Component {
 								</button>
 							</div>
 							<div className="modal-body">
-								{/* <img
+								<img
 									className="modalImage"
 									src={this.props.modalState.behanceData[0].projects[0].covers[808]}
 									alt="loading...."
-								/> */}
+								/>
 
-								{this.props.modalState.behanceData.map(projectsList => (
+								{/* {this.props.modalState.behanceData.map(projectsList => (
 									<img 
 										className="modalImage"
 										src={projectsList.projects.covers[230]}
 										alt="loading...."
 									/>
 								))}
-								;
+								; */}
 							</div>
 						</div>
 					</div>
