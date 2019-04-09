@@ -150,6 +150,18 @@ class App extends Component {
 
 // LIVE DATA COMPONENT
 class LiveDataClass extends React.Component {
+
+// for (var ij=0; j<12; j++){
+//  console.log(i);
+//  console.log(user)
+//  console.log(user[i]);
+// var newuser=user[i];
+//  console.log(newuser);
+//  var url='https://api.behance.net/v2/users/'+newuser+'/projects?client_id=';
+//  console.log(url);
+
+// }
+
 	constructor(props) {
 		super(props);
 		this.state = {
