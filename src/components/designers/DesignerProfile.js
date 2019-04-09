@@ -12,7 +12,8 @@ class DesignerProfile extends Component {
         <div>
          <div className="row">
           <div className="col-4">
-            {/* <img src={this.props.designerProfileState.behanceData[0].user.images[276]} /> */}
+          <h1>hello</h1>
+            {/* <img src={this.props.designerProfileState.behanceData[0].user.images[276]} alt="loading...."/> */}
           </div>
           <div>
 
