@@ -5,7 +5,24 @@ import React, { Component } from "react";
 class Modal extends Component {
 	render() {
 		console.log(this.props.modalState.behanceData);
-		console.log(this.props.modalState.behanceData[0].projects[0].covers[808]);
+		console.log(this.props.modalState.behanceData[0].projects[0]);
+		// console.log(this.props.modalState.behanceData[0].projects[0].covers[808]);
+		// console.log(this.props.modalState.behanceData[0].user.username);
+
+		for (var i = 0; i < this.props.modalState.behanceData.length; i++) {
+			// console.log(this.props.modalState.behanceData.length);
+			// console.log(this.props.modalState.behanceData[i].user.username);
+			// console.log(this.props.modalState.behanceData[i].projects[0]);
+
+			for (
+				var j = 0;
+				j < this.props.modalState.behanceData[j].projects.length;
+				j++
+			) {
+				// console.log(this.props.modalState.behanceData[j].projects.length);
+				// console.log(this.props.modalState.behanceData[j].projects[j]);
+			}
+		}
 
 		return (
 			<div>
@@ -33,8 +50,17 @@ class Modal extends Component {
 									className="modal-title textLight modalProjectName"
 									id="exampleModalLabel"
 								>
-									project title
+									{this.props.modalState.behanceData[0].user.username}
 								</h4>
+								{/* {this.props.modalState.behanceData.map(projectsUserName => (
+									<h4	key={projectsUserName.user.id}
+										className="modal-title textLight modalProjectName"
+										id="exampleModalLabel"
+									>
+										{projectsUserName[1].user.username}
+									</h4>
+								))}
+								; */}
 								<button
 									type="button"
 									className="close"
@@ -45,17 +71,22 @@ class Modal extends Component {
 								</button>
 							</div>
 							<div className="modal-body">
-								<img
-									className="modalImage"
-									src={
-										this.props.modalState.behanceData[0].projects[0].covers
-											.max_808
-									}
-									alt="loading...."
-								/>
-							</div>
-							<div className="modal-footer">
-								<h4 className="modalProjectName textLight">Designer name</h4>
+
+									<img
+										className="modalImage"
+										src={this.props.modalState.behanceData[0].projects[0].url}
+										alt="loading...."
+									/>
+								
+
+								{/* {this.props.modalState.behanceData.map(projectsList => (
+									<img
+										className="modalImage"
+										src={projectsList.projects.covers.max_808}
+										alt="loading...."
+									/>
+								))}
+								; */}
 							</div>
 						</div>
 					</div>

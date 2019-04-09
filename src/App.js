@@ -44,7 +44,7 @@ class App extends Component {
 			behanceData: [],
 			designers: [],
 			projects: [],
-			currentPage: "DesignerProfile",
+			currentPage: "modal",
 			mainHeadingClass: "textLightPink",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",

@@ -5,13 +5,17 @@ import React, { Component } from "react";
 class DesignerProfile extends Component {
   render() {
     console.log(this.props.designerProfileState.behanceData);
+    // console.log(this.props.designerProfileState.behanceData[0].user.images[276]);
 
 
     return (
         <div>
          <div className="row">
-          <div classname="col-4">
-            <h1>yoyoyoyyo</h1>
+          <div className="col-4">
+            {/* <img src={this.props.designerProfileState.behanceData[0].user.images[276]} /> */}
+          </div>
+          <div>
+
           </div>
          </div>
         </div>
