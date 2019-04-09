@@ -1,102 +1,73 @@
 // IMPORT
 import React, { Component } from "react";
 
+var designerBar
+    
+
 // USER DATA
 class DesignerProfile extends Component {
+
+  constructor(props) {
+		super(props);
+		this.state = {
+			currentDesignerProfile: "h3l"
+		};
+		this.testBar = this.testBar.bind(this);
+  } 
+  
+  testBar(){
+    this.setState({
+      currentDesignerProfile: "washe"
+    });
+  }
+
   render() {
+    
     console.log(this.props.designerProfileState.behanceData);
-    // console.log(this.props.designerProfileState.behanceData[0].user.images[276]);
-    // console.log(this.props.designerProfileState.behanceData[0].user.username);
-    // console.log(this.props.designerProfileState.behanceData[4].user.stats.views);
-    // console.log(this.props.designerProfileState.behanceData[4].user.stats.appreciations);
-    // console.log(this.props.designerProfileState.behanceData[4].user.stats.followers);
-    console.log(this.props.designerProfileState.behanceData[4].projects);
+    console.log(this.state.currentDesignerProfile);
+
+    if (this.state.currentDesignerProfile === "h3l"){
+      designerBar = 4
+    } else if (this.state.currentDesignerProfile === "washe"){
+      designerBar = 0
+    }
 
 
     return (
       <div className="container">
-        <div className="row bgMethodBlack">
+        <button onClick={this.testBar}>button</button>
+        <div className="row bgLightPink">
               <div className="col-3 wrapperCol">
-                <img src={this.props.designerProfileState.behanceData[4].user.images[276]} alt="loading...." />
+                <img src={this.props.designerProfileState.behanceData[designerBar].user.images[276]} alt="loading...." />
               </div>
+
               <div className="col-9">
-                  <div className="designerAttributes wrapperCol textLightPink">
-                      <h2>Name: <span className="designerDetails">{this.props.designerProfileState.behanceData[4].user.username}</span></h2>
+                  <div className="designerAttributes wrapperCol textDark">
+                      <h2><span className="designerDetails">{this.props.designerProfileState.behanceData[designerBar].user.username}</span></h2>
                   </div>
-                  <div className="designerAttributes wrapperCol textLightPink">
-                      <h2>Total Project Views: <span className="designerDetails">{this.props.designerProfileState.behanceData[4].user.stats.views}</span></h2>
+                  <div className="designerAttributes wrapperCol textDark">
+                      <h5>Total Project Views: <span className="designerDetails">{this.props.designerProfileState.behanceData[designerBar].user.stats.views}</span></h5>
                   </div>
-                  <div className="designerAttributes wrapperCol textLightPink">
-                      <h2>Total Project Appreciations: <span className="designerDetails">{this.props.designerProfileState.behanceData[4].user.stats.appreciations}</span></h2>
+                  <div className="designerAttributes wrapperCol textDark">
+                      <h5>Total Project Appreciations: <span className="designerDetails">{this.props.designerProfileState.behanceData[designerBar].user.stats.appreciations}</span></h5>
                   </div>
-                  <div className="designerAttributes wrapperCol textLightPink">
-                      <h2>Followers: <span className="designerDetails">{this.props.designerProfileState.behanceData[4].user.stats.followers}</span></h2>
+                  <div className="designerAttributes wrapperCol textLightDark">
+                      <h5>Followers: <span className="designerDetails">{this.props.designerProfileState.behanceData[designerBar].user.stats.followers}</span></h5>
                   </div>
               </div>
           </div>
-          <div className="row projectImageRow">
-            <div className="col-4">
-              <div className="projectContainer">
-                <img className="projectImage" src={this.props.designerProfileState.behanceData[4].projects[0].covers[404]} alt="loading..."/>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="projectContainer">
-                <img className="projectImage" src={this.props.designerProfileState.behanceData[4].projects[1].covers[404]} alt="loading..."/>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="projectContainer">
-                <img className="projectImage" src={this.props.designerProfileState.behanceData[4].projects[2].covers[404]} alt="loading..."/>
-              </div>
-            </div>
-          </div>
+
+
 
           <div className="row projectImageRow">
-            <div className="col-4">
-              <div className="projectContainer">
-                <img className="projectImage" src={this.props.designerProfileState.behanceData[4].projects[3].covers[808]} alt="loading..."/>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="projectContainer">
-                <img className="projectImage" src={this.props.designerProfileState.behanceData[4].projects[4].covers[404]} alt="loading..."/>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="projectContainer">
-                <img className="projectImage" src={this.props.designerProfileState.behanceData[4].projects[5].covers[404]} alt="loading..."/>
-              </div>
-            </div>
+          
+              {this.props.designerProfileState.behanceData[designerBar].projects.map(designerProfileImages => (<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"> <img className="projectImage" src={designerProfileImages.covers[404]} alt="loading..." />	</div>
+							))}
+							;
+            
           </div>
 
-          <div className="row projectImageRow">
-            <div className="col-4">
-              <div className="projectContainer">
-                <img className="projectImage" src={this.props.designerProfileState.behanceData[4].projects[6].covers[808]} alt="loading..."/>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="projectContainer">
-                <img className="projectImage" src={this.props.designerProfileState.behanceData[4].projects[7].covers[404]} alt="loading..."/>
-              </div>
-            </div>
-            <div className="col-4">
-              <div className="projectContainer">
-                <img className="projectImage" src={this.props.designerProfileState.behanceData[4].projects[8].covers[404]} alt="loading..."/>
-              </div>
-            </div>
-          </div>
-
-          <div className="row projectImageRow">
-            <div className="col-4">
-              <div className="projectContainer">
-                <img className="projectImage" src={this.props.designerProfileState.behanceData[4].projects[9].covers[404]} alt="loading..."/>
-              </div>
-            </div>
-
-          </div>
-
+          
           
         </div>
     );
