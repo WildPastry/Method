@@ -9,10 +9,9 @@ class Projects extends Component {
 		return projectDetails.map(projectDetailsMapped => (
 			<div
 				key={projectDetailsMapped.user.id}
-				className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
+				className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
-				{projectDetailsMapped["projects"].map(singleProject => {
-					return (
+				{projectDetailsMapped["projects"].map(singleProject => (
 						<div
 							key={singleProject.id}
 							className={this.props.projectsState.projectCardClass}
@@ -21,7 +20,7 @@ class Projects extends Component {
 								<img
 									className="designerProject--Img"
 									src={singleProject.covers["max_808"]}
-									alt="Behance Project"
+									alt="Behance project loading... "
 								/>
 							</div>
 
@@ -36,8 +35,7 @@ class Projects extends Component {
 								</div>
 							</div>
 						</div>
-					);
-				})}
+				))}
 			</div>
 		));
 	}
