@@ -1,7 +1,6 @@
 // IMPORT
 import React, { Component } from "react";
 
-
 // USER DATA
 class Projects extends Component {
 
@@ -13,9 +12,6 @@ class Projects extends Component {
       projects: [],
 		};
 	}
-
-
-
 
   render() {
     var projectDetails = this.props.projectsState.behanceData;
@@ -40,7 +36,7 @@ return (
             // key={['projects']}
             >
                 <div className = "cardProject--Img">
-                <img className = "designerProject--Img" src = {singleProject.covers['max_808']}/>
+                <img className = "designerProject--Img" src = {singleProject.covers['max_808']} alt="Behance Project"/>
                 </div>
                 
                 <div className = "wrapperProject--Details">
@@ -59,22 +55,4 @@ return (
     }
   }
 
-
-
-
-
-
 export default Projects;
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -8,7 +8,6 @@ import Search from "./components/Search";
 import Designers from "./components/designers/Designers";
 import DesignerProfile from "./components/designers/DesignerProfile";
 import Projects from "./components/projects/Projects";
-// import projectStyles from "./components/projects/projectCard";
 
 // IMPORT SASS
 import "./scss/main.scss";
@@ -45,7 +44,7 @@ class App extends Component {
 			behanceData: [],
 			designers: [],
 			projects: [],
-			currentPage: "projects",
+			currentPage: "designers",
 			mainHeadingClass: "textLightPink",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
@@ -99,7 +98,6 @@ class App extends Component {
 			this.state.projects.push(behanceDataFromJSON[i].projects);
 		}
 	}
-
 
 	render() {
 		var currentPage = this.state.currentPage;
