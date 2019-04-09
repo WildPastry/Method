@@ -44,7 +44,7 @@ class App extends Component {
 			behanceData: [],
 			designers: [],
 			projects: [],
-			profileIcon: "../icons/menu/profileCream.svg",
+			menuIcon: "menuIconPink",
 			currentPage: "designers",
 			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
@@ -70,6 +70,7 @@ class App extends Component {
 			htmlBody.className = "bgLight";
 			this.setState({
 				light: true,
+				menuIcon: "menuIconGreen",
 				mainHeadingClass: "textDarkGreen text-center",
 				headingClass: "textDark text-center",
 				cardClass: "cardDesigner bgDarkGreen",
@@ -83,6 +84,7 @@ class App extends Component {
 			htmlBody.className = "bgDark";
 			this.setState({
 				light: false,
+				menuIcon: "menuIconPink",
 				mainHeadingClass: "textLightPink text-center",
 				headingClass: "textLight text-center",
 				cardClass: "cardDesigner bgLightPink",

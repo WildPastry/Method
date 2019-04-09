@@ -115,12 +115,6 @@ p {
 	height: 35px;
 }
 
-.menuImg {
-width: 17px;
-height: auto;
-margin-right: 5px;
-}
-
 .menuDesigner,
 .menuProjects,
 .menuSearch,
@@ -129,4 +123,12 @@ margin-right: 5px;
 	display: flex;
 	flex-direction: row;
 	margin: 0px 10px;
+}
+
+.menuIconPink {
+	fill: $lightPink;
+}
+
+.menuIconGreen {
+	fill: $darkGreen;
 }

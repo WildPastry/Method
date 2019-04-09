@@ -22,13 +22,9 @@
 	position: relative;
 }
 
-// .wrapperProjects--Details {
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: center;
-// 	align-items: center;
-// 	height: 15%;
-// }
+.wrapperProject--Details {
+	height: 15%;
+}
 
 // MIKES SCSS
 .wrapperHexagon {
@@ -48,6 +44,12 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+.wrapperMenu svg {
+	width: 17px;
+	height: auto;
+	margin-right: 5px;
 }
 
 .wrapperDesignerDetails {
