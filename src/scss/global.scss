@@ -85,10 +85,16 @@ p {
 
 // MIKES SCSS
 #methodLogo {
-	width: 30px;
+	width: 50px;
 	height: auto;
-	margin: 6.825px auto;
+	margin-top: 12px;
 }
+
+// #methodLogo {
+// 	width: 30px;
+// 	height: auto;
+// 	margin: 6.825px auto;
+// }
 
 #methodLoader {
 	background: $methodBlack--trans;
@@ -131,6 +137,14 @@ margin-right: 5px;
 	margin: 0px 10px;
 }
 
+// svg {
+// 	width: 25px;
+// 	height: auto;
+// }
+
+// .test {
+// 	fill: blueviolet;
+// }
 // .menuDesigner {
 // 	width: 126px;
 // }
