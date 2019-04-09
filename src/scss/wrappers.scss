@@ -23,17 +23,6 @@
 	position: relative;
 }
 
-.wrapperHexagon {
-	height: 200px;
-	left: 50%;
-	margin-top: -100px;
-	margin-left: -50px;
-	position: absolute;
-	top: 50%;
-	width: 100px;
-	z-index: 5;
-}
-
 .wrapperDesignerDetails {
 	margin: 10px;
 	height: 50%;
@@ -52,6 +41,22 @@
 	align-items: center;
 }
 
-// .testPadding {
-// 	height: 5em;
-// }
+// MIKES SCSS
+.wrapperHexagon {
+	height: 200px;
+	left: 50%;
+	margin-top: -100px;
+	margin-left: -50px;
+	position: absolute;
+	top: 50%;
+	width: 100px;
+	z-index: 5;
+}
+
+.wrapperMenu {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}

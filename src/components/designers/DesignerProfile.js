@@ -3,14 +3,14 @@ import React, { Component } from "react";
 
 // USER DATA
 class DesignerProfile extends Component {
-  render() {
-    console.log("DesignerProfile Component");
-    return (
-        <div className="col-12">
-          <h5 className="textLight text-center">DesignerProfile</h5>
-        </div>
-    );
-  }
+	render() {
+		console.log("DesignerProfile Component");
+		return (
+			<div className={this.props.designerProfileState.cardClass}>
+				<h5 className={this.props.designerProfileState.hClass}>DesignerProfile</h5>
+			</div>
+		);
+	}
 }
 
 export default DesignerProfile;

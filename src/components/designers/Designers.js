@@ -11,7 +11,7 @@ class Designers extends Component {
 			profileSize: "cover",
 			profileRepeat: "no-repeat"
 		};
-		this.changePageFromDesigners = this.changePageFromDesigners.bind(this);
+    this.changePageFromDesigners = this.changePageFromDesigners.bind(this);
 	}
 
 	changePageFromDesigners(value) {
@@ -19,6 +19,8 @@ class Designers extends Component {
 	}
 
 	render() {
+    console.log(this.props.designersState.designers)
+
 		return this.props.designersState.designers.map(designers => (
 			<div
 				key={designers.user.id}

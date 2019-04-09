@@ -45,12 +45,13 @@ class App extends Component {
 			designers: [],
 			projects: [],
 			currentPage: "designers",
-			mainHeadingClass: "textLightPink",
+			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
 			pClass: "textDark",
 			hClass: "textDark",
-			captionClass: "caption textDark text-center"
+			mClass: "textLight",
+			captionClass: "caption textDark"
 		};
 		this.changePage = this.changePage.bind(this);
 		this.changeTheme = this.changeTheme.bind(this);
@@ -67,22 +68,24 @@ class App extends Component {
 			htmlBody.className = "bgLight";
 			this.setState({
 				light: true,
-				mainHeadingClass: "textDarkGreen",
+				mainHeadingClass: "textDarkGreen text-center",
 				headingClass: "textDark text-center",
 				cardClass: "cardDesigner bgDarkGreen",
-				pClass: "textLight text-center",
-				hClass: "textLight text-center",
+				pClass: "textLight",
+				hClass: "textLight",
+				mClass: "textDark",
 				captionClass: "caption textLight"
 			});
 		} else {
 			htmlBody.className = "bgDark";
 			this.setState({
 				light: false,
-				mainHeadingClass: "textLightPink",
+				mainHeadingClass: "textLightPink text-center",
 				headingClass: "textLight text-center",
 				cardClass: "cardDesigner bgLightPink",
-				pClass: "textDark text-center",
-				hClass: "textDark text-center",
+				pClass: "textDark",
+				hClass: "textDark",
+				mClass: "textLight",
 				captionClass: "caption textDark"
 			});
 		}
@@ -121,7 +124,7 @@ class App extends Component {
 			return (
 				<div id="methodLoader">
 					<img
-						className="methodLoader--img"
+						className="methodLoaderImg"
 						src={require("./icons/logo/methodCreamTrans.svg")}
 						alt="Method Loader"
 					/>
@@ -136,7 +139,11 @@ class App extends Component {
 							changeTheme={this.changeTheme}
 							changeBodyTheme={this.changeBodyTheme}
 						/> */}
-						<Menu menuStateClass={this.state.headingClass} />
+						<Menu
+							menuStateClass={this.state}
+							changePage={this.changePage}
+							changeTheme={this.changeTheme}
+						/>
 
 						{/* CURRENT PAGE*/}
 						<div className="row">{display}</div>

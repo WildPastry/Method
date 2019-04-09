@@ -28,8 +28,6 @@ p {
 
 h1 {
 	font-weight: $bold;
-	text-align: center;
-	cursor: pointer;
 }
 
 a:hover {
@@ -85,26 +83,19 @@ p {
 	line-height: 48px;
 }
 
-// LOGO
+// MIKES SCSS
 #methodLogo {
-	width: 30px;
+	width: 50px;
 	height: auto;
-	margin: 6.825px auto;
+	margin-top: 12px;
 }
 
-// MENU
-.button {
-	width: 120px;
-	height: 35px;
-}
+// #methodLogo {
+// 	width: 30px;
+// 	height: auto;
+// 	margin: 6.825px auto;
+// }
 
-.buttonDesigner,
-.buttonProjects,
-.buttonSearch {
-	color: $white;
-}
-
-// LOADER
 #methodLoader {
 	background: $methodBlack--trans;
 	bottom: 0;
@@ -115,7 +106,7 @@ p {
 	z-index: 50;
 }
 
-.methodLoader--img {
+.methodLoaderImg {
 	height: 233px;
 	left: 50%;
 	margin-left: -100px;
@@ -124,3 +115,45 @@ p {
 	top: 50%;
 	width: 200px;
 }
+
+.menu {
+	width: 120px;
+	height: 35px;
+}
+
+.menuImg {
+width: 17px;
+height: auto;
+margin-right: 5px;
+}
+
+.menuDesigner,
+.menuProjects,
+.menuSearch,
+.menuTheme {
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	margin: 0px 10px;
+}
+
+// svg {
+// 	width: 25px;
+// 	height: auto;
+// }
+
+// .test {
+// 	fill: blueviolet;
+// }
+// .menuDesigner {
+// 	width: 126px;
+// }
+// .menuProjects {
+// 	width: 119px;
+// }
+// .menuSearch {
+// 	width: 102px;
+// }
+// .menuTheme {
+// 	width: 94px;
+// }
