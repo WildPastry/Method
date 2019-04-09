@@ -16,10 +16,10 @@ class Menu extends Component {
 		return (
 			<div className="wrapperMenu">
 				<div className="menuDesigner">
-				{/* <img className="menuImg"
+				<img className="menuImg"
 						src={require("../icons/menu/profileCream.svg")}
 						alt="Designers Icon"
-					/> */}
+					/>
 					<p
 						className={this.props.menuStateClass["mClass"]}
 						onClick={this.changePageFromMenu.bind(this, "designers")}
@@ -30,10 +30,10 @@ class Menu extends Component {
 				</div>
 
 				<div className="menuProjects">
-				{/* <img className="menuImg"
+				<img className="menuImg"
 						src={require("../icons/menu/galleryCream.svg")}
 						alt="Projects Icon"
-					/> */}
+					/>
 					<p
 						className={this.props.menuStateClass["mClass"]}
 						onClick={this.changePageFromMenu.bind(this, "projects")}
@@ -44,10 +44,10 @@ class Menu extends Component {
 				</div>
 
 				<div className="menuSearch">
-				{/* <img className="menuImg"
+				<img className="menuImg"
 						src={require("../icons/menu/searchCream.svg")}
 						alt="Search Icon"
-					/> */}
+					/>
 					<p
 						className={this.props.menuStateClass["mClass"]}
 						onClick={this.changePageFromMenu.bind(this, "search")}
@@ -58,10 +58,10 @@ class Menu extends Component {
 				</div>
 
 				<div className="menuTheme">
-				{/* <img className="menuImg"
+				<img className="menuImg"
 						src={require("../icons/menu/galleryCream.svg")}
 						alt="Theme Icon"
-					/> */}
+					/>
 					<p
 						className={this.props.menuStateClass["mClass"]}
 						onClick={this.props.changeTheme}
