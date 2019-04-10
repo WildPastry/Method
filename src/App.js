@@ -50,8 +50,9 @@ class App extends Component {
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
 			projectCardClass: "bgLightPink cardProject",
+			projectpClass: "textDark textBold",
 			pClass: "textDark",
-			hClass: "textDark",
+			hClass: "textDark textBold",
 			mClass: "textLight",
 			captionClass: "caption textDark"
 		};
@@ -75,8 +76,9 @@ class App extends Component {
 				headingClass: "textDark text-center",
 				cardClass: "cardDesigner bgDarkGreen",
 				projectCardClass: "bgDarkGreen cardProject",
+				projectpClass: "textLight textBold",
 				pClass: "textLight",
-				hClass: "textLight",
+				hClass: "textLight textBold",
 				mClass: "textDark",
 				captionClass: "caption textLight"
 			});
@@ -89,8 +91,9 @@ class App extends Component {
 				headingClass: "textLight text-center",
 				cardClass: "cardDesigner bgLightPink",
 				projectCardClass: "bgLightPink cardProject",
+				projectpClass: "textDark textBold",
 				pClass: "textDark",
-				hClass: "textDark",
+				hClass: "textDark textBold",
 				mClass: "textLight",
 				captionClass: "caption textDark"
 			});

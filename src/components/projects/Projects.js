@@ -26,7 +26,7 @@ class Projects extends Component {
 
 							<div className="wrapperProject--Details">
 								<div className="wrapper paraStyle--DesignerProject">
-									<p className={this.props.projectsState.pClass}>
+									<p className={this.props.projectsState.projectpClass}>
 										{singleProject.name}
 									</p>
 									<p className={this.props.projectsState.captionClass}>
