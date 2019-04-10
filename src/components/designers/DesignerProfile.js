@@ -71,8 +71,7 @@ class DesignerProfile extends Component {
 
 		return (
 			<div>
-				<button onClick={this.testBar}>button</button>
-				<div className="row bgLightPink">
+				<div className="row">
 					<div className="col-3 wrapperCol">
 						<img
 							src={
