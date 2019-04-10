@@ -3,12 +3,24 @@ import React, { Component } from "react";
 
 // PROJECT DATA
 class Projects extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+		};
+		this.changePageFromProjects = this.changePageFromProjects.bind(this);
+	}
+
+	changePageFromProjects(value) {
+		this.props.changePage(value);
+	}
+
 	render() {
 		var projectDetails = this.props.projectsState.behanceData;
 
 		return projectDetails.map(projectDetailsMapped => (
 			<div
 				key={projectDetailsMapped.user.id}
+				onClick={this.changePageFromProjects.bind(this, "modal")}
 				className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
 				{projectDetailsMapped["projects"].map(singleProject => (
