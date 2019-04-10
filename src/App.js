@@ -46,6 +46,7 @@ class App extends Component {
 			projects: [],
 			menuIcon: "menuIconPink",
 			currentPage: "designers",
+			currentDesigner: '',
 			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
@@ -61,8 +62,11 @@ class App extends Component {
 	}
 
 	changePage(value) {
+		console.log("App.js")
+		console.log(value);
 		this.setState({
-			currentPage: value
+			currentPage: value['page'],
+			currentDesigner: value['designer']
 		});
 	}
 

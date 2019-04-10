@@ -15,7 +15,12 @@ class Designers extends Component {
 	}
 
 	changePageFromDesigners(value) {
-		this.props.changePage(value);
+		var options = {
+			page: "designerProfile",
+			designer: value
+		}
+		console.log(value);
+		this.props.changePage(options);
 	}
 
 	render() {
@@ -26,7 +31,7 @@ class Designers extends Component {
 			>
 				<div
 					className={this.props.designersState.cardClass}
-					onClick={this.changePageFromDesigners.bind(this, "designerProfile")}
+					onClick={this.changePageFromDesigners.bind(this, designers.user.username)}
 				>
 					<div className="wrapperHexagon">
 						<div className="hexagonDesigner">
