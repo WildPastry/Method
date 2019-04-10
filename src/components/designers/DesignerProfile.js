@@ -71,9 +71,9 @@ class DesignerProfile extends Component {
 
 		return (
 			<div>
-				<div className="row">
-					<div className="col-3 wrapperCol">
-						<img
+				<div className="row designerBar bgLightPink">
+					<div className="col-2">
+						<img className="designerBar__image"
 							src={
 								this.props.designerProfileState.behanceData[designerBar].user
 									.images[276]
@@ -82,50 +82,47 @@ class DesignerProfile extends Component {
 						/>
 					</div>
 
-					<div className="col-9">
-						<div className="designerAttributes wrapperCol textDark">
-							<h2>
-								<span className="designerDetails">
+					<div className="col-10 designerBar__info">
+							<h3 className="textBold textDark designerBar__info--user">
 									{
 										this.props.designerProfileState.behanceData[designerBar]
 											.user.username
 									}
-								</span>
-							</h2>
-						</div>
-						<div className="designerAttributes wrapperCol textDark">
-							<h5>
-								Total Project Views:{" "}
-								<span className="designerDetails">
+							</h3>
+							<h5 className="textDark">
+								Total Project:{" "}
 									{
 										this.props.designerProfileState.behanceData[designerBar]
 											.user.stats.views
 									}
-								</span>
 							</h5>
-						</div>
-						<div className="designerAttributes wrapperCol textDark">
-							<h5>
+							<h5 className="textDark">
 								Total Project Appreciations:{" "}
-								<span className="designerDetails">
 									{
 										this.props.designerProfileState.behanceData[designerBar]
 											.user.stats.appreciations
 									}
-								</span>
 							</h5>
-						</div>
-						<div className="designerAttributes wrapperCol textLightDark">
-							<h5>
+							<h5 className="textDark">
 								Followers:{" "}
-								<span className="designerDetails">
 									{
 										this.props.designerProfileState.behanceData[designerBar]
 											.user.stats.followers
 									}
-								</span>
 							</h5>
-						</div>
+							<h5 className="textDark">
+							Fields:{" "}
+									{
+										this.props.designerProfileState.behanceData[designerBar]
+											.user.fields[0]
+									} | {
+										this.props.designerProfileState.behanceData[designerBar]
+											.user.fields[1]
+									} | {
+										this.props.designerProfileState.behanceData[designerBar]
+											.user.fields[2]
+									}
+							</h5>
 					</div>
 				</div>
 
