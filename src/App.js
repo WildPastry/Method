@@ -126,7 +126,9 @@ class App extends Component {
 		} else if (currentPage === "designerProfile") {
 			display = <DesignerProfile designerProfileState={this.state} />;
 		} else if (currentPage === "projects") {
-			display = <Projects projectsState={this.state} />;
+			display = (
+				<Projects projectsState={this.state} changePage={this.changePage} />
+			);
 		} else if (currentPage === "search") {
 			display = <Search searchState={this.state} />;
 		} else if (currentPage === "modal") {
