@@ -1,48 +1,25 @@
-// IMPORT
 import React, { Component } from "react";
 
 var designerBar;
 
-// console.log(userDetails);
-// for (let index = 0; index < userDetails.length; index++) {
-//   const element = userDetails[index];
-//   console.log(element['projects'])
-// }
-
-// USER DATA
 class DesignerProfile extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentDesignerProfile: this.props.designerProfileState['currentDesigner']
+			currentDesignerProfile: this.props.designerProfileState["currentDesigner"]
 		};
-    this.testBar = this.testBar.bind(this);
-    console.log("THE CURRENT DESIGNER IS");
-    console.log(this.state.currentDesignerProfile);
+		this.changeDesigner = this.changeDesigner.bind(this);
+		console.log("THE CURRENT DESIGNER IS");
+		console.log(this.state.currentDesignerProfile);
 	}
 
-	testBar() {
+	changeDesigner() {
 		this.setState({
 			currentDesignerProfile: ""
 		});
 	}
 
 	render() {
-    // console.log("FROM DESIGNER PROFILE");
-    // console.log(this.props.designerProfileState);
-		var userDetails = this.props.designerProfileState.behanceData;
-		// console.log(userDetails);
-
-		console.log(userDetails);
-		for (let i = 0; i < userDetails.length; i++) {
-      const designerUserName = userDetails[i].user.username;
-      console.log(designerUserName)
-    }
-    
-
-		// console.log(this.props.designerProfileState.behanceData);
-		// console.log(this.state.currentDesignerProfile);
-
 		if (this.state.currentDesignerProfile === "washe") {
 			designerBar = 0;
 		} else if (this.state.currentDesignerProfile === "bogdan_aksonenko") {
@@ -82,7 +59,7 @@ class DesignerProfile extends Component {
 						/>
 					</div>
 
-					<div className="col-9">
+					<div className="col-9 wrapperCol">
 						<div className="designerAttributes wrapperCol textDark">
 							<h2>
 								<span className="designerDetails">
@@ -141,7 +118,7 @@ class DesignerProfile extends Component {
 							<img
 								className="projectImage"
 								src={designerProfileImages.covers[404]}
-								alt="loading..."
+								alt="Thumbnail oading..."
 							/>{" "}
 						</div>
 					))}

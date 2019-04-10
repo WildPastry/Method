@@ -1,7 +1,5 @@
-// IMPORT
 import React, { Component } from "react";
 
-// MENU
 class Menu extends Component {
 	constructor(props) {
 		super(props);
@@ -9,7 +7,7 @@ class Menu extends Component {
 	}
 
 	changePageFromMenu(value) {
-		this.props.changePage(value);
+		this.props.changePageFromMenu(value);
 	}
 
 	render() {

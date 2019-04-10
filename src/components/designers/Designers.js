@@ -1,7 +1,5 @@
-// IMPORT
 import React, { Component } from "react";
 
-// USER DATA
 class Designers extends Component {
 	constructor(props) {
 		super(props);
@@ -18,7 +16,7 @@ class Designers extends Component {
 		var options = {
 			page: "designerProfile",
 			designer: value
-		}
+		};
 		console.log(value);
 		this.props.changePage(options);
 	}
@@ -31,7 +29,10 @@ class Designers extends Component {
 			>
 				<div
 					className={this.props.designersState.cardClass}
-					onClick={this.changePageFromDesigners.bind(this, designers.user.username)}
+					onClick={this.changePageFromDesigners.bind(
+						this,
+						designers.user.username
+					)}
 				>
 					<div className="wrapperHexagon">
 						<div className="hexagonDesigner">
