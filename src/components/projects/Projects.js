@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import FallbackImage from "../../images/fallback.jpg";
 
 class Projects extends Component {
 	constructor(props) {
@@ -29,10 +30,12 @@ class Projects extends Component {
 							<img
 								className="designerProject--Img"
 								src={singleProject.covers["max_808"]}
+								onError={e => {
+									e.target.src = FallbackImage;
+								}}
 								alt="Behance project loading... "
 							/>
 						</div>
-
 						<div className="wrapperProject--Details">
 							<div className="wrapper paraStyle--DesignerProject">
 								<p className={this.props.projectsState.projectpClass}>

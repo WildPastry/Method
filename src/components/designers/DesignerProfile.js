@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import FallbackImage from "../../images/fallback.jpg";
 
 var designerBar;
 
@@ -55,7 +56,10 @@ class DesignerProfile extends Component {
 								this.props.designerProfileState.behanceData[designerBar].user
 									.images[276]
 							}
-							alt="loading...."
+							onError={e => {
+								e.target.src = FallbackImage;
+							}}
+							alt="Profile thumbnail loading...."
 						/>
 					</div>
 
@@ -118,7 +122,10 @@ class DesignerProfile extends Component {
 							<img
 								className="projectImage"
 								src={designerProfileImages.covers[404]}
-								alt="Thumbnail oading..."
+								onError={e => {
+									e.target.src = FallbackImage;
+								}}
+								alt="Project thumbnail loading..."
 							/>{" "}
 						</div>
 					))}
