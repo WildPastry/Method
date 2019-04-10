@@ -44,14 +44,9 @@ class App extends Component {
 			behanceData: [],
 			designers: [],
 			projects: [],
-<<<<<<< HEAD
-			currentPage: "designerProfile",
-			mainHeadingClass: "textLightPink",
-=======
 			menuIcon: "menuIconPink",
 			currentPage: "designers",
 			mainHeadingClass: "textLightPink text-center",
->>>>>>> master-dev
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
 			projectCardClass: "bgLightPink cardProject",
@@ -153,15 +148,11 @@ class App extends Component {
 							changeTheme={this.changeTheme}
 							changeBodyTheme={this.changeBodyTheme}
 						/> */}
-<<<<<<< HEAD
-						<Menu menuStateClass={this.state.headingClass} />
-=======
 						<Menu
 							menuStateClass={this.state}
 							changePage={this.changePage}
 							changeTheme={this.changeTheme}
 						/>
->>>>>>> master-dev
 
 						{/* CURRENT PAGE*/}
 						<div className="row">{display}</div>

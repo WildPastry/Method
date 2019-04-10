@@ -3,7 +3,6 @@ import React, { Component } from "react";
 
 // USER DATA
 class Modal extends Component {
-<<<<<<< HEAD
 	render() {
 		console.log(this.props.modalState.behanceData);
 		console.log(this.props.modalState.behanceData[0].projects[0]);
@@ -93,16 +92,6 @@ class Modal extends Component {
 			</div>
 		);
 	}
-=======
-  render() {
-    console.log("Modal Component");
-    return (
-        <div className={this.props.modalState.cardClass}>
-          <h5 className={this.props.modalState.hClass}>Modal</h5>
-        </div>
-    );
-  }
->>>>>>> master-dev
 }
 
 export default Modal;
