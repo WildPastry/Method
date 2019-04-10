@@ -78,7 +78,7 @@ class Modal extends Component {
 								/>
 
 								{/* {this.props.modalState.behanceData.map(projectsList => (
-									<img
+									<img 
 										className="modalImage"
 										src={projectsList.projects.covers.max_808}
 										alt="loading...."

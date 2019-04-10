@@ -17,11 +17,6 @@
 	height: 350px;
 }
 
-.cardDesigner--Img {
-	width: 100%;
-	height: 50%;
-}
-
 // HEXAGON
 .hexagonDesigner {
 	width: 100px;
@@ -44,4 +39,30 @@
 	visibility: visible;
 	transform: rotate(-60deg);
 	background: $methodBlack;
+}
+
+// MARIAS SCSS
+// .cardProject--Img {
+// 	width: 100%;
+// }
+
+.designerProject--Img {
+	width: 100%;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat
+}
+
+// MIKES SCSS
+.cardDesigner--Img {
+	width: 100%;
+	height: 60%;
+}
+
+.cardProject {
+	cursor: pointer;
+	// height: 350px;
+	width: 100%;
+	margin-bottom:30px;
+	margin-top: 15px;
 }

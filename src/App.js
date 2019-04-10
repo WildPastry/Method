@@ -44,21 +44,29 @@ class App extends Component {
 			behanceData: [],
 			designers: [],
 			projects: [],
-			currentPage: "Modal",
-			mainHeadingClass: "textLightPink",
+			menuIcon: "menuIconPink",
+			currentPage: "designers",
+			currentDesigner: '',
+			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
+			projectCardClass: "bgLightPink cardProject",
+			projectpClass: "textDark textBold",
 			pClass: "textDark",
-			hClass: "textDark",
-			captionClass: "caption textDark text-center"
+			hClass: "textDark textBold",
+			mClass: "textLight",
+			captionClass: "caption textDark"
 		};
 		this.changePage = this.changePage.bind(this);
 		this.changeTheme = this.changeTheme.bind(this);
 	}
 
 	changePage(value) {
+		console.log("App.js")
+		console.log(value);
 		this.setState({
-			currentPage: value
+			currentPage: value['page'],
+			currentDesigner: value['designer']
 		});
 	}
 
@@ -67,22 +75,30 @@ class App extends Component {
 			htmlBody.className = "bgLight";
 			this.setState({
 				light: true,
-				mainHeadingClass: "textDarkGreen",
+				menuIcon: "menuIconGreen",
+				mainHeadingClass: "textDarkGreen text-center",
 				headingClass: "textDark text-center",
 				cardClass: "cardDesigner bgDarkGreen",
-				pClass: "textLight text-center",
-				hClass: "textLight text-center",
+				projectCardClass: "bgDarkGreen cardProject",
+				projectpClass: "textLight textBold",
+				pClass: "textLight",
+				hClass: "textLight textBold",
+				mClass: "textDark",
 				captionClass: "caption textLight"
 			});
 		} else {
 			htmlBody.className = "bgDark";
 			this.setState({
 				light: false,
-				mainHeadingClass: "textLightPink",
+				menuIcon: "menuIconPink",
+				mainHeadingClass: "textLightPink text-center",
 				headingClass: "textLight text-center",
 				cardClass: "cardDesigner bgLightPink",
-				pClass: "textDark text-center",
-				hClass: "textDark text-center",
+				projectCardClass: "bgLightPink cardProject",
+				projectpClass: "textDark textBold",
+				pClass: "textDark",
+				hClass: "textDark textBold",
+				mClass: "textLight",
 				captionClass: "caption textDark"
 			});
 		}
@@ -95,7 +111,7 @@ class App extends Component {
 		});
 		for (var i = 0; i < behanceDataFromJSON.length; i++) {
 			this.state.designers.push(behanceDataFromJSON[i]);
-			this.state.projects.push(behanceDataFromJSON[i].projects);
+			this.state.projects.push(behanceDataFromJSON[i]);
 		}
 	}
 
@@ -121,7 +137,7 @@ class App extends Component {
 			return (
 				<div id="methodLoader">
 					<img
-						className="methodLoader--img"
+						className="methodLoaderImg"
 						src={require("./icons/logo/methodCreamTrans.svg")}
 						alt="Method Loader"
 					/>
@@ -136,7 +152,11 @@ class App extends Component {
 							changeTheme={this.changeTheme}
 							changeBodyTheme={this.changeBodyTheme}
 						/> */}
-						<Menu menuStateClass={this.state.headingClass} />
+						<Menu
+							menuStateClass={this.state}
+							changePage={this.changePage}
+							changeTheme={this.changeTheme}
+						/>
 
 						{/* CURRENT PAGE*/}
 						<div className="row">{display}</div>

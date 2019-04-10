@@ -27,6 +27,7 @@
   ],
   "devDependencies": {
     "axios": "^0.18.0",
-    "node-sass": "^4.11.0"
+    "node-sass": "^4.11.0",
+    "nodemon": "^1.18.11"
   }
 }
