@@ -27,10 +27,19 @@
   color: $darkGreen;
 }
 
-// .paraStyle__designer--name{
+.textBold {
+  font-weight: $bold;
+}
 
-// }
+// MIKES SCSS
+.paraStyle--DesignerName{
+  margin-top: 50px;
+}
 
-// .paraStyle__designer--discipline{
-
-// }
+// MARIAS SCSS
+.paraStyle--DesignerProject {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+	height: 3em;
+}
