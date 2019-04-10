@@ -34,7 +34,7 @@ class DesignerProfile extends Component {
 
 
     return (
-      <div className="container">
+      <div>
         <button onClick={this.testBar}>button</button>
         <div className="row bgLightPink">
               <div className="col-3 wrapperCol">
