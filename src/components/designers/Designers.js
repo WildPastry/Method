@@ -22,24 +22,24 @@ class Designers extends Component {
 	}
 
 	render() {
-		return this.props.designersState.designers.map(designers => (
+		// console.log(this.props.designersClass[0].covers['max_808'])
+
+		return this.props.designersData.map(designers => (
 			<div
-				key={designers.user.id}
+				key={designers.id}
 				className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
 				<div
-					className={this.props.designersState.cardClass}
-					onClick={this.changePageFromDesigners.bind(
-						this,
-						designers.user.username
-					)}
+					className={this.props.designersCardClass}
+					onClick={this.changePageFromDesigners.bind(this, designers.username)}
 				>
 					<div className="wrapperHexagon">
 						<div className="hexagonDesigner">
 							<div className="hexagonDesigner--in1">
 								<div
 									style={{
-										backgroundImage: "url(" + designers.user.images[276] + ")",
+										backgroundImage:
+											"url(" + designers.owners[0].images[276] + ")",
 										backgroundPosition: "center",
 										backgroundSize: "cover",
 										backgroundRepeat: "no-repeat"
@@ -52,8 +52,7 @@ class Designers extends Component {
 					<div className="wrapperCard">
 						<div
 							style={{
-								backgroundImage:
-									"url(" + designers.projects[6].covers.max_808 + ")",
+								backgroundImage: "url(" + designers.covers["max_808"] + ")",
 								backgroundPosition: "center",
 								backgroundSize: "cover",
 								backgroundRepeat: "no-repeat"
@@ -62,17 +61,17 @@ class Designers extends Component {
 						/>
 						<div className="wrapperDesignerDetails">
 							<div className="paraStyle--DesignerName">
-								<h5 className={this.props.designersState.hClass}>
-									{designers.user.username}
+								<h5 className={this.props.designersHClass}>
+									{designers.owners[0].username}
 								</h5>
 							</div>
 							<div className="paraStyle--DesignerDiscipline">
-								<p className={this.props.designersState.captionClass}>
-									{designers.user.fields[0] +
+								<p className={this.props.designersCaptionClass}>
+									{designers.fields[0] +
 										" | " +
-										designers.user.fields[1] +
+										designers.fields[1] +
 										" | " +
-										designers.user.fields[2]}
+										designers.fields[2]}
 								</p>
 							</div>
 						</div>
