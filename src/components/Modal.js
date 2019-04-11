@@ -5,8 +5,8 @@ import React, { Component } from "react";
 class Modal extends Component {
 	render() {
 		console.log(this.props.modalState.behanceData);
-		console.log(this.props.modalState.behanceData[0].projects[0]);
-		// console.log(this.props.modalState.behanceData[0].projects[0].covers[808]);
+		// console.log(this.props.modalState.behanceData[0].projects[0]);
+		console.log(this.props.modalState.behanceData[0].projects[0].covers[808]);
 		// console.log(this.props.modalState.behanceData[0].user.username);
 
 		for (var i = 0; i < this.props.modalState.behanceData.length; i++) {
@@ -22,12 +22,16 @@ class Modal extends Component {
 				// console.log(this.props.modalState.behanceData[j].projects.length);
 				// console.log(this.props.modalState.behanceData[j].projects[j]);
 			}
+			// console.log(this.props.modalState.behanceData[0].projects[0]);
 		}
 
 		return (
-			<div className="row">
-				<div className="col-12"></div>
-
+			<div id="methodLoader">
+				<div className="methodModal bgDark">
+					<div className="methodModal__top">
+						<img className="methodModal__top--image" src={this.props.modalState.behanceData[0].projects[0].covers[808]} alt="loading...." />
+					</div>
+				</div>
 			</div>
 		);
 	}
