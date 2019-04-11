@@ -12,7 +12,7 @@ class Modal extends Component {
 		for (var i = 0; i < this.props.modalState.behanceData.length; i++) {
 			// console.log(this.props.modalState.behanceData.length);
 			// console.log(this.props.modalState.behanceData[i].user.username);
-			// console.log(this.props.modalState.behanceData[i].projects[0]);
+			console.log(this.props.modalState.behanceData[i].projects[0].url);
 
 			for (
 				var j = 0;
@@ -25,70 +25,12 @@ class Modal extends Component {
 		}
 
 		return (
-			<div>
-				<button
-					type="button"
-					className="btn bgLightPink"
-					data-toggle="modal"
-					data-target="#projectModal"
-				>
-					Show Modal
-				</button>
-
-				<div
-					className="modal fade"
-					id="projectModal"
-					tabIndex="-1"
-					role="dialog"
-					aria-labelledby="exampleModalLabel"
-					aria-hidden="true"
-				>
-					<div className="modal-dialog" role="document">
-						<div className="modal-content bgDark">
-							<div className="modal-header">
-								<h4
-									className="modal-title textLight modalProjectName"
-									id="exampleModalLabel"
-								>
-									{this.props.modalState.behanceData[0].user.username}
-								</h4>
-								{/* {this.props.modalState.behanceData.map(projectsUserName => (
-									<h4	key={projectsUserName.user.id}
-										className="modal-title textLight modalProjectName"
-										id="exampleModalLabel"
-									>
-										{projectsUserName[1].user.username}
-									</h4>
-								))}
-								; */}
-								<button
-									type="button"
-									className="close"
-									data-dismiss="modal"
-									aria-label="Close"
-								>
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div className="modal-body">
-								<img
-									className="modalImage"
-									src={this.props.modalState.behanceData[0].projects[0].url}
-									alt="loading...."
-								/>
-
-								{/* {this.props.modalState.behanceData.map(projectsList => (
-									<img 
-										className="modalImage"
-										src={projectsList.projects.covers.max_808}
-										alt="loading...."
-									/>
-								))}
-								; */}
-							</div>
-						</div>
-					</div>
+			<div className="row">
+				<div className="col-12">
 				</div>
+				<div className="col-12">
+				</div>
+
 			</div>
 		);
 	}
