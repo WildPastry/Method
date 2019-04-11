@@ -85,19 +85,27 @@
 .methodModal__bottom{
 	height: 35%;
 	margin: 0px;
-	background-color: #666;
+	// background-color: #666;
 }
 .methodModal__bottomLeft{
 	height: 100%;
-	background-color: #ccc;
+	// background-color: #ccc;
 }
 .methodModal__bottomLeft--likes{
-	background-color: #bbb;
+	// background-color: #bbb;
+	display: inline-flex
+}
+.methodModal__bottomLeft--views{
+	// background-color: #bbb;
+	display: inline-flex
+}
+.methodModal__bottomLeft--comments{
+	// background-color: #bbb;
 	display: inline-flex
 }
 .methodModal__bottomRight{
 	height: 100%;
-	background-color: #aaa;
+	// background-color: #aaa;
 }
 
 // DANIEL DESIGNER PROFILE
