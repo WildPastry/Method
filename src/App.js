@@ -6,17 +6,17 @@ import Designers from "./components/designers/Designers";
 import DesignerProfile from "./components/designers/DesignerProfile";
 import Projects from "./components/projects/Projects";
 import "./scss/main.scss";
-// import axios from "axios";
-// import configData from "./data/config.json";
+import axios from "axios";
+import configData from "./data/config.json";
 import behanceDataFromJSON from "./data/behanceData";
 console.log("Data from JSON loaded...");
 
-// const key = configData.OAUTH;
-// const cors = configData.CORS;
-// const behance = configData.BEHANCE;
-// const scope = configData.SCOPE;
+const key = configData.OAUTH;
+const cors = configData.CORS;
+const behance = configData.BEHANCE;
+const scope = configData.SCOPE;
 
-// const API = cors + behance + key + scope;
+const API = cors + behance + key + scope;
 
 var htmlBody = document.getElementById("bg");
 
@@ -35,6 +35,7 @@ class App extends Component {
 			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
+			designerBarClass: "row designerBar bgLightPink",
 			projectCardClass: "bgLightPink cardProject",
 			projectpClass: "textDark textBold",
 			pClass: "textDark",
@@ -71,6 +72,7 @@ class App extends Component {
 				mainHeadingClass: "textDarkGreen text-center",
 				headingClass: "textDark text-center",
 				cardClass: "cardDesigner bgDarkGreen",
+				designerBarClass: "row designerBar bgDarkGreen",
 				projectCardClass: "bgDarkGreen cardProject",
 				projectpClass: "textLight textBold",
 				pClass: "textLight",
@@ -86,6 +88,7 @@ class App extends Component {
 				mainHeadingClass: "textLightPink text-center",
 				headingClass: "textLight text-center",
 				cardClass: "cardDesigner bgLightPink",
+				designerBarClass: "row designerBar bgLightPink",
 				projectCardClass: "bgLightPink cardProject",
 				projectpClass: "textDark textBold",
 				pClass: "textDark",
@@ -109,6 +112,7 @@ class App extends Component {
 
 	render() {
 		var currentPage = this.state.currentPage;
+		let altDisplay;
 		let display;
 
 		if (currentPage === "designers") {
@@ -116,7 +120,8 @@ class App extends Component {
 				<Designers designersState={this.state} changePage={this.changePage} />
 			);
 		} else if (currentPage === "designerProfile") {
-			display = <DesignerProfile designerProfileState={this.state} />;
+			display = "";
+			altDisplay = <DesignerProfile designerProfileState={this.state} />;
 		} else if (currentPage === "projects") {
 			display = (
 				<Projects projectsState={this.state} changePage={this.changePage} />
@@ -124,6 +129,8 @@ class App extends Component {
 		} else if (currentPage === "search") {
 			display = <Search searchState={this.state} />;
 		} else if (currentPage === "modal") {
+			display = "";
+			altDisplay = <DesignerProfile designerProfileState={this.state} />;
 			display = <Modal modalState={this.state} />;
 		}
 
@@ -141,11 +148,11 @@ class App extends Component {
 			return (
 				<div className={this.state.bgClass}>
 					<div className="container-fluid">
-						{/* <LiveDataClass
+						<LiveDataClass
 							liveDataStateClass={this.state}
 							changeTheme={this.changeTheme}
 							changeBodyTheme={this.changeBodyTheme}
-						/> */}
+						/>
 						<Menu
 							menuStateClass={this.state}
 							changePageFromMenu={this.changePageFromMenu}
@@ -154,6 +161,7 @@ class App extends Component {
 
 						{/* CURRENT PAGE*/}
 						<div className="row">{display}</div>
+						<div className="altDisplay">{altDisplay}</div>
 					</div>
 				</div>
 			);
@@ -161,74 +169,72 @@ class App extends Component {
 	}
 }
 
-// class LiveDataClass extends React.Component {
-// 	constructor(props) {
-// 		super(props);
-// 		this.state = {
-// 			behanceDataFromAPI: [],
-// 			designersFromAPI: [],
-// 			projectsFromAPI: [],
-// 			isLoaded: false
-// 		};
-// 	}
+class LiveDataClass extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			behanceDataFromAPI: [],
+			designersFromAPI: [],
+			projectsFromAPI: [],
+			isLoaded: false
+		};
+	}
 
-// 	componentDidMount() {
-// 		axios
-// 			.get(API)
-// 			.then(res => {
-// 				const behanceDataFromAPI = res.data;
-// 				this.setState({
-// 					isLoaded: true,
-// 					behanceDataFromAPI
-// 				});
-// 			})
-// 			.catch(error => {
-// 				if (error.res) {
-// 				} else if (error.request) {
-// 					console.log(error.request);
-// 				} else {
-// 					console.log("Error", error.message);
-// 				}
-// 				console.log(error.config);
-// 			});
-// 	}
+	componentDidMount() {
+		axios
+			.get(API)
+			.then(res => {
+				const behanceDataFromAPI = res.data;
+				this.setState({
+					isLoaded: true,
+					behanceDataFromAPI
+				});
+			})
+			.catch(error => {
+				if (error.res) {
+				} else if (error.request) {
+					console.log(error.request);
+				} else {
+					console.log("Error", error.message);
+				}
+				console.log(error.config);
+			});
+	}
 
-// 	render() {
-// 		var { isLoaded } = this.state;
-// 		if (!isLoaded) {
-// 			return (
-// 				<div id="methodLoader">
-// 					<img
-// 						className="methodLoader--img"
-// 						src={require("./icons/logo/methodCreamTrans.svg")}
-// 						alt="Method Loader"
-// 					/>
-// 				</div>
-// 			);
-// 		} else {
-// 			var dataLive = this.state.behanceDataFromAPI;
-// 			for (var i = 0; i < dataLive.projects.length; i++) {
-// 				this.state.designersFromAPI.push(dataLive.projects[i].owners[0]);
-// 				this.state.projectsFromAPI.push(dataLive.projects[i]);
-// 			}
-// 			console.log("Live data loaded...");
-// 			console.log(dataLive);
-// 			console.log("Live designers array...");
-// 			console.log(this.state.designersFromAPI);
-// 			console.log("Live projects array...");
-// 			console.log(this.state.projectsFromAPI);
-// 			return (
-// 				<div>
-// 					<h1
-// 						className={this.props.liveDataStateClass.mainHeadingClass}
-// 						onClick={this.props.changeTheme}
-// 					>
-// 						Method
-// 					</h1>
-// 				</div>
-// 			);
-// 		}
-// 	}
-// }
+	render() {
+		var { isLoaded } = this.state;
+		if (!isLoaded) {
+			return (
+				<div id="methodLoader">
+					<img
+						className="methodLoader--img"
+						src={require("./icons/logo/methodCreamTrans.svg")}
+						alt="Method Loader"
+					/>
+				</div>
+			);
+		} else {
+			var dataLive = this.state.behanceDataFromAPI;
+			for (var i = 0; i < dataLive.projects.length; i++) {
+				this.state.designersFromAPI.push(dataLive.projects[i].owners[0]);
+				this.state.projectsFromAPI.push(dataLive.projects[i]);
+			}
+			console.log("Live data loaded...");
+			console.log(dataLive);
+			console.log("Live designers array...");
+			console.log(this.state.designersFromAPI);
+			console.log("Live projects array...");
+			console.log(this.state.projectsFromAPI);
+			return (
+				<div>
+					<p
+						className={this.props.liveDataStateClass.mainHeadingClass}
+					>
+					</p>
+				</div>
+			);
+		}
+	}
+}
 
 export default App;

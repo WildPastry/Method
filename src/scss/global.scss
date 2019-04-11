@@ -132,3 +132,17 @@ p {
 .menuIconGreen {
 	fill: $darkGreen;
 }
+
+// MIKES MEDIA
+@media screen and (max-width: 500px) {
+	.menuDesigner,
+	.menuProjects,
+	.menuSearch,
+	.menuTheme {
+		margin: 0px 10px;
+		background: $methodBlack;
+		width: 100%;
+		margin: 5px auto;
+		padding: 10px;
+	}
+}

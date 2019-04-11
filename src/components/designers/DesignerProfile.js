@@ -49,8 +49,8 @@ class DesignerProfile extends Component {
 
 		return (
 			<div>
-				<div className="row designerBar bgLightPink">
-					<div className="col-2 imageBox">
+				<div className={this.props.designerProfileState.designerBarClass}>
+					<div className="wrapperCol col-2 imageBox">
 						<img
 							className="designerBar__image"
 							src={
@@ -64,35 +64,35 @@ class DesignerProfile extends Component {
 						/>
 					</div>
 
-					<div className="col-10 designerBar__info">
-						<h5 className="textBold textDark designerBar__info--user">
+					<div className="wrapperCol col-10 designerBar__info">
+						<h5 className={this.props.designerProfileState.hClass}>
 							{
 								this.props.designerProfileState.behanceData[designerBar].user
 									.username
 							}
 						</h5>
-						<p className="textDark">
+						<p className={this.props.designerProfileState.captionClass}>
 							Total Project Views:{" "}
 							{
 								this.props.designerProfileState.behanceData[designerBar].user
 									.stats.views
 							}
 						</p>
-						<p className="textDark">
+						<p className={this.props.designerProfileState.captionClass}>
 							Total Project Appreciations:{" "}
 							{
 								this.props.designerProfileState.behanceData[designerBar].user
 									.stats.appreciations
 							}
 						</p>
-						<p className="textDark">
+						<p className={this.props.designerProfileState.captionClass}>
 							Followers:{" "}
 							{
 								this.props.designerProfileState.behanceData[designerBar].user
 									.stats.followers
 							}
 						</p>
-						<p className="textDark">
+						<p className={this.props.designerProfileState.captionClass}>
 							Fields:{" "}
 							{
 								this.props.designerProfileState.behanceData[designerBar].user
