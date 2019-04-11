@@ -22,16 +22,16 @@ class Designers extends Component {
 	}
 
 	render() {
-		// console.log(this.props.designersClass[0].covers['max_808'])
-
-		return this.props.designersData.map(designers => (
+		var designersDetails = this.props.designersData.projects;
+		console.log(designersDetails)
+		return designersDetails.map(designers => (
 			<div
 				key={designers.id}
 				className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
 				<div
 					className={this.props.designersCardClass}
-					onClick={this.changePageFromDesigners.bind(this, designers.username)}
+					onClick={this.changePageFromDesigners.bind(this, designers.owners[0].username)}
 				>
 					<div className="wrapperHexagon">
 						<div className="hexagonDesigner">

@@ -13,22 +13,34 @@ class Projects extends Component {
 	}
 
 	render() {
-		var projectDetails = this.props.projectsData;
+		var projectDetails = this.props.projectsData.projects;
 		console.log(projectDetails);
 		return projectDetails.map(projectDetailsMapped => (
 			<div
 				key={projectDetailsMapped.id}
 				onClick={this.changePageFromProjects.bind(this, "modal")}
-				className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
+				className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
-										<img
-								className="designerProject--Img"
-								src={projectDetailsMapped.covers["max_808"]}
-								onError={e => {
-									e.target.src = FallbackImage;
-								}}
-								alt="Behance Project"
-							/>
+				<div className={this.props.projectsCardClass}>
+					<img
+						className="designerProject--Img"
+						src={projectDetailsMapped.covers["max_808"]}
+						onError={e => {
+							e.target.src = FallbackImage;
+						}}
+						alt="Behance Project"
+					/>
+					<div className="wrapperProject--Details">
+						<div className="wrapper paraStyle--DesignerProject">
+							<p className={this.props.projectsPClass}>
+								{projectDetailsMapped.name}
+							</p>
+							<p className={this.props.projectsCaptionClass}>
+								Views: {projectDetailsMapped.stats.views}
+							</p>
+						</div>
+					</div>
+				</div>
 				{/* {projectDetailsMapped.map(singleProject => (
 					<div
 						key={singleProject.id}

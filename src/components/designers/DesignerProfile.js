@@ -7,7 +7,7 @@ class DesignerProfile extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentDesignerProfile: this.props.designerProfileState["currentDesigner"]
+			currentDesignerProfile: this.props.designerProfileData["currentDesigner"]
 		};
 		this.changeDesigner = this.changeDesigner.bind(this);
 	}
@@ -47,12 +47,12 @@ class DesignerProfile extends Component {
 
 		return (
 			<div>
-				<div className={this.props.designerProfileState.designerBarClass}>
-					<div className="wrapperCol col-xs-auto col-sm-auto  col-md-auto  col-lg-auto imageBox">
+				<div className={this.props.designerProfileBarClass}>
+					{/* <div className="wrapperCol col-xs-auto col-sm-auto  col-md-auto  col-lg-auto imageBox">
 						<img
 							className="designerBar__image"
 							src={
-								this.props.designerProfileState.behanceData[designerBar].user
+								this.props.designerProfileData[designerBar].user
 									.images[276]
 							}
 							onError={e => {
@@ -63,55 +63,55 @@ class DesignerProfile extends Component {
 					</div>
 
 					<div className="wrapperCol col-xs-auto col-sm-auto  col-md-auto  col-lg-auto">
-						<h5 className={this.props.designerProfileState.hClass}>
+						<h5 className={this.props.designerProfileHClass}>
 							{
-								this.props.designerProfileState.behanceData[designerBar].user
+								this.props.designerProfileData[designerBar].user
 									.username
 							}
 						</h5>
-						<p className={this.props.designerProfileState.pClass}>
+						<p className={this.props.designerProfilePClass}>
 							Total Project Views:{" "}
 							{
-								this.props.designerProfileState.behanceData[designerBar].user
+								this.props.designerProfileData[designerBar].user
 									.stats.views
 							}
 						</p>
-						<p className={this.props.designerProfileState.pClass}>
+						<p className={this.props.designerProfilePClass}>
 							Total Project Appreciations:{" "}
 							{
-								this.props.designerProfileState.behanceData[designerBar].user
+								this.props.designerProfileData[designerBar].user
 									.stats.appreciations
 							}
 						</p>
-						<p className={this.props.designerProfileState.pClass}>
+						<p className={this.props.designerProfilePClass}>
 							Followers:{" "}
 							{
-								this.props.designerProfileState.behanceData[designerBar].user
+								this.props.designerProfileData[designerBar].user
 									.stats.followers
 							}
 						</p>
-						<p className={this.props.designerProfileState.pClass}>
+						<p className={this.props.designerProfilePClass}>
 							Fields:{" "}
 							{
-								this.props.designerProfileState.behanceData[designerBar].user
+								this.props.designerProfileData[designerBar].user
 									.fields[0]
 							}{" "}
 							|{" "}
 							{
-								this.props.designerProfileState.behanceData[designerBar].user
+								this.props.designerProfileData[designerBar].user
 									.fields[1]
 							}{" "}
 							|{" "}
 							{
-								this.props.designerProfileState.behanceData[designerBar].user
+								this.props.designerProfileData[designerBar].user
 									.fields[2]
 							}
 						</p>
-					</div>
+					</div> */}
 				</div>
 
-				<div className="row projectImageRow">
-					{this.props.designerProfileState.behanceData[
+				{/* <div className="row projectImageRow">
+					{this.props.designerProfileData[
 						designerBar
 					].projects.map(designerProfileImages => (
 						<div
@@ -130,7 +130,7 @@ class DesignerProfile extends Component {
 						</div>
 					))}
 					;
-				</div>
+				</div> */}
 			</div>
 		);
 	}

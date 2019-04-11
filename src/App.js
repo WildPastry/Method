@@ -9,12 +9,32 @@ import "./scss/main.scss";
 import axios from "axios";
 import configData from "./data/config.json";
 
+var user = [
+	"washe",
+	"bogdan_aksonenko",
+	"LenaLaBallena",
+	"mateuszkozlowski",
+	"h3l",
+	"ahoyillustration",
+	"mishapriem",
+	"godsinlovea3ef",
+	"angelinaout",
+	"nfiasche89",
+	"surrealcyborg",
+	"AndreiPokrovskii"
+];
+
+// for (var i = 0; i < user.length; i++) {
+// 	var userName = user[i];
+// 	console.log(userName)
+// }
+
 const key = configData.OAUTH;
 const cors = configData.CORS;
 const behance = configData.BEHANCE;
 const scope = configData.SCOPE;
 
-const API = cors + behance + key + scope;
+const API = cors + behance + user[2] + "/projects" + key + scope;
 
 var htmlBody = document.getElementById("bg");
 
@@ -48,8 +68,6 @@ class App extends Component {
 	}
 
 	changePage(value) {
-		console.log("App.js");
-		console.log(value);
 		this.setState({
 			currentPage: value["page"],
 			currentDesigner: value["designer"]
@@ -134,15 +152,17 @@ class App extends Component {
 				</div>
 			);
 		} else {
-			var dataLive = this.state.behanceData;
-			for (var i = 0; i < dataLive.projects.length; i++) {
-				this.state.designers.push(dataLive.projects[i].owners[0]);
-				this.state.projects.push(dataLive.projects[i]);
-			}
-			console.log("DESIGNERS...");
-			console.log(this.state.designers);
-			console.log("PROJECTS...");
-			console.log(this.state.projects);
+			// var dataLive = this.state.behanceData;
+			// this.state.desingers = []
+			// this.state.projects = []
+			// for (var i = 0; i < dataLive.projects.length; i++) {
+			// 	this.state.designers.push(dataLive.projects[i].owners[0]);
+			// 	this.state.projects.push(dataLive.projects[i]);
+			// }
+			// console.log("DESIGNERS...");
+			// console.log(this.state.designers);
+			// console.log("PROJECTS...");
+			// console.log(this.state.projects);
 
 			var currentPage = this.state.currentPage;
 			let altDisplay;
@@ -151,7 +171,7 @@ class App extends Component {
 			if (currentPage === "designers") {
 				display = (
 					<Designers
-						designersData={this.state.projects}
+						designersData={this.state.behanceData}
 						designersCardClass={this.state.cardClass}
 						designersHClass={this.state.hClass}
 						designersCaptionClass={this.state.designersCaptionClass}
@@ -160,11 +180,18 @@ class App extends Component {
 				);
 			} else if (currentPage === "designerProfile") {
 				display = "";
-				altDisplay = <DesignerProfile designerProfileState={this.state} />;
+				altDisplay = (
+					<DesignerProfile
+						designerProfileData={this.state.behanceData}
+						designerProfilePClass={this.state.pClass}
+						designerProfileHClass={this.state.hClass}
+						designerProfileBarClass={this.state.designerBarClass}
+					/>
+				);
 			} else if (currentPage === "projects") {
 				display = (
 					<Projects
-						projectsData={this.state.projects}
+						projectsData={this.state.behanceData}
 						projectsCardClass={this.state.cardClass}
 						projectsPClass={this.state.pClass}
 						projectsCaptionClass={this.state.captionClass}
@@ -194,7 +221,8 @@ class App extends Component {
 					<div className={this.state.bgClass}>
 						<div className="container-fluid">
 							<Menu
-								menuStateClass={this.state}
+								menuStateIconClass={this.state.menuIcon}
+								menuStateMClass={this.state.mClass}
 								changePageFromMenu={this.changePageFromMenu}
 								changeTheme={this.changeTheme}
 							/>
