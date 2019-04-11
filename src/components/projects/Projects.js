@@ -13,18 +13,26 @@ class Projects extends Component {
 	}
 
 	render() {
-		var projectDetails = this.props.projectsState.behanceData;
-
+		var projectDetails = this.props.projectsData;
+		console.log(projectDetails);
 		return projectDetails.map(projectDetailsMapped => (
 			<div
-				key={projectDetailsMapped.user.id}
+				key={projectDetailsMapped.id}
 				onClick={this.changePageFromProjects.bind(this, "modal")}
 				className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
-				{projectDetailsMapped["projects"].map(singleProject => (
+										<img
+								className="designerProject--Img"
+								src={projectDetailsMapped.covers["max_808"]}
+								onError={e => {
+									e.target.src = FallbackImage;
+								}}
+								alt="Behance Project"
+							/>
+				{/* {projectDetailsMapped.map(singleProject => (
 					<div
 						key={singleProject.id}
-						className={this.props.projectsState.projectCardClass}
+						className={this.props.projectsCardClass}
 					>
 						<div className="cardProject--Img">
 							<img
@@ -33,21 +41,21 @@ class Projects extends Component {
 								onError={e => {
 									e.target.src = FallbackImage;
 								}}
-								alt="Behance project loading... "
+								alt="Behance Project"
 							/>
 						</div>
 						<div className="wrapperProject--Details">
 							<div className="wrapper paraStyle--DesignerProject">
-								<p className={this.props.projectsState.projectpClass}>
+								<p className={this.props.projectsPClass}>
 									{singleProject.name}
 								</p>
-								<p className={this.props.projectsState.captionClass}>
+								<p className={this.props.projectsCaptionClass}>
 									Views: {singleProject.stats.views}
 								</p>
 							</div>
 						</div>
 					</div>
-				))}
+				))} */}
 			</div>
 		));
 	}

@@ -10,8 +10,6 @@ class DesignerProfile extends Component {
 			currentDesignerProfile: this.props.designerProfileState["currentDesigner"]
 		};
 		this.changeDesigner = this.changeDesigner.bind(this);
-		console.log("THE CURRENT DESIGNER IS");
-		console.log(this.state.currentDesignerProfile);
 	}
 
 	changeDesigner() {
@@ -60,7 +58,7 @@ class DesignerProfile extends Component {
 							onError={e => {
 								e.target.src = FallbackImage;
 							}}
-							alt="Profile thumbnail loading...."
+							alt="Profile Thumbnail"
 						/>
 					</div>
 
@@ -127,7 +125,7 @@ class DesignerProfile extends Component {
 								onError={e => {
 									e.target.src = FallbackImage;
 								}}
-								alt="Project thumbnail loading..."
+								alt="Project Thumbnail"
 							/>{" "}
 						</div>
 					))}
