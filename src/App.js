@@ -45,7 +45,7 @@ class App extends Component {
 			designers: [],
 			projects: [],
 			menuIcon: "menuIconPink",
-			currentPage: "designers",
+			currentPage: "modal",
 			currentDesigner: '',
 			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
