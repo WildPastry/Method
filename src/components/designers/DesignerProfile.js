@@ -20,7 +20,7 @@ class DesignerProfile extends Component {
 
 	render() {
 		var designerProfileDetails = this.props.designerProfileData.projects[0];
-		console.log(designerProfileDetails)
+		console.log(designerProfileDetails);
 		// console.log(designerProfileDetails.owners[0].username)
 		// console.log(designerProfileDetails.owners[0].images[276])
 
@@ -74,44 +74,40 @@ class DesignerProfile extends Component {
 						</p>
 						<p className={this.props.designerProfilePClass}>
 							Total Project Appreciations:{" "}
-							{
-								designerProfileDetails.owners[0].stats.appreciations
-							}
+							{designerProfileDetails.owners[0].stats.appreciations}
 						</p>
 						<p className={this.props.designerProfilePClass}>
-							Followers:{" "}
-							{designerProfileDetails.owners[0].stats.followers}
+							Followers: {designerProfileDetails.owners[0].stats.followers}
 						</p>
 						<p className={this.props.designerProfilePClass}>
-							Fields:{" "}
-							{designerProfileDetails.owners[0].fields[0]} |{" "}
+							Fields: {designerProfileDetails.owners[0].fields[0]} |{" "}
 							{designerProfileDetails.owners[0].fields[1]} |{" "}
 							{designerProfileDetails.owners[0].fields[2]}
 						</p>
 					</div>
 				</div>
 
-				{/* <div className="row projectImageRow">
-					{designerProfileDetails[
-						designerBar
-					].projects.map(designerProfileImages => (
-						<div
-							key={designerProfileImages.id}
-							className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
-						>
-							{" "}
-							<img
-								className="projectImage"
-								src={designerProfileImages.covers[404]}
-								onError={e => {
-									e.target.src = FallbackImage;
-								}}
-								alt="Project Thumbnail"
-							/>{" "}
-						</div>
-					))}
+				<div className="row projectImageRow">
+					{designerProfileDetails[designerBar].projects.map(
+						designerProfileImages => (
+							<div
+								key={designerProfileImages.id}
+								className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
+							>
+								{" "}
+								<img
+									className="projectImage"
+									src={designerProfileImages.covers[404]}
+									onError={e => {
+										e.target.src = FallbackImage;
+									}}
+									alt="Project Thumbnail"
+								/>{" "}
+							</div>
+						)
+					)}
 					;
-				</div> */}
+				</div>
 			</div>
 		);
 	}

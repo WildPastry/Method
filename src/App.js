@@ -34,7 +34,7 @@ const cors = configData.CORS;
 const behance = configData.BEHANCE;
 const scope = configData.SCOPE;
 
-const API = cors + behance + user[2] + "/projects" + key + scope;
+const API = cors + behance + user[0] + "/projects" + key + scope;
 
 var htmlBody = document.getElementById("bg");
 
