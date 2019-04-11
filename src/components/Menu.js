@@ -13,7 +13,10 @@ class Menu extends Component {
 	render() {
 		return (
 			<div className="wrapperMenu">
-				<div className="menuDesigner">
+				<div
+					className="menuDesigner"
+					onClick={this.changePageFromMenu.bind(this, "designers")}
+				>
 					<svg viewBox="0 0 89.02 70.55">
 						<g id="Layer_2" data-name="Layer 2">
 							<g id="Layer_1-2" data-name="Layer 1">
@@ -36,14 +39,12 @@ class Menu extends Component {
 							</g>
 						</g>
 					</svg>
-					<p
-						className={this.props.menuStateClass["mClass"]}
-						onClick={this.changePageFromMenu.bind(this, "designers")}
-					>
-						DESIGNERS
-					</p>
+					<p className={this.props.menuStateClass["mClass"]}>DESIGNERS</p>
 				</div>
-				<div className="menuProjects">
+				<div
+					className="menuProjects"
+					onClick={this.changePageFromMenu.bind(this, "projects")}
+				>
 					<svg viewBox="0 0 90.85 71.07">
 						<g id="Layer_2" data-name="Layer 2">
 							<g id="Layer_1-2" data-name="Layer 1">
@@ -66,14 +67,12 @@ class Menu extends Component {
 							</g>
 						</g>
 					</svg>
-					<p
-						className={this.props.menuStateClass["mClass"]}
-						onClick={this.changePageFromMenu.bind(this, "projects")}
-					>
-						PROJECTS
-					</p>
+					<p className={this.props.menuStateClass["mClass"]}>PROJECTS</p>
 				</div>
-				<div className="menuSearch">
+				<div
+					className="menuSearch"
+					onClick={this.changePageFromMenu.bind(this, "search")}
+				>
 					<svg viewBox="0 0 87.56 70.38">
 						<g id="Layer_2" data-name="Layer 2">
 							<g id="Layer_1-2" data-name="Layer 1">
@@ -88,15 +87,10 @@ class Menu extends Component {
 							</g>
 						</g>
 					</svg>
-					<p
-						className={this.props.menuStateClass["mClass"]}
-						onClick={this.changePageFromMenu.bind(this, "search")}
-					>
-						SEARCH
-					</p>
+					<p className={this.props.menuStateClass["mClass"]}>SEARCH</p>
 				</div>
 
-				<div className="menuTheme">
+				<div className="menuTheme" onClick={this.props.changeTheme}>
 					<svg viewBox="0 0 90.8 71.1">
 						<path
 							className={this.props.menuStateClass["menuIcon"]}
@@ -113,12 +107,7 @@ class Menu extends Component {
 	c4.7-2.8,8.4-7.1,10.4-12.3c4.7,3.3,7.8,8.8,7.8,15C75.6,57.4,67.3,65.7,57.1,65.7z"
 						/>
 					</svg>
-					<p
-						className={this.props.menuStateClass["mClass"]}
-						onClick={this.props.changeTheme}
-					>
-						THEME
-					</p>
+					<p className={this.props.menuStateClass["mClass"]}>THEME</p>
 				</div>
 			</div>
 		);

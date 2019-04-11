@@ -127,11 +127,11 @@ class App extends Component {
 				<Projects projectsState={this.state} changePage={this.changePage} />
 			);
 		} else if (currentPage === "search") {
-			display = <Search searchState={this.state} />;
+			display = "";
+			altDisplay = <Search searchState={this.state} />;
 		} else if (currentPage === "modal") {
 			display = "";
-			altDisplay = <DesignerProfile designerProfileState={this.state} />;
-			display = <Modal modalState={this.state} />;
+			altDisplay = <Modal modalState={this.state} />;
 		}
 
 		if (this.state.loaded === false) {
@@ -207,7 +207,7 @@ class LiveDataClass extends React.Component {
 			return (
 				<div id="methodLoader">
 					<img
-						className="methodLoader--img"
+						className="methodLoaderImg"
 						src={require("./icons/logo/methodCreamTrans.svg")}
 						alt="Method Loader"
 					/>

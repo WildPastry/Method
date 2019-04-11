@@ -50,7 +50,7 @@ class DesignerProfile extends Component {
 		return (
 			<div>
 				<div className={this.props.designerProfileState.designerBarClass}>
-					<div className="wrapperCol col-2 imageBox">
+					<div className="wrapperCol col-xs-auto col-sm-auto  col-md-auto  col-lg-auto imageBox">
 						<img
 							className="designerBar__image"
 							src={
@@ -64,35 +64,35 @@ class DesignerProfile extends Component {
 						/>
 					</div>
 
-					<div className="wrapperCol col-10 designerBar__info">
+					<div className="wrapperCol col-xs-auto col-sm-auto  col-md-auto  col-lg-auto">
 						<h5 className={this.props.designerProfileState.hClass}>
 							{
 								this.props.designerProfileState.behanceData[designerBar].user
 									.username
 							}
 						</h5>
-						<p className={this.props.designerProfileState.captionClass}>
+						<p className={this.props.designerProfileState.pClass}>
 							Total Project Views:{" "}
 							{
 								this.props.designerProfileState.behanceData[designerBar].user
 									.stats.views
 							}
 						</p>
-						<p className={this.props.designerProfileState.captionClass}>
+						<p className={this.props.designerProfileState.pClass}>
 							Total Project Appreciations:{" "}
 							{
 								this.props.designerProfileState.behanceData[designerBar].user
 									.stats.appreciations
 							}
 						</p>
-						<p className={this.props.designerProfileState.captionClass}>
+						<p className={this.props.designerProfileState.pClass}>
 							Followers:{" "}
 							{
 								this.props.designerProfileState.behanceData[designerBar].user
 									.stats.followers
 							}
 						</p>
-						<p className={this.props.designerProfileState.captionClass}>
+						<p className={this.props.designerProfileState.pClass}>
 							Fields:{" "}
 							{
 								this.props.designerProfileState.behanceData[designerBar].user
