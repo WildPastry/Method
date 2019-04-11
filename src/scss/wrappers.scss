@@ -62,23 +62,42 @@
 	align-items: center;
 }
 
-// daniels css
+// DANIEL MODAL
 .methodModal {
 	top: 50%;
 	left: 50%;
+	width: 640px;
 	height: 750px;
-	margin-left: -375px;
+	margin-left: -320px;
 	margin-top: -375px;
 	position: absolute;
-	width: 750px;
+	
 }
 .methodModal__top{
-	height: 500px;
-	background-color: #ccc;
+	height: 65%;
+	// background-color: #ccc;
+	width: 100%;
 }
 .methodModal__top--image{
 	height: 100%;
-	width: auto;
+	width: 100%;
+}
+.methodModal__bottom{
+	height: 35%;
+	margin: 0px;
+	background-color: #666;
+}
+.methodModal__bottomLeft{
+	height: 100%;
+	background-color: #ccc;
+}
+.methodModal__bottomLeft--likes{
+	background-color: #bbb;
+	display: inline-flex
+}
+.methodModal__bottomRight{
+	height: 100%;
+	background-color: #aaa;
 }
 
 // DANIEL DESIGNER PROFILE

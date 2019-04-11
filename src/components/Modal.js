@@ -31,6 +31,23 @@ class Modal extends Component {
 					<div className="methodModal__top">
 						<img className="methodModal__top--image" src={this.props.modalState.behanceData[0].projects[0].covers[808]} alt="loading...." />
 					</div>
+					<div className="row wrapperCol bgLightPink textDark methodModal__bottom">
+						<div className="col-6 methodModal__bottomLeft">
+							<div className="methodModal__bottomLeft--Designer">
+								<h4 className="textBold">Designer Name</h4>
+							</div>
+							<div className="methodModal__bottomLeft--likes">
+								<img src="../../icons/menu/likesGreen.svg" alt="loading..." />
+								<h5 className="">likes</h5>
+							</div>
+						</div>
+						<div className="col-6 methodModal__bottomRight">
+							<div>
+								<h4 className="textBold">Project Name</h4>
+							</div>
+						</div>
+
+					</div>
 				</div>
 			</div>
 		);
