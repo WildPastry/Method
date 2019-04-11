@@ -152,7 +152,10 @@ class App extends Component {
 				</div>
 			);
 		} else {
-			// var dataLive = this.state.behanceData;
+			var dataLive = this.state.behanceData;
+			console.log("LIVE DATA...");
+			console.log(dataLive);
+
 			// this.state.desingers = []
 			// this.state.projects = []
 			// for (var i = 0; i < dataLive.projects.length; i++) {

@@ -14,7 +14,7 @@ class Projects extends Component {
 
 	render() {
 		var projectDetails = this.props.projectsData.projects;
-		console.log(projectDetails);
+		// console.log(projectDetails);
 		return projectDetails.map(projectDetailsMapped => (
 			<div
 				key={projectDetailsMapped.id}

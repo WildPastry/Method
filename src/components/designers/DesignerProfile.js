@@ -19,6 +19,11 @@ class DesignerProfile extends Component {
 	}
 
 	render() {
+		var designerProfileDetails = this.props.designerProfileData.projects[0];
+		console.log(designerProfileDetails)
+		// console.log(designerProfileDetails.owners[0].username)
+		// console.log(designerProfileDetails.owners[0].images[276])
+
 		if (this.state.currentDesignerProfile === "washe") {
 			designerBar = 0;
 		} else if (this.state.currentDesignerProfile === "bogdan_aksonenko") {
@@ -48,13 +53,10 @@ class DesignerProfile extends Component {
 		return (
 			<div>
 				<div className={this.props.designerProfileBarClass}>
-					{/* <div className="wrapperCol col-xs-auto col-sm-auto  col-md-auto  col-lg-auto imageBox">
+					<div className="wrapperCol col-xs-auto col-sm-auto col-md-auto col-lg-auto imageBox">
 						<img
 							className="designerBar__image"
-							src={
-								this.props.designerProfileData[designerBar].user
-									.images[276]
-							}
+							src={designerProfileDetails.owners[0].images[276]}
 							onError={e => {
 								e.target.src = FallbackImage;
 							}}
@@ -62,56 +64,35 @@ class DesignerProfile extends Component {
 						/>
 					</div>
 
-					<div className="wrapperCol col-xs-auto col-sm-auto  col-md-auto  col-lg-auto">
+					<div className="wrapperCol col-xs-auto col-sm-auto col-md-auto col-lg-auto">
 						<h5 className={this.props.designerProfileHClass}>
-							{
-								this.props.designerProfileData[designerBar].user
-									.username
-							}
+							{designerProfileDetails.owners[0].username}
 						</h5>
 						<p className={this.props.designerProfilePClass}>
 							Total Project Views:{" "}
-							{
-								this.props.designerProfileData[designerBar].user
-									.stats.views
-							}
+							{designerProfileDetails.owners[0].stats.views}
 						</p>
 						<p className={this.props.designerProfilePClass}>
 							Total Project Appreciations:{" "}
 							{
-								this.props.designerProfileData[designerBar].user
-									.stats.appreciations
+								designerProfileDetails.owners[0].stats.appreciations
 							}
 						</p>
 						<p className={this.props.designerProfilePClass}>
 							Followers:{" "}
-							{
-								this.props.designerProfileData[designerBar].user
-									.stats.followers
-							}
+							{designerProfileDetails.owners[0].stats.followers}
 						</p>
 						<p className={this.props.designerProfilePClass}>
 							Fields:{" "}
-							{
-								this.props.designerProfileData[designerBar].user
-									.fields[0]
-							}{" "}
-							|{" "}
-							{
-								this.props.designerProfileData[designerBar].user
-									.fields[1]
-							}{" "}
-							|{" "}
-							{
-								this.props.designerProfileData[designerBar].user
-									.fields[2]
-							}
+							{designerProfileDetails.owners[0].fields[0]} |{" "}
+							{designerProfileDetails.owners[0].fields[1]} |{" "}
+							{designerProfileDetails.owners[0].fields[2]}
 						</p>
-					</div> */}
+					</div>
 				</div>
 
 				{/* <div className="row projectImageRow">
-					{this.props.designerProfileData[
+					{designerProfileDetails[
 						designerBar
 					].projects.map(designerProfileImages => (
 						<div

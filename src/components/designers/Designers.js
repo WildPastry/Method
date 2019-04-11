@@ -23,7 +23,7 @@ class Designers extends Component {
 
 	render() {
 		var designersDetails = this.props.designersData.projects;
-		console.log(designersDetails)
+		// console.log(designersDetails)
 		return designersDetails.map(designers => (
 			<div
 				key={designers.id}
