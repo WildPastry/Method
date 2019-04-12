@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import FallbackImage from "../../images/fallback.jpg";
 
 var designerBar;
 
@@ -10,6 +9,8 @@ class DesignerProfile extends Component {
 			currentDesignerProfile: this.props.designerProfileData["currentDesigner"]
 		};
 		this.changeDesigner = this.changeDesigner.bind(this);
+		console.log("THE CURRENT DESIGNER IS");
+		console.log(this.state.currentDesignerProfile);
 	}
 
 	changeDesigner() {
@@ -19,11 +20,8 @@ class DesignerProfile extends Component {
 	}
 
 	render() {
-		var designerProfileDetails = this.props.designerProfileData.projects[0];
+		var designerProfileDetails = this.props.designerProfileData.projects;
 		console.log(designerProfileDetails);
-		// console.log(designerProfileDetails.owners[0].username)
-		// console.log(designerProfileDetails.owners[0].images[276])
-
 		if (this.state.currentDesignerProfile === "washe") {
 			designerBar = 0;
 		} else if (this.state.currentDesignerProfile === "bogdan_aksonenko") {
@@ -52,43 +50,45 @@ class DesignerProfile extends Component {
 
 		return (
 			<div>
-				<div className={this.props.designerProfileBarClass}>
-					<div className="wrapperCol col-xs-auto col-sm-auto col-md-auto col-lg-auto imageBox">
+				<div className="row designerBar bgLightPink">
+					<div className="col-2 imageBox">
 						<img
 							className="designerBar__image"
-							src={designerProfileDetails.owners[0].images[276]}
-							onError={e => {
-								e.target.src = FallbackImage;
-							}}
-							alt="Profile Thumbnail"
+							src={this.props.designerProfileData[designerBar].user.images[276]}
+							alt="loading...."
 						/>
 					</div>
 
-					<div className="wrapperCol col-xs-auto col-sm-auto col-md-auto col-lg-auto">
-						<h5 className={this.props.designerProfileHClass}>
-							{designerProfileDetails.owners[0].username}
+					<div className="col-10 designerBar__info">
+						<h5 className="textBold textDark designerBar__info--user">
+							{this.props.designerProfileData[designerBar].user.username}
 						</h5>
-						<p className={this.props.designerProfilePClass}>
+						<p className="textDark">
 							Total Project Views:{" "}
-							{designerProfileDetails.owners[0].stats.views}
+							{this.props.designerProfileData[designerBar].user.stats.views}
 						</p>
-						<p className={this.props.designerProfilePClass}>
+						<p className="textDark">
 							Total Project Appreciations:{" "}
-							{designerProfileDetails.owners[0].stats.appreciations}
+							{
+								this.props.designerProfileData[designerBar].user.stats
+									.appreciations
+							}
 						</p>
-						<p className={this.props.designerProfilePClass}>
-							Followers: {designerProfileDetails.owners[0].stats.followers}
+						<p className="textDark">
+							Followers:{" "}
+							{this.props.designerProfileData[designerBar].user.stats.followers}
 						</p>
-						<p className={this.props.designerProfilePClass}>
-							Fields: {designerProfileDetails.owners[0].fields[0]} |{" "}
-							{designerProfileDetails.owners[0].fields[1]} |{" "}
-							{designerProfileDetails.owners[0].fields[2]}
+						<p className="textDark">
+							Fields:{" "}
+							{this.props.designerProfileData[designerBar].user.fields[0]} |{" "}
+							{this.props.designerProfileData[designerBar].user.fields[1]} |{" "}
+							{this.props.designerProfileData[designerBar].user.fields[2]}
 						</p>
 					</div>
 				</div>
 
 				<div className="row projectImageRow">
-					{designerProfileDetails[designerBar].projects.map(
+					{this.props.designerProfileData[designerBar].projects.map(
 						designerProfileImages => (
 							<div
 								key={designerProfileImages.id}
@@ -98,10 +98,7 @@ class DesignerProfile extends Component {
 								<img
 									className="projectImage"
 									src={designerProfileImages.covers[404]}
-									onError={e => {
-										e.target.src = FallbackImage;
-									}}
-									alt="Project Thumbnail"
+									alt="Thumbnail oading..."
 								/>{" "}
 							</div>
 						)

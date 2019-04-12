@@ -22,24 +22,24 @@ class Designers extends Component {
 	}
 
 	render() {
-		var designersDetails = this.props.designersData.projects;
-		// console.log(designersDetails)
-		return designersDetails.map(designers => (
+		return this.props.designersData.map(designers => (
 			<div
-				key={designers.id}
+				key={designers.user.id}
 				className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
 				<div
 					className={this.props.designersCardClass}
-					onClick={this.changePageFromDesigners.bind(this, designers.owners[0].username)}
+					onClick={this.changePageFromDesigners.bind(
+						this,
+						designers.user.username
+					)}
 				>
 					<div className="wrapperHexagon">
 						<div className="hexagonDesigner">
 							<div className="hexagonDesigner--in1">
 								<div
 									style={{
-										backgroundImage:
-											"url(" + designers.owners[0].images[276] + ")",
+										backgroundImage: "url(" + designers.user.images[276] + ")",
 										backgroundPosition: "center",
 										backgroundSize: "cover",
 										backgroundRepeat: "no-repeat"
@@ -52,7 +52,8 @@ class Designers extends Component {
 					<div className="wrapperCard">
 						<div
 							style={{
-								backgroundImage: "url(" + designers.covers["max_808"] + ")",
+								backgroundImage:
+									"url(" + designers.projects[6].covers.max_808 + ")",
 								backgroundPosition: "center",
 								backgroundSize: "cover",
 								backgroundRepeat: "no-repeat"
@@ -62,16 +63,16 @@ class Designers extends Component {
 						<div className="wrapperDesignerDetails">
 							<div className="paraStyle--DesignerName">
 								<h5 className={this.props.designersHClass}>
-									{designers.owners[0].username}
+									{designers.user.username}
 								</h5>
 							</div>
 							<div className="paraStyle--DesignerDiscipline">
 								<p className={this.props.designersCaptionClass}>
-									{designers.fields[0] +
+									{designers.user.fields[0] +
 										" | " +
-										designers.fields[1] +
+										designers.user.fields[1] +
 										" | " +
-										designers.fields[2]}
+										designers.user.fields[2]}
 								</p>
 							</div>
 						</div>

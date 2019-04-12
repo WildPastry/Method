@@ -13,9 +13,9 @@ class Projects extends Component {
 	}
 
 	render() {
-		var projectDetails = this.props.projectsData.projects;
-		// console.log(projectDetails);
-		return projectDetails.map(projectDetailsMapped => (
+		var projectDetails = this.props.projectsData;
+		console.log(projectDetails);
+		return projectDetails.projects.map(projectDetailsMapped => (
 			<div
 				key={projectDetailsMapped.id}
 				onClick={this.changePageFromProjects.bind(this, "modal")}
@@ -41,7 +41,7 @@ class Projects extends Component {
 						</div>
 					</div>
 				</div>
-				{/* {projectDetailsMapped.map(singleProject => (
+				{projectDetailsMapped.map(singleProject => (
 					<div
 						key={singleProject.id}
 						className={this.props.projectsCardClass}
@@ -67,7 +67,7 @@ class Projects extends Component {
 							</div>
 						</div>
 					</div>
-				))} */}
+				))}
 			</div>
 		));
 	}
