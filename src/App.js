@@ -23,14 +23,6 @@ var htmlBody = document.getElementById("bg");
 class App extends Component {
 	constructor(props) {
 		super(props);
-
-		// AXIOS LOOP
-		// REQUEST HERE - 12 FOLLOWERS
-		// SEND TO Array USERS (12)
-		// LOOP OVER THE ARRAY
-		// BASED ON THAT ARRAY - INDIVIDUAL REQUEST FOR ALL 10 PROJECTS - SAVE AS NEW ARRAY AS ALL (120) PROJECTS
-		// ONCE WORKING - SAVE EVERYTHING AS HARD CODED DATA - EXACTLY 
-
 		this.state = {
 			loaded: false,
 			light: false,
@@ -44,21 +36,20 @@ class App extends Component {
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
 			projectCardClass: "bgLightPink cardProject",
-			projectpClass: "textDark textBold",
+			projectPClass: "textDark textBold",
 			pClass: "textDark",
 			hClass: "textDark textBold",
 			mClass: "textLight",
 			captionClass: "caption textDark",
+			designerBarClass: "row designerBar bgLightPink",
 			designersCaptionClass: "caption textDark text-center"
-		};
+};
 		this.changePage = this.changePage.bind(this);
 		this.changePageFromMenu = this.changePageFromMenu.bind(this);
 		this.changeTheme = this.changeTheme.bind(this);
 	}
 
 	changePage(value) {
-		console.log("App.js");
-		console.log(value);
 		this.setState({
 			currentPage: value["page"],
 			currentDesigner: value["designer"]
@@ -81,11 +72,12 @@ class App extends Component {
 				headingClass: "textDark text-center",
 				cardClass: "cardDesigner bgDarkGreen",
 				projectCardClass: "bgDarkGreen cardProject",
-				projectpClass: "textLight textBold",
+				projectPClass: "textLight textBold",
 				pClass: "textLight",
 				hClass: "textLight textBold",
 				mClass: "textDark",
 				captionClass: "caption textLight",
+				designerBarClass: "row designerBar bgDarkGreen",
 				designersCaptionClass: "caption textLight text-center"
 			});
 		} else {
@@ -97,26 +89,22 @@ class App extends Component {
 				headingClass: "textLight text-center",
 				cardClass: "cardDesigner bgLightPink",
 				projectCardClass: "bgLightPink cardProject",
-				projectpClass: "textDark textBold",
+				projectPClass: "textDark textBold",
 				pClass: "textDark",
 				hClass: "textDark textBold",
 				mClass: "textLight",
 				captionClass: "caption textDark",
+				designerBarClass: "row designerBar bgLightPink",
 				designersCaptionClass: "caption textDark text-center"
 			});
 		}
 	}
 
 	componentDidMount() {
-		console.log("mount");
 		this.setState({
 			behanceData: behanceDataFromJSON,
 			loaded: true
 		});
-		// for (var i = 0; i < behanceDataFromJSON.length; i++) {
-		// 	this.state.designers.push(behanceDataFromJSON[i]);
-		// 	this.state.projects.push(behanceDataFromJSON[i]);
-		// }
 	}
 
 	render() {
@@ -139,7 +127,7 @@ class App extends Component {
 			display = "";
 			altDisplay = (
 				<DesignerProfile
-					designerProfileData={this.state.behanceData}
+					designerProfileData={this.state}
 					designerProfilePClass={this.state.pClass}
 					designerProfileHClass={this.state.hClass}
 					designerProfileBarClass={this.state.designerBarClass}
@@ -148,11 +136,12 @@ class App extends Component {
 		} else if (currentPage === "projects") {
 			display = (
 				<Projects
-					projectsData={this.state.behanceData}
-					projectsCardClass={this.state.cardClass}
+					projectsData={this.state}
+					projectsCardClass={this.state.projectCardClass}
 					projectsHClass={this.state.hClass}
+					projectsPClass={this.state.projectPClass}
 					projectsCaptionClass={this.state.captionClass}
-					changePage={this.changePage}
+					changePageFromProjects={this.changePageFromMenu}
 				/>
 			);
 		} else if (currentPage === "search") {
