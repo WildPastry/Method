@@ -23,6 +23,14 @@ var htmlBody = document.getElementById("bg");
 class App extends Component {
 	constructor(props) {
 		super(props);
+
+		// AXIOS LOOP
+		// REQUEST HERE - 12 FOLLOWERS
+		// SEND TO Array USERS (12)
+		// LOOP OVER THE ARRAY
+		// BASED ON THAT ARRAY - INDIVIDUAL REQUEST FOR ALL 10 PROJECTS - SAVE AS NEW ARRAY AS ALL (120) PROJECTS
+		// ONCE WORKING - SAVE EVERYTHING AS HARD CODED DATA - EXACTLY 
+
 		this.state = {
 			loaded: false,
 			light: false,
@@ -97,6 +105,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
+		console.log("mount");
 		this.setState({
 			behanceData: behanceDataFromJSON,
 			loaded: true
