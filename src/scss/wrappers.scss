@@ -63,6 +63,17 @@
 }
 
 // DANIEL MODAL
+.closeModal{
+right: 0%;
+margin-right: 20px;
+margin-top: 10px;
+position: absolute;
+opacity: 0.75;
+cursor: pointer;
+}
+.closeModal:hover{
+opacity: 1;
+}
 .methodModal {
 	top: 50%;
 	left: 50%;
@@ -87,26 +98,44 @@
 	margin: 0px;
 	// background-color: #666;
 }
+.methodModal__bannerLeft{
+	// background-color: #666;
+	height: 20%;
+	border-bottom: solid $grey 0.5px;
+}
+.methodModal__bannerRight{
+	// background-color: #555;
+	height: 20%;
+	border-bottom: solid $grey 0.5px;
+	text-align: right;
+}
 .methodModal__bottomLeft{
-	height: 100%;
-	// background-color: #ccc;
+	// background-color: #aaa;
+	height: 65%;
+	text-align: center;
 }
-.methodModal__bottomLeft--likes{
+.methodModal__bottomMiddle{
 	// background-color: #bbb;
-	display: inline-flex
-}
-.methodModal__bottomLeft--views{
-	// background-color: #bbb;
-	display: inline-flex
-}
-.methodModal__bottomLeft--comments{
-	// background-color: #bbb;
-	display: inline-flex
+	height: 65%;
+	text-align: center;
 }
 .methodModal__bottomRight{
-	height: 100%;
-	// background-color: #aaa;
+	// background-color: #ccc;
+	height: 65%;
+	text-align: center;
 }
+.methodModal__bannerBottom{
+	// background-color: #ddd;
+	height: 15%;
+	padding-top: 5px;
+	text-align: center;
+}
+.methodModal__icons{
+	height: 65%;
+	margin-bottom: 12px;
+	margin-top: 20px;
+}
+
 
 // DANIEL DESIGNER PROFILE
 .designerBar{
