@@ -24,10 +24,10 @@ var user = [
 	"AndreiPokrovskii"
 ];
 
-// for (var i = 0; i < user.length; i++) {
-// 	var userName = user[i];
-// 	console.log(userName)
-// }
+for (var i = 0; i < user.length; i++) {
+	var userName = user[i];
+	// console.log(userName);
+}
 
 const key = configData.OAUTH;
 const cors = configData.CORS;
@@ -35,16 +35,30 @@ const behance = configData.BEHANCE;
 const scope = configData.SCOPE;
 
 const API = cors + behance + user[0] + "/projects" + key + scope;
+// const APITWO = cors + behance + user[1] + "/projects" + key + scope;
 
 var htmlBody = document.getElementById("bg");
 
 class App extends Component {
 	constructor(props) {
 		super(props);
+
+		let usersFrom = [];
+		for(var i = 0; i < user.length; i++){
+			axios.get('https://cors-anywhere.herokuapp.com/https://www.behance.net/v2/users/washe?api_key=JoI9j5mk8tEfLB81PQeEMKhDSTjVNewT&per_page=12', {
+				}).then(function (response) {
+					let users = response.data['user'];
+					usersFrom.push(users);
+				}).catch(function (error) {
+					console.log(error);
+			});
+		}
+
+		console.log(usersFrom);
 		this.state = {
 			isLoaded: false,
 			light: false,
-			behanceData: [],
+			behanceData: usersFrom,
 			designers: [],
 			projects: [],
 			menuIcon: "menuIconPink",
@@ -118,29 +132,63 @@ class App extends Component {
 		}
 	}
 
+	// handleSubmit = async event => {
+	// 	event.preventDefault();
+
+	// 	// Promise is resolved and value is inside of the response const.
+	// 	const response = await API.delete(`users/${this.state.id}`);
+
+	// 	console.log(response);
+	// 	console.log(response.data);
+	// };
+	// axios.all([
+	//   axios.get(API),
+	//   axios.get(APITWO)
+	// ])
+	// .then(axios.spread((API, APITWO) => {
+	//   // do something with both responses
+	// }));
+
 	componentDidMount() {
-		axios
-			.get(API)
-			.then(res => {
-				const behanceData = res.data;
-				this.setState({
-					isLoaded: true,
-					behanceData
-				});
-			})
-			.catch(error => {
-				if (error.res) {
-				} else if (error.request) {
-					console.log(error.request);
-				} else {
-					console.log("Error", error.message);
-				}
-				console.log(error.config);
-			});
+// console.log("https://www.behance.net/v2/users/washe?api_key=JoI9j5mk8tEfLB81PQeEMKhDSTjVNewT&per_page=12")
+		// axios
+		// 	.get("https://www.behance.net/v2/users/washe?api_key=JoI9j5mk8tEfLB81PQeEMKhDSTjVNewT&per_page=12")
+		// 	.then(res => {
+		// 		const behanceData = res.data;
+		// 		console.log(behanceData);
+		// 		// this.setState({
+		// 		// 	isLoaded: true,
+		// 		// 	behanceData
+		// 		// });
+		// 	})
+
+		// let usersFrom = [];
+		// for(var i = 0; i < user.length; i++){
+
+			// axios.get('https://cors-anywhere.herokuapp.com/https://www.behance.net/v2/users/washe?api_key=JoI9j5mk8tEfLB81PQeEMKhDSTjVNewT&per_page=12', {
+			// 	}).then(function (response) {
+			// 		let users = response.data['user'];
+			// 	}).catch(function (error) {
+			// 		console.log(error);
+			// });
+
+		// }
+		// console.log(this.state.behanceData);
+
+		// 	.catch(error => {
+		// 		if (error.res) {
+		// 		} else if (error.request) {
+		// 			console.log(error.request);
+		// 		} else {
+		// 			console.log("Error", error.message);
+		// 		}
+		// 		console.log(error.config);
+		// 	});
 	}
 
 	render() {
 		var { isLoaded } = this.state;
+		console.log(this.state.behanceData);
 		if (!isLoaded) {
 			return (
 				<div id="methodLoader">
@@ -196,7 +244,7 @@ class App extends Component {
 					<Projects
 						projectsData={this.state.behanceData}
 						projectsCardClass={this.state.cardClass}
-						projectsPClass={this.state.pClass}
+						projectsHClass={this.state.hClass}
 						projectsCaptionClass={this.state.captionClass}
 						changePage={this.changePage}
 					/>

@@ -32,7 +32,7 @@ class Projects extends Component {
 					/>
 					<div className="wrapperProject--Details">
 						<div className="wrapper paraStyle--DesignerProject">
-							<p className={this.props.projectsPClass}>
+							<p className={this.props.projectsHClass}>
 								{projectDetailsMapped.name}
 							</p>
 							<p className={this.props.projectsCaptionClass}>
