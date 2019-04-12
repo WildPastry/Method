@@ -1,43 +1,36 @@
-// IMPORT REACT
 import React, { Component } from "react";
-
-// IMPORT COMPONENTS
 import Menu from "./components/Menu";
 import Modal from "./components/Modal";
 import Search from "./components/Search";
 import Designers from "./components/designers/Designers";
 import DesignerProfile from "./components/designers/DesignerProfile";
 import Projects from "./components/projects/Projects";
-
-// IMPORT SASS
 import "./scss/main.scss";
-
-// IMPORT AXIOS
 // import axios from "axios";
-
-// IMPORT CONFIG
 // import configData from "./data/config.json";
-
-// IMPORT LOCAL DATA
 import behanceDataFromJSON from "./data/behanceData";
 console.log("Data from JSON loaded...");
 
-// DEFINE CONFIG
 // const key = configData.OAUTH;
 // const cors = configData.CORS;
 // const behance = configData.BEHANCE;
 // const scope = configData.SCOPE;
 
-// DEFINE API DATA
 // const API = cors + behance + key + scope;
 
-// DEFINE ELEMENTS
 var htmlBody = document.getElementById("bg");
 
-// MAIN APP
 class App extends Component {
 	constructor(props) {
 		super(props);
+
+		// AXIOS LOOP
+		// REQUEST HERE - 12 FOLLOWERS
+		// SEND TO Array USERS (12)
+		// LOOP OVER THE ARRAY
+		// BASED ON THAT ARRAY - INDIVIDUAL REQUEST FOR ALL 10 PROJECTS - SAVE AS NEW ARRAY AS ALL (120) PROJECTS
+		// ONCE WORKING - SAVE EVERYTHING AS HARD CODED DATA - EXACTLY 
+
 		this.state = {
 			loaded: false,
 			light: false,
@@ -45,8 +38,8 @@ class App extends Component {
 			designers: [],
 			projects: [],
 			menuIcon: "menuIconPink",
-			currentPage: "modal",
-			currentDesigner: '',
+			currentPage: "designers",
+			currentDesigner: "",
 			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
@@ -58,15 +51,22 @@ class App extends Component {
 			captionClass: "caption textDark"
 		};
 		this.changePage = this.changePage.bind(this);
+		this.changePageFromMenu = this.changePageFromMenu.bind(this);
 		this.changeTheme = this.changeTheme.bind(this);
 	}
 
 	changePage(value) {
-		console.log("App.js")
+		console.log("App.js");
 		console.log(value);
 		this.setState({
-			currentPage: value['page'],
-			currentDesigner: value['designer']
+			currentPage: value["page"],
+			currentDesigner: value["designer"]
+		});
+	}
+
+	changePageFromMenu(value) {
+		this.setState({
+			currentPage: value
 		});
 	}
 
@@ -105,6 +105,7 @@ class App extends Component {
 	}
 
 	componentDidMount() {
+		console.log("mount");
 		this.setState({
 			behanceData: behanceDataFromJSON,
 			loaded: true
@@ -156,7 +157,7 @@ class App extends Component {
 						/> */}
 						<Menu
 							menuStateClass={this.state}
-							changePage={this.changePage}
+							changePageFromMenu={this.changePageFromMenu}
 							changeTheme={this.changeTheme}
 						/>
 
@@ -169,7 +170,6 @@ class App extends Component {
 	}
 }
 
-// LIVE DATA COMPONENT
 // class LiveDataClass extends React.Component {
 // 	constructor(props) {
 // 		super(props);
