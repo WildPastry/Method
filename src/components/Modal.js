@@ -72,7 +72,7 @@ class Modal extends Component {
 							<h5 className="textThin">Likes: {this.props.modalState.behanceData[projectDeets].projects[0].stats.appreciations}</h5>
 						</div>
 						<div className="col-4 methodModal__bottomRight">
-							<img className="methodModal__icons" src={require("../icons/menu/commentsGrey.svg")} alt="loading..." />
+							{/* <img className="methodModal__icons" src={require("../icons/menu/commentsGrey.svg")} alt="loading..." /> */}
 							<h5 className="textThin">Comments: {this.props.modalState.behanceData[projectDeets].projects[0].stats.comments}</h5>
 						</div>
 						<div className="col-12 methodModal__bannerBottom">
