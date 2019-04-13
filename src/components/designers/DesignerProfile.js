@@ -7,9 +7,18 @@ class DesignerProfile extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentDesignerProfile: this.props.designerProfileData["currentDesigner"]
+			currentDesignerProfile: this.props.designerProfileData["currentDesigner"],
+			designerProfileURL: " ",
+			profilePosition: "center",
+			profileSize: "cover",
+			profileRepeat: "no-repeat"
 		};
 		this.changeDesigner = this.changeDesigner.bind(this);
+		this.changePageFromProfiles = this.changePageFromProfiles.bind(this);
+	}
+
+	changePageFromProfiles(value) {
+		this.props.changePageFromProfiles(value);
 	}
 
 	changeDesigner() {
@@ -20,6 +29,8 @@ class DesignerProfile extends Component {
 
 	render() {
 		var designerProfileDetails = this.props.designerProfileData.behanceData;
+		// console.log(designerProfileDetails)
+		// console.log(designerProfileDetails[1].user.images[276])
 		if (this.state.currentDesignerProfile === "washe") {
 			designerBar = 0;
 		} else if (this.state.currentDesignerProfile === "bogdan_aksonenko") {
@@ -49,38 +60,52 @@ class DesignerProfile extends Component {
 		return (
 			<div>
 				<div className={this.props.designerProfileBarClass}>
-					<div className="col-2 imageBox">
-						<img
+					<div className="imageBox col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						<div
+							style={{
+								backgroundImage:
+									"url(" +
+									designerProfileDetails[designerBar].user.images[276] +
+									")",
+								backgroundPosition: "center",
+								backgroundSize: "cover",
+								backgroundRepeat: "no-repeat"
+							}}
 							className="designerBar__image"
-							src={designerProfileDetails[designerBar].user.images[276]}
-							alt="Profile Thumbnail"
 						/>
 					</div>
 
-					<div className="wrapperCol col-10">
+					<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
 						<h5 className={this.props.designerProfileHClass}>
 							{designerProfileDetails[designerBar].user.username}
 						</h5>
-						<p className={this.props.designerProfilePClass}>
-							Total Project Views:{" "}
-							{designerProfileDetails[designerBar].user.stats.views}
-						</p>
-						<p className={this.props.designerProfilePClass}>
-							Total Project Appreciations:{" "}
-							{
-								designerProfileDetails[designerBar].user.stats
-									.appreciations
-							}
-						</p>
-						<p className={this.props.designerProfilePClass}>
-							Followers:{" "}
-							{designerProfileDetails[designerBar].user.stats.followers}
-						</p>
-						<p className={this.props.designerProfilePClass}>
-							Fields:{" "}
+						<p className={this.props.designerProfilePClassMargin}>
 							{designerProfileDetails[designerBar].user.fields[0]} |{" "}
 							{designerProfileDetails[designerBar].user.fields[1]} |{" "}
 							{designerProfileDetails[designerBar].user.fields[2]}
+						</p>
+						<p className={this.props.designerProfilePClassThin}>
+							Total Project Views:{" "}
+							{designerProfileDetails[designerBar].user.stats.views}
+						</p>
+						<p className={this.props.designerProfilePClassThin}>
+							Total Project Appreciations:{" "}
+							{designerProfileDetails[designerBar].user.stats.appreciations}
+						</p>
+						<p className={this.props.designerProfilePClassThin}>
+							Followers:{" "}
+							{designerProfileDetails[designerBar].user.stats.followers}
+						</p>
+						{/* <p className={this.props.designerProfilePClass}>
+							Fields: {designerProfileDetails[designerBar].user.fields[0]} |{" "}
+							{designerProfileDetails[designerBar].user.fields[1]} |{" "}
+							{designerProfileDetails[designerBar].user.fields[2]}
+						</p> */}
+					</div>
+
+					<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
+						<p className={this.props.designerProfilePClass}>
+						Something else in here?<br/>Maybe some icons?<br/>Maybe a chart?<br/>Thoughts????
 						</p>
 					</div>
 				</div>
@@ -94,6 +119,7 @@ class DesignerProfile extends Component {
 							>
 								{" "}
 								<img
+									onClick={this.changePageFromProfiles.bind(this, "modal")}
 									className="projectImage"
 									src={designerProfileImages.covers[404]}
 									onError={e => {

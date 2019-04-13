@@ -17,7 +17,7 @@ class Designers extends Component {
 			page: "designerProfile",
 			designer: value
 		};
-		this.props.changePage(options);
+		this.props.changePageFromDesigners(options);
 	}
 
 	render() {

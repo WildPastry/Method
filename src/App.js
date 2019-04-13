@@ -38,25 +38,27 @@ class App extends Component {
 			projectCardClass: "bgLightPink cardProject",
 			projectPClass: "textDark textBold",
 			pClass: "textDark",
+			pClassThin: "textDark textThin",
+			pClassMargin: "textDark textMargin",
 			hClass: "textDark textBold",
 			mClass: "textLight",
 			captionClass: "caption textDark",
 			designerBarClass: "row designerBar bgLightPink",
 			designersCaptionClass: "caption textDark text-center"
-};
+		};
+		this.changePageAndDesigner = this.changePageAndDesigner.bind(this);
 		this.changePage = this.changePage.bind(this);
-		this.changePageFromMenu = this.changePageFromMenu.bind(this);
 		this.changeTheme = this.changeTheme.bind(this);
 	}
 
-	changePage(value) {
+	changePageAndDesigner(value) {
 		this.setState({
 			currentPage: value["page"],
 			currentDesigner: value["designer"]
 		});
 	}
 
-	changePageFromMenu(value) {
+	changePage(value) {
 		this.setState({
 			currentPage: value
 		});
@@ -74,6 +76,8 @@ class App extends Component {
 				projectCardClass: "bgDarkGreen cardProject",
 				projectPClass: "textLight textBold",
 				pClass: "textLight",
+				pClassThin: "textLight textThin",
+				pClassMargin: "textLight textMargin",
 				hClass: "textLight textBold",
 				mClass: "textDark",
 				captionClass: "caption textLight",
@@ -91,6 +95,8 @@ class App extends Component {
 				projectCardClass: "bgLightPink cardProject",
 				projectPClass: "textDark textBold",
 				pClass: "textDark",
+				pClassThin: "textDark textThin",
+				pClassMargin: "textDark textMargin",
 				hClass: "textDark textBold",
 				mClass: "textLight",
 				captionClass: "caption textDark",
@@ -108,7 +114,7 @@ class App extends Component {
 	}
 
 	render() {
-
+		// console.log(this.state.behanceData)
 		var currentPage = this.state.currentPage;
 		let altDisplay;
 		let display;
@@ -120,7 +126,7 @@ class App extends Component {
 					designersCardClass={this.state.cardClass}
 					designersHClass={this.state.hClass}
 					designersCaptionClass={this.state.designersCaptionClass}
-					changePage={this.changePage}
+					changePageFromDesigners={this.changePageAndDesigner}
 				/>
 			);
 		} else if (currentPage === "designerProfile") {
@@ -129,8 +135,11 @@ class App extends Component {
 				<DesignerProfile
 					designerProfileData={this.state}
 					designerProfilePClass={this.state.pClass}
+					designerProfilePClassThin={this.state.pClassThin}
+					designerProfilePClassMargin={this.state.pClassMargin}
 					designerProfileHClass={this.state.hClass}
 					designerProfileBarClass={this.state.designerBarClass}
+					changePageFromProfiles={this.changePage}
 				/>
 			);
 		} else if (currentPage === "projects") {
@@ -141,7 +150,7 @@ class App extends Component {
 					projectsHClass={this.state.hClass}
 					projectsPClass={this.state.projectPClass}
 					projectsCaptionClass={this.state.captionClass}
-					changePageFromProjects={this.changePageFromMenu}
+					changePageFromProjects={this.changePage}
 				/>
 			);
 		} else if (currentPage === "search") {
@@ -166,10 +175,11 @@ class App extends Component {
 			return (
 				<div className={this.state.bgClass}>
 					<div className="container-fluid">
+						{/* <LiveDataClass /> */}
 						<Menu
 							menuStateIconClass={this.state.menuIcon}
 							menuStateMClass={this.state.mClass}
-							changePageFromMenu={this.changePageFromMenu}
+							changePageFromMenu={this.changePage}
 							changeTheme={this.changeTheme}
 						/>
 
@@ -221,7 +231,7 @@ class App extends Component {
 // 			return (
 // 				<div id="methodLoader">
 // 					<img
-// 						className="methodLoader--img"
+// 						className="methodLoaderImg"
 // 						src={require("./icons/logo/methodCreamTrans.svg")}
 // 						alt="Method Loader"
 // 					/>
@@ -229,24 +239,10 @@ class App extends Component {
 // 			);
 // 		} else {
 // 			var dataLive = this.state.behanceDataFromAPI;
-// 			for (var i = 0; i < dataLive.projects.length; i++) {
-// 				this.state.designersFromAPI.push(dataLive.projects[i].owners[0]);
-// 				this.state.projectsFromAPI.push(dataLive.projects[i]);
-// 			}
 // 			console.log("Live data loaded...");
 // 			console.log(dataLive);
-// 			console.log("Live designers array...");
-// 			console.log(this.state.designersFromAPI);
-// 			console.log("Live projects array...");
-// 			console.log(this.state.projectsFromAPI);
 // 			return (
 // 				<div>
-// 					<h1
-// 						className={this.props.liveDataStateClass.mainHeadingClass}
-// 						onClick={this.props.changeTheme}
-// 					>
-// 						Method
-// 					</h1>
 // 				</div>
 // 			);
 // 		}

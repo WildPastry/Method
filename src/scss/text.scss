@@ -31,6 +31,19 @@
   font-weight: $bold;
 }
 
+.textThin {
+  font-weight: $light;
+}
+
+.textReg {
+  font-weight: $regular;
+}
+
+.textMargin {
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+
 // MIKES SCSS
 .paraStyle--DesignerName{
   margin-top: 50px;
