@@ -15,8 +15,8 @@ class DesignerProfile extends Component {
 			profileRepeat: "no-repeat"
 		};
 		this.changeDesigner = this.changeDesigner.bind(this);
-		this.changePrev = this.changePrev.bind(this);
-		this.changeNext = this.changeNext.bind(this);
+		// this.changePrev = this.changePrev.bind(this);
+		// this.changeNext = this.changeNext.bind(this);
 		this.changePageFromProfiles = this.changePageFromProfiles.bind(this);
 	}
 
@@ -24,17 +24,34 @@ class DesignerProfile extends Component {
 		this.props.changePageFromProfiles(value);
 	}
 
-	changePrev() {
-		console.log(designerBar);
-		designerBar = designerBar - 1;
-		console.log(designerBar);
-	}
+	// changePrev() {
+	// 	designerBar = designerBar - 1;
+	// 	this.props.changePage();
+	// }
 
-	changeNext() {
-		console.log(designerBar);
-		designerBar = designerBar + 1;
-		console.log(designerBar);
-	}
+	// changePrev() {
+	// 	designerBar = designerBar - 1;
+	// 	var options = {
+	// 		page: "designerProfile",
+	// 		designer: value
+	// 	};
+	// 	this.setState({
+	// 		currentPage: value["page"],
+	// 		currentDesigner: value["designer"]
+	// 	});
+	// }
+
+	// changeNext() {
+	// 	designerBar = designerBar + 1;
+	// 	var options = {
+	// 		page: "designerProfile",
+	// 		designer: value
+	// 	};
+	// 	this.setState({
+	// 		currentPage: value["page"],
+	// 		currentDesigner: value["designer"]
+	// 	});
+	// }
 
 	changeDesigner() {
 		this.setState({
@@ -82,7 +99,7 @@ class DesignerProfile extends Component {
 					{/* <div className="designerProfileButtons">
 						<div
 							className="prevButton textLight"
-							onClick={this.changePrev.bind(this)}
+							onClick={this.changePrev.bind(this, "designerProfile")}
 						>
 							<p>prev</p>
 						</div>

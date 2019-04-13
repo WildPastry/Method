@@ -10,10 +10,10 @@
 
 // BODY
 body {
-	position: relative;
-	background: $grey;
-	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	background: $grey;
+	position: relative;
 }
 
 // MAIN TYPOGRAHPY
@@ -31,8 +31,8 @@ h1 {
 }
 
 a:hover {
-	text-decoration: none;
 	color: $cream;
+	text-decoration: none;
 }
 
 p {
@@ -53,10 +53,10 @@ p {
 
 // MAIN CONTAINER
 .container-fluid {
-	position: relative;
-	max-width: 1200px;
-	margin-top: 40px;
 	margin-bottom: 40px;
+	margin-top: 40px;
+	max-width: 1200px;
+	position: relative;
 }
 
 // COL
@@ -71,23 +71,23 @@ p {
 
 // HEADER & FOOTER
 #methodHeader {
-	width: 100%;
 	height: 3rem;
+	width: 100%;
 }
 
 #methodFooter {
-	position: absolute;
 	bottom: 0;
-	width: 100%;
 	height: 3rem;
 	line-height: 48px;
+	position: absolute;
+	width: 100%;
 }
 
 // MIKE
 #methodLogo {
-	width: 50px;
 	height: auto;
 	margin-top: 12px;
+	width: 50px;
 }
 
 #methodLoader {
@@ -111,8 +111,8 @@ p {
 }
 
 .menu {
-	width: 120px;
 	height: 35px;
+	width: 120px;
 }
 
 .menuDesigner,
@@ -126,23 +126,23 @@ p {
 }
 
 .menuIconPink {
-	fill: $lightPink;
 	fill-rule: evenodd;
+	fill: $lightPink;
 }
 
 .menuIconGreen {
-	fill: $darkGreen;
 	fill-rule: evenodd;
+	fill: $darkGreen;
 }
 
 .menuIconCream {
-	fill: $cream;
 	fill-rule: evenodd;
+	fill: $cream;
 }
 
 .menuIconGrey {
-	fill: $grey;
 	fill-rule: evenodd;
+	fill: $grey;
 }
 
 .totalViews,
@@ -159,13 +159,14 @@ p {
 }
 
 .designerBar svg {
-	width: 30px;
 	height: 25px;
 	margin-right: 5px;
+	width: 30px;
 }
 
-.nextButton,.prevButton{
-cursor: pointer;
+.nextButton,
+.prevButton {
+	cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {
@@ -173,10 +174,10 @@ cursor: pointer;
 	.menuProjects,
 	.menuSearch,
 	.menuTheme {
-		margin: 0px 10px;
 		border: 1px solid $methodBlack;
-		width: 100%;
-		margin: 5px auto;
+		height: 46px;
+		margin: 10px auto;
 		padding: 10px;
+		width: 100%;
 	}
 }
