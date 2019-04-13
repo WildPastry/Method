@@ -86,7 +86,6 @@ opacity: 1;
 }
 .methodModal__top{
 	height: 65%;
-	// background-color: #ccc;
 	width: 100%;
 }
 .methodModal__top--image{
@@ -96,36 +95,29 @@ opacity: 1;
 .methodModal__bottom{
 	height: 35%;
 	margin: 0px;
-	// background-color: #666;
 }
 .methodModal__bannerLeft{
-	// background-color: #666;
 	height: 20%;
 	border-bottom: solid $grey 0.5px;
 }
 .methodModal__bannerRight{
-	// background-color: #555;
 	height: 20%;
 	border-bottom: solid $grey 0.5px;
 	text-align: right;
 }
 .methodModal__bottomLeft{
-	// background-color: #aaa;
 	height: 65%;
 	text-align: center;
 }
 .methodModal__bottomMiddle{
-	// background-color: #bbb;
 	height: 65%;
 	text-align: center;
 }
 .methodModal__bottomRight{
-	// background-color: #ccc;
 	height: 65%;
 	text-align: center;
 }
 .methodModal__bannerBottom{
-	// background-color: #ddd;
 	height: 15%;
 	padding-top: 5px;
 	text-align: center;
@@ -138,6 +130,93 @@ opacity: 1;
 .methodModal__icons--grey{
 	fill: $grey;
 }
+
+// MEDIA QUERY
+@media only screen and (max-width : 500px) {
+
+.closeModal{
+right: 0%;
+margin-right: 20px;
+margin-top: 10px;
+position: absolute;
+opacity: 0.75;
+cursor: pointer;
+}
+.closeModal:hover{
+opacity: 1;
+}
+.methodModal {
+	width: 340px;
+	height: 500px;
+	margin-left: -170px;
+	margin-top: -250px;
+}
+.methodModal__top{
+	height: 60%;
+	width: 100%;
+}
+.methodModal__top--image{
+	height: 100%;
+	width: 100%;
+}
+.methodModal__bottom{
+	height: 40%;
+	margin: 0px;
+}
+.methodModal__bannerLeft{
+	height: 20%;
+	border-bottom: solid $grey 0.5px;
+}
+.methodModal__bannerLeft--text{
+	font-size: .85em
+}
+.methodModal__bannerRight{
+	height: 20%;
+	border-bottom: solid $grey 0.5px;
+	text-align: right;
+}
+.methodModal__bannerRight--text{
+	font-size: .85em
+}
+.methodModal__bottomLeft{
+	height: 65%;
+	text-align: center;
+}
+.methodModal__bottomLeft--text{
+	font-size: 1em;
+}
+.methodModal__bottomMiddle{
+	height: 65%;
+	text-align: center;
+}
+.methodModal__bottomMiddle--text{
+	font-size: 1em;
+}
+.methodModal__bottomRight{
+	height: 65%;
+	text-align: center;
+}
+.methodModal__bottomRight--text{
+	font-size: 1em;
+}
+.methodModal__bannerBottom{
+	height: 15%;
+	padding-top: 5px;
+	text-align: center;
+}
+.methodModal__bannerBottom--text{
+	font-size: .8em
+}
+.methodModal__icons{
+	height: 50%;
+	margin-bottom: 12px;
+	margin-top: 15px;
+}
+.methodModal__icons--grey{
+	fill: $grey;
+}
+}
+
 
 
 // DANIEL DESIGNER PROFILE
