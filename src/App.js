@@ -6,6 +6,7 @@ import Designers from "./components/designers/Designers";
 import DesignerProfile from "./components/designers/DesignerProfile";
 import Projects from "./components/projects/Projects";
 import "./scss/main.scss";
+import { CSSTransitionGroup } from "react-transition-group";
 // import axios from "axios";
 // import configData from "./data/config.json";
 import behanceDataFromJSON from "./data/behanceData";
@@ -180,13 +181,20 @@ class App extends Component {
 				<div className={this.state.bgClass}>
 					<div className="container-fluid">
 						{/* <LiveDataClass /> */}
-						<Menu
-							menuStateIconClass={this.state.menuIcon}
-							menuStateMClass={this.state.mClass}
-							changePageFromMenu={this.changePage}
-							changeTheme={this.changeTheme}
-						/>
-
+						<CSSTransitionGroup
+							transitionName="menuLoad"
+							transitionAppear={true}
+							transitionAppearTimeout={500}
+							transitionEnter={false}
+							transitionLeave={false}
+						>
+							<Menu
+								menuStateIconClass={this.state.menuIcon}
+								menuStateMClass={this.state.mClass}
+								changePageFromMenu={this.changePage}
+								changeTheme={this.changeTheme}
+							/>
+						</CSSTransitionGroup>
 						{/* CURRENT PAGE*/}
 						<div className="row">{display}</div>
 						<div className="altDisplay">{altDisplay}</div>
@@ -196,6 +204,47 @@ class App extends Component {
 		}
 	}
 }
+
+// class TodoList extends React.Component {
+// 	constructor(props) {
+// 		super(props);
+// 		this.state = { items: ["hello", "world", "click", "me"] };
+// 		this.handleAdd = this.handleAdd.bind(this);
+// 	}
+
+// 	handleAdd() {
+// 		const newItems = this.state.items.concat([prompt("Enter some text")]);
+// 		this.setState({ items: newItems });
+// 	}
+
+// 	handleRemove(i) {
+// 		let newItems = this.state.items.slice();
+// 		newItems.splice(i, 1);
+// 		this.setState({ items: newItems });
+// 	}
+
+// 	render() {
+// 		const items = this.state.items.map((item, i) => (
+// 			<div key={item} onClick={() => this.handleRemove(i)}>
+// 				{item}
+// 			</div>
+// 		));
+
+// 		return (
+// 			<div>
+// 				<CSSTransitionGroup
+// 					transitionName="methodLoad"
+// 					transitionAppear={true}
+// 					transitionAppearTimeout={500}
+// 					transitionEnter={false}
+// 					transitionLeave={false}
+// 				>
+// 					<h1>Fading at Initial Mount</h1>
+// 				</CSSTransitionGroup>
+// 			</div>
+// 		);
+// 	}
+// }
 
 // class LiveDataClass extends React.Component {
 // 	constructor(props) {
