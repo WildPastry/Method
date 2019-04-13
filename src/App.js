@@ -142,9 +142,9 @@ class App extends Component {
 				</div>
 			);
 		} else {
-			var dataLive = this.state.behanceData;
-			console.log("Live data loaded...");
-			console.log(dataLive);
+			// var dataLive = this.state.behanceData;
+			// console.log("Live data loaded...");
+			// console.log(dataLive);
 
 			var currentPage = this.state.currentPage;
 			let altDisplay;
@@ -177,7 +177,7 @@ class App extends Component {
 			} else if (currentPage === "projects") {
 				display = (
 					<Projects
-						projectsData={this.state}
+						projectsData={this.state.behanceData}
 						projectsCardClass={this.state.projectCardClass}
 						projectsHClass={this.state.hClass}
 						projectsPClass={this.state.projectPClass}

@@ -14,11 +14,10 @@ class Projects extends Component {
 	}
 
 	render() {
-		var projectDetails = this.props.projectsData.behanceData;
-
-		return projectDetails.map(projectDetailsMapped => (
+		var projectDetails = this.props.projectsData;
+		return projectDetails.projects.map(projectDetailsMapped => (
 			<div
-				key={projectDetailsMapped.user.id}
+				key={projectDetailsMapped.id}
 				onClick={this.changePageFromProjects.bind(this, "modal")}
 				className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
@@ -29,34 +28,29 @@ class Projects extends Component {
 					transitionEnter={false}
 					transitionLeave={false}
 				>
-					{projectDetailsMapped["projects"].map(singleProject => (
-						<div
-							key={singleProject.id}
-							className={this.props.projectsCardClass}
-						>
-							<div className="cardProject--Img">
-								<img
-									className="designerProject--Img"
-									src={singleProject.covers["max_808"]}
-									onError={e => {
-										e.target.src = FallbackImage;
-									}}
-									alt="Behance Project"
-								/>
-							</div>
+					<div className={this.props.projectsCardClass}>
+						<div className="cardProject--Img">
+							<img
+								className="designerProject--Img"
+								src={projectDetailsMapped.covers["max_808"]}
+								onError={e => {
+									e.target.src = FallbackImage;
+								}}
+								alt="Behance Project"
+							/>
+						</div>
 
-							<div className="wrapperProject--Details">
-								<div className="wrapper paraStyle--DesignerProject">
-									<p className={this.props.projectsPClass}>
-										{singleProject.name}
-									</p>
-									<p className={this.props.projectsCaptionClass}>
-										Views: {singleProject.stats.views}
-									</p>
-								</div>
+						<div className="wrapperProject--Details">
+							<div className="wrapper paraStyle--DesignerProject">
+								<p className={this.props.projectsPClass}>
+									{projectDetailsMapped.name}
+								</p>
+								<p className={this.props.projectsCaptionClass}>
+									Views: {projectDetailsMapped.stats.views}
+								</p>
 							</div>
 						</div>
-					))}
+					</div>
 				</CSSTransitionGroup>
 			</div>
 		));

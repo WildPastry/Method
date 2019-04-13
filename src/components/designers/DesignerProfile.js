@@ -29,30 +29,32 @@ class DesignerProfile extends Component {
 	}
 
 	render() {
-		var designerProfileDetails = this.props.designerProfileData.behanceData;
-		if (this.state.currentDesignerProfile === "washe") {
+		var designerProfileDetails = this.props.designerProfileData.behanceData
+			.projects;
+
+		if (this.state.currentDesignerProfile === "edmond072") {
 			designerBar = 0;
-		} else if (this.state.currentDesignerProfile === "bogdan_aksonenko") {
+		} else if (this.state.currentDesignerProfile === "thomasenjurgen") {
 			designerBar = 1;
-		} else if (this.state.currentDesignerProfile === "LenaLaBallena") {
+		} else if (this.state.currentDesignerProfile === "PerKasch") {
 			designerBar = 2;
-		} else if (this.state.currentDesignerProfile === "mateuszkozlowski") {
+		} else if (this.state.currentDesignerProfile === "Ooli_Mos") {
 			designerBar = 3;
-		} else if (this.state.currentDesignerProfile === "h3l") {
+		} else if (this.state.currentDesignerProfile === "timotion") {
 			designerBar = 4;
-		} else if (this.state.currentDesignerProfile === "ahoyillustration") {
+		} else if (this.state.currentDesignerProfile === "joe0035") {
 			designerBar = 5;
-		} else if (this.state.currentDesignerProfile === "mishapriem") {
+		} else if (this.state.currentDesignerProfile === "impekable") {
 			designerBar = 6;
-		} else if (this.state.currentDesignerProfile === "godsinlovea3ef") {
+		} else if (this.state.currentDesignerProfile === "studio_kim") {
 			designerBar = 7;
-		} else if (this.state.currentDesignerProfile === "angelinaout") {
+		} else if (this.state.currentDesignerProfile === "estudiopegrande") {
 			designerBar = 8;
-		} else if (this.state.currentDesignerProfile === "nfiasche89") {
+		} else if (this.state.currentDesignerProfile === "balsamstudio") {
 			designerBar = 9;
-		} else if (this.state.currentDesignerProfile === "surrealcyborg") {
+		} else if (this.state.currentDesignerProfile === "HybridDesignSF") {
 			designerBar = 10;
-		} else if (this.state.currentDesignerProfile === "AndreiPokrovskii") {
+		} else if (this.state.currentDesignerProfile === "LuminousDesignGroup") {
 			designerBar = 11;
 		}
 
@@ -71,7 +73,7 @@ class DesignerProfile extends Component {
 								style={{
 									backgroundImage:
 										"url(" +
-										designerProfileDetails[designerBar].user.images[276] +
+										designerProfileDetails[designerBar].owners[0].images[276] +
 										")",
 									backgroundPosition: "center",
 									backgroundSize: "cover",
@@ -83,12 +85,12 @@ class DesignerProfile extends Component {
 
 						<div className="wrapperColBig col-xs-12 col-sm-6 col-md-6 col-lg-6">
 							<h4 className={this.props.designerProfileHClass}>
-								{designerProfileDetails[designerBar].user.username}
+								{designerProfileDetails[designerBar].owners[0].username}
 							</h4>
 							<p className={this.props.designerProfilePClassMargin}>
-								{designerProfileDetails[designerBar].user.fields[0]} |{" "}
-								{designerProfileDetails[designerBar].user.fields[1]} |{" "}
-								{designerProfileDetails[designerBar].user.fields[2]}
+								{designerProfileDetails[designerBar].owners[0].fields[0]} |{" "}
+								{designerProfileDetails[designerBar].owners[0].fields[1]} |{" "}
+								{designerProfileDetails[designerBar].owners[0].fields[2]}
 							</p>
 
 							<div className="totalViews">
@@ -112,7 +114,7 @@ class DesignerProfile extends Component {
 								</svg>
 								<p className={this.props.designerProfilePClassThin}>
 									Total Project Views:{" "}
-									{designerProfileDetails[designerBar].user.stats.views}
+									{designerProfileDetails[designerBar].owners[0].stats.views}
 								</p>
 							</div>
 
@@ -138,7 +140,10 @@ class DesignerProfile extends Component {
 								</svg>
 								<p className={this.props.designerProfilePClassThin}>
 									Total Project Appreciations:{" "}
-									{designerProfileDetails[designerBar].user.stats.appreciations}
+									{
+										designerProfileDetails[designerBar].owners[0].stats
+											.appreciations
+									}
 								</p>
 							</div>
 
@@ -161,33 +166,67 @@ class DesignerProfile extends Component {
 								</svg>
 								<p className={this.props.designerProfilePClassThin}>
 									Followers:{" "}
-									{designerProfileDetails[designerBar].user.stats.followers}
+									{
+										designerProfileDetails[designerBar].owners[0].stats
+											.followers
+									}
 								</p>
 							</div>
 						</div>
 					</div>
 
 					<div className="row projectImageRow">
-						{designerProfileDetails[designerBar].projects.map(
-							designerProfileImages => (
-								<div
-									key={designerProfileImages.id}
-									className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
-								>
-									{" "}
-									<img
-										onClick={this.changePageFromProfiles.bind(this, "modal")}
-										className="projectImage"
-										src={designerProfileImages.covers["max_808"]}
-										onError={e => {
-											e.target.src = FallbackImage;
-										}}
-										alt="Project Thumbnail"
-									/>{" "}
-								</div>
-							)
-						)}
-						;
+						<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<img
+								onClick={this.changePageFromProfiles.bind(this, "modal")}
+								className="projectImage"
+								src={designerProfileDetails[designerBar].covers["max_808"]}
+								onError={e => {
+									e.target.src = FallbackImage;
+								}}
+								alt="Project Thumbnail"
+							/>
+						</div>
+						<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<img
+								onClick={this.changePageFromProfiles.bind(this, "modal")}
+								className="projectImage"
+								src={FallbackImage}
+								alt="Project Thumbnail"
+							/>
+						</div>
+						<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<img
+								onClick={this.changePageFromProfiles.bind(this, "modal")}
+								className="projectImage"
+								src={FallbackImage}
+								alt="Project Thumbnail"
+							/>
+						</div>
+						<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<img
+								onClick={this.changePageFromProfiles.bind(this, "modal")}
+								className="projectImage"
+								src={FallbackImage}
+								alt="Project Thumbnail"
+							/>
+						</div>
+						<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<img
+								onClick={this.changePageFromProfiles.bind(this, "modal")}
+								className="projectImage"
+								src={FallbackImage}
+								alt="Project Thumbnail"
+							/>
+						</div>
+						<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
+							<img
+								onClick={this.changePageFromProfiles.bind(this, "modal")}
+								className="projectImage"
+								src={FallbackImage}
+								alt="Project Thumbnail"
+							/>
+						</div>
 					</div>
 				</CSSTransitionGroup>
 			</React.Fragment>

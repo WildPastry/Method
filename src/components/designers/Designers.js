@@ -22,7 +22,6 @@ class Designers extends Component {
 	}
 
 	render() {
-		console.log(this.props.designersData.projects)
 		return this.props.designersData.projects.map(designers => (
 			<div
 				key={designers.id}
@@ -61,8 +60,7 @@ class Designers extends Component {
 						<div className="wrapperCard">
 							<div
 								style={{
-									backgroundImage:
-										"url(" + designers.covers.max_808 + ")",
+									backgroundImage: "url(" + designers.covers.max_808 + ")",
 									backgroundPosition: "center",
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat"
