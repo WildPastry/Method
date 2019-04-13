@@ -22,9 +22,10 @@ class Designers extends Component {
 	}
 
 	render() {
-		return this.props.designersData.map(designers => (
+		console.log(this.props.designersData.projects)
+		return this.props.designersData.projects.map(designers => (
 			<div
-				key={designers.user.id}
+				key={designers.id}
 				className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
 				<CSSTransitionGroup
@@ -38,7 +39,7 @@ class Designers extends Component {
 						className={this.props.designersCardClass}
 						onClick={this.changePageFromDesigners.bind(
 							this,
-							designers.user.username
+							designers.owners[0].username
 						)}
 					>
 						<div className="wrapperHexagon">
@@ -47,7 +48,7 @@ class Designers extends Component {
 									<div
 										style={{
 											backgroundImage:
-												"url(" + designers.user.images[276] + ")",
+												"url(" + designers.owners[0].images[276] + ")",
 											backgroundPosition: "center",
 											backgroundSize: "cover",
 											backgroundRepeat: "no-repeat"
@@ -61,7 +62,7 @@ class Designers extends Component {
 							<div
 								style={{
 									backgroundImage:
-										"url(" + designers.projects[6].covers.max_808 + ")",
+										"url(" + designers.covers.max_808 + ")",
 									backgroundPosition: "center",
 									backgroundSize: "cover",
 									backgroundRepeat: "no-repeat"
@@ -71,16 +72,16 @@ class Designers extends Component {
 							<div className="wrapperDesignerDetails">
 								<div className="paraStyle--DesignerName">
 									<h5 className={this.props.designersHClass}>
-										{designers.user.username}
+										{designers.owners[0].username}
 									</h5>
 								</div>
 								<div className="paraStyle--DesignerDiscipline">
 									<p className={this.props.designersCaptionClass}>
-										{designers.user.fields[0] +
+										{designers.owners[0].fields[0] +
 											" | " +
-											designers.user.fields[1] +
+											designers.owners[0].fields[1] +
 											" | " +
-											designers.user.fields[2]}
+											designers.owners[0].fields[2]}
 									</p>
 								</div>
 							</div>

@@ -15,43 +15,12 @@ class DesignerProfile extends Component {
 			profileRepeat: "no-repeat"
 		};
 		this.changeDesigner = this.changeDesigner.bind(this);
-		// this.changePrev = this.changePrev.bind(this);
-		// this.changeNext = this.changeNext.bind(this);
 		this.changePageFromProfiles = this.changePageFromProfiles.bind(this);
 	}
 
 	changePageFromProfiles(value) {
 		this.props.changePageFromProfiles(value);
 	}
-
-	// changePrev() {
-	// 	designerBar = designerBar - 1;
-	// 	this.props.changePage();
-	// }
-
-	// changePrev() {
-	// 	designerBar = designerBar - 1;
-	// 	var options = {
-	// 		page: "designerProfile",
-	// 		designer: value
-	// 	};
-	// 	this.setState({
-	// 		currentPage: value["page"],
-	// 		currentDesigner: value["designer"]
-	// 	});
-	// }
-
-	// changeNext() {
-	// 	designerBar = designerBar + 1;
-	// 	var options = {
-	// 		page: "designerProfile",
-	// 		designer: value
-	// 	};
-	// 	this.setState({
-	// 		currentPage: value["page"],
-	// 		currentDesigner: value["designer"]
-	// 	});
-	// }
 
 	changeDesigner() {
 		this.setState({
@@ -96,21 +65,6 @@ class DesignerProfile extends Component {
 					transitionEnter={false}
 					transitionLeave={false}
 				>
-					{/* <div className="designerProfileButtons">
-						<div
-							className="prevButton textLight"
-							onClick={this.changePrev.bind(this, "designerProfile")}
-						>
-							<p>prev</p>
-						</div>
-						<div
-							className="prevButton textLight"
-							onClick={this.changeNext.bind(this)}
-						>
-							<p>next</p>
-						</div>
-					</div> */}
-
 					<div className={this.props.designerProfileBarClass}>
 						<div className="imageBox col-xs-12 col-sm-6 col-md-6 col-lg-6">
 							<div

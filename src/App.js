@@ -9,8 +9,6 @@ import "./scss/main.scss";
 import { CSSTransitionGroup } from "react-transition-group";
 import axios from "axios";
 import configData from "./data/config.json";
-import behanceDataFromJSON from "./data/behanceData";
-console.log("Data from JSON loaded...");
 
 const key = configData.OAUTH;
 const cors = configData.CORS;
@@ -25,7 +23,7 @@ class App extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			loaded: false,
+			isLoaded: false,
 			light: false,
 			behanceData: [],
 			designers: [],
@@ -111,65 +109,31 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		this.setState({
-			behanceData: behanceDataFromJSON,
-			loaded: true
-		});
+		axios
+			.get(API)
+			.then(res => {
+				const behanceData = res.data;
+				this.setState({
+					isLoaded: true,
+					behanceData
+				});
+			})
+			.catch(error => {
+				if (error.res) {
+				} else if (error.request) {
+					console.log(error.request);
+				} else {
+					console.log("Error", error.message);
+				}
+				console.log(error.config);
+			});
 	}
 
 	render() {
-		// console.log(this.state.behanceData)
-		var currentPage = this.state.currentPage;
-		let altDisplay;
-		let display;
-
-		if (currentPage === "designers") {
-			display = (
-				<Designers
-					designersData={this.state.behanceData}
-					designersCardClass={this.state.cardClass}
-					designersHClass={this.state.hClass}
-					designersCaptionClass={this.state.designersCaptionClass}
-					changePageFromDesigners={this.changePageAndDesigner}
-				/>
-			);
-		} else if (currentPage === "designerProfile") {
-			display = "";
-			altDisplay = (
-				<DesignerProfile
-					designerProfileData={this.state}
-					designerProfileIconClass={this.state.menuIconProfile}
-					designerProfilePClass={this.state.pClass}
-					designerProfilePClassThin={this.state.pClassThin}
-					designerProfilePClassMargin={this.state.pClassMargin}
-					designerProfileHClass={this.state.hClass}
-					designerProfileBarClass={this.state.designerBarClass}
-					changePageFromProfiles={this.changePage}
-				/>
-			);
-		} else if (currentPage === "projects") {
-			display = (
-				<Projects
-					projectsData={this.state}
-					projectsCardClass={this.state.projectCardClass}
-					projectsHClass={this.state.hClass}
-					projectsPClass={this.state.projectPClass}
-					projectsCaptionClass={this.state.captionClass}
-					changePageFromProjects={this.changePage}
-				/>
-			);
-		} else if (currentPage === "search") {
-			display = "";
-			altDisplay = <Search searchState={this.state} />;
-		} else if (currentPage === "modal") {
-			display = "";
-			altDisplay = <Modal modalState={this.state} />;
-		}
-
-		if (this.state.loaded === false) {
+		var { isLoaded } = this.state;
+		if (!isLoaded) {
 			return (
 				<div id="methodLoader">
-				<div className="circle"></div>
 					<img
 						className="methodLoaderImg"
 						src={require("./icons/logo/methodCreamTrans.svg")}
@@ -178,88 +142,94 @@ class App extends Component {
 				</div>
 			);
 		} else {
-			return (
-				<div className={this.state.bgClass}>
-					<div className="container-fluid">
-						{/* <LiveDataClass /> */}
-						<CSSTransitionGroup
-							transitionName="menuLoad"
-							transitionAppear={true}
-							transitionAppearTimeout={500}
-							transitionEnter={false}
-							transitionLeave={false}
-						>
-							<Menu
-								menuStateIconClass={this.state.menuIcon}
-								menuStateMClass={this.state.mClass}
-								changePageFromMenu={this.changePage}
-								changeTheme={this.changeTheme}
-							/>
-						</CSSTransitionGroup>
-						{/* CURRENT PAGE*/}
-						<div className="row">{display}</div>
-						<div className="altDisplay">{altDisplay}</div>
+			var dataLive = this.state.behanceData;
+			console.log("Live data loaded...");
+			console.log(dataLive);
+
+			var currentPage = this.state.currentPage;
+			let altDisplay;
+			let display;
+
+			if (currentPage === "designers") {
+				display = (
+					<Designers
+						designersData={this.state.behanceData}
+						designersCardClass={this.state.cardClass}
+						designersHClass={this.state.hClass}
+						designersCaptionClass={this.state.designersCaptionClass}
+						changePageFromDesigners={this.changePageAndDesigner}
+					/>
+				);
+			} else if (currentPage === "designerProfile") {
+				display = "";
+				altDisplay = (
+					<DesignerProfile
+						designerProfileData={this.state}
+						designerProfileIconClass={this.state.menuIconProfile}
+						designerProfilePClass={this.state.pClass}
+						designerProfilePClassThin={this.state.pClassThin}
+						designerProfilePClassMargin={this.state.pClassMargin}
+						designerProfileHClass={this.state.hClass}
+						designerProfileBarClass={this.state.designerBarClass}
+						changePageFromProfiles={this.changePage}
+					/>
+				);
+			} else if (currentPage === "projects") {
+				display = (
+					<Projects
+						projectsData={this.state}
+						projectsCardClass={this.state.projectCardClass}
+						projectsHClass={this.state.hClass}
+						projectsPClass={this.state.projectPClass}
+						projectsCaptionClass={this.state.captionClass}
+						changePageFromProjects={this.changePage}
+					/>
+				);
+			} else if (currentPage === "search") {
+				display = "";
+				altDisplay = <Search searchState={this.state} />;
+			} else if (currentPage === "modal") {
+				display = "";
+				altDisplay = <Modal modalState={this.state} />;
+			}
+
+			if (this.state.loaded === false) {
+				return (
+					<div id="methodLoader">
+						<div className="circle" />
+						<img
+							className="methodLoaderImg"
+							src={require("./icons/logo/methodCreamTrans.svg")}
+							alt="Method Loader"
+						/>
 					</div>
-				</div>
-			);
+				);
+			} else {
+				return (
+					<div className={this.state.bgClass}>
+						<div className="container-fluid">
+							<CSSTransitionGroup
+								transitionName="menuLoad"
+								transitionAppear={true}
+								transitionAppearTimeout={500}
+								transitionEnter={false}
+								transitionLeave={false}
+							>
+								<Menu
+									menuStateIconClass={this.state.menuIcon}
+									menuStateMClass={this.state.mClass}
+									changePageFromMenu={this.changePage}
+									changeTheme={this.changeTheme}
+								/>
+							</CSSTransitionGroup>
+							<div className="row">{display}</div>
+							<div className="altDisplay">{altDisplay}</div>
+						</div>
+					</div>
+				);
+			}
 		}
 	}
 }
-
-// class LiveDataClass extends React.Component {
-// 	constructor(props) {
-// 		super(props);
-// 		this.state = {
-// 			behanceDataFromAPI: [],
-// 			designersFromAPI: [],
-// 			projectsFromAPI: [],
-// 			isLoaded: false
-// 		};
-// 	}
-
-// 	componentDidMount() {
-// 		axios
-// 			.get(API)
-// 			.then(res => {
-// 				const behanceDataFromAPI = res.data;
-// 				this.setState({
-// 					isLoaded: true,
-// 					behanceDataFromAPI
-// 				});
-// 			})
-// 			.catch(error => {
-// 				if (error.res) {
-// 				} else if (error.request) {
-// 					console.log(error.request);
-// 				} else {
-// 					console.log("Error", error.message);
-// 				}
-// 				console.log(error.config);
-// 			});
-// 	}
-
-// 	render() {
-// 		var { isLoaded } = this.state;
-// 		if (!isLoaded) {
-// 			return (
-// 				<div id="methodLoader">
-// 					<img
-// 						className="methodLoaderImg"
-// 						src={require("./icons/logo/methodCreamTrans.svg")}
-// 						alt="Method Loader"
-// 					/>
-// 				</div>
-// 			);
-// 		} else {
-// 			var dataLive = this.state.behanceDataFromAPI;
-// 			console.log("Live data loaded...");
-// 			console.log(dataLive);
-// 			return (
-// 				<div>
-// 				</div>
-// 			);
-// 		}
-// 	}
-// }
 
 export default App;
