@@ -30,6 +30,7 @@ class App extends Component {
 			designers: [],
 			projects: [],
 			menuIcon: "menuIconPink",
+			menuIconProfile: "menuIconGrey",
 			currentPage: "designers",
 			currentDesigner: "",
 			mainHeadingClass: "textLightPink text-center",
@@ -70,6 +71,7 @@ class App extends Component {
 			this.setState({
 				light: true,
 				menuIcon: "menuIconGreen",
+				menuIconProfile: "menuIconCream",
 				mainHeadingClass: "textDarkGreen text-center",
 				headingClass: "textDark text-center",
 				cardClass: "cardDesigner bgDarkGreen",
@@ -89,6 +91,7 @@ class App extends Component {
 			this.setState({
 				light: false,
 				menuIcon: "menuIconPink",
+				menuIconProfile: "menuIconGrey",
 				mainHeadingClass: "textLightPink text-center",
 				headingClass: "textLight text-center",
 				cardClass: "cardDesigner bgLightPink",
@@ -134,6 +137,7 @@ class App extends Component {
 			altDisplay = (
 				<DesignerProfile
 					designerProfileData={this.state}
+					designerProfileIconClass={this.state.menuIconProfile}
 					designerProfilePClass={this.state.pClass}
 					designerProfilePClassThin={this.state.pClassThin}
 					designerProfilePClassMargin={this.state.pClassMargin}

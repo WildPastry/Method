@@ -11,6 +11,10 @@
 	padding: 15px;
 }
 
+.wrapperColBig {
+	padding: 30px 30px 30px 50px;
+}
+
 .wrapperLogo {
 	width: 30px;
 	margin: 0 auto;
@@ -98,7 +102,7 @@
 }
 
 .imageBox {
-	padding-left: 0px;
+	padding: 0px;
 }
 
 .designerBar__image {
@@ -125,6 +129,18 @@
 }
 
 // MIKES MEDIA
+@media screen and (max-width: 800px) {
+	.wrapperColBig {
+		padding: 15px;
+	}
+}
+
+@media screen and (max-width: 575px) {
+	.designerBar__image {
+		height: 250px;
+	}
+}
+
 @media screen and (max-width: 500px) {
 	.wrapperMenu {
 		height: auto;

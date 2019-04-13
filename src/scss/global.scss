@@ -127,10 +127,41 @@ p {
 
 .menuIconPink {
 	fill: $lightPink;
+	fill-rule: evenodd;
 }
 
 .menuIconGreen {
 	fill: $darkGreen;
+	fill-rule: evenodd;
+}
+
+.menuIconCream {
+	fill: $cream;
+	fill-rule: evenodd;
+}
+
+.menuIconGrey {
+	fill: $grey;
+	fill-rule: evenodd;
+}
+
+.totalViews,
+.totalAppreciations {
+	display: flex;
+	flex-direction: row;
+	margin: 20px auto;
+}
+
+.totalFollowers {
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+}
+
+.designerBar svg {
+	width: 30px;
+	height: 25px;
+	margin-right: 5px;
 }
 
 // MIKE
