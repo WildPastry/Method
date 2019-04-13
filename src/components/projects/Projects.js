@@ -12,18 +12,24 @@ class Projects extends Component {
 	}
 
 	render() {
-		var projectDetails = this.props.projectsState.behanceData;
 
+		// <div>
+		// 	<input 
+		// 	placeholder = "search"
+		// 	/>
+		// </div>
+
+		var projectDetails = this.props.projectsState.behanceData;
 		return projectDetails.map(projectDetailsMapped => (
-			<div
+			<div 
 				key={projectDetailsMapped.user.id}
 				onClick={this.changePageFromProjects.bind(this, "modal")}
-				className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
+				className=" col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
 				{projectDetailsMapped["projects"].map(singleProject => (
 					<div
 						key={singleProject.id}
-						className={this.props.projectsState.projectCardClass}
+						className= {this.props.projectsState.projectCardClass}
 					>
 						<div className="cardProject--Img">
 							<img

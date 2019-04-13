@@ -62,6 +62,8 @@ class App extends Component {
 		});
 	}
 
+	//searchBar
+
 	changeTheme() {
 		if (this.state.light === false) {
 			htmlBody.className = "bgLight";
@@ -110,6 +112,8 @@ class App extends Component {
 	render() {
 		var currentPage = this.state.currentPage;
 		let display;
+		let altDisplay;
+		let projectDisplay;
 
 		if (currentPage === "designers") {
 			display = (
@@ -118,7 +122,8 @@ class App extends Component {
 		} else if (currentPage === "designerProfile") {
 			display = <DesignerProfile designerProfileState={this.state} />;
 		} else if (currentPage === "projects") {
-			display = (
+			display = "";
+			projectDisplay = (
 				<Projects projectsState={this.state} changePage={this.changePage} />
 			);
 		} else if (currentPage === "search") {
@@ -154,6 +159,10 @@ class App extends Component {
 
 						{/* CURRENT PAGE*/}
 						<div className="row">{display}</div>
+						{/* <div className= "searchBar">{searchBar}</div> */}
+						<div className="altDisplay">{altDisplay}</div>
+						<div className="row projectDisplay">{projectDisplay}</div>
+
 					</div>
 				</div>
 			);
