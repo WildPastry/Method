@@ -7,17 +7,17 @@ import DesignerProfile from "./components/designers/DesignerProfile";
 import Projects from "./components/projects/Projects";
 import "./scss/main.scss";
 import { CSSTransitionGroup } from "react-transition-group";
-import axios from "axios";
-import configData from "./data/config.json";
+// import axios from "axios";
+// import configData from "./data/config.json";
 import behanceDataFromJSON from "./data/behanceData";
 console.log("Data from JSON loaded...");
 
-const key = configData.OAUTH;
-const cors = configData.CORS;
-const behance = configData.BEHANCE;
-const scope = configData.SCOPE;
+// const key = configData.OAUTH;
+// const cors = configData.CORS;
+// const behance = configData.BEHANCE;
+// const scope = configData.SCOPE;
 
-const API = cors + behance + key + scope;
+// const API = cors + behance + key + scope;
 
 var htmlBody = document.getElementById("bg");
 
@@ -150,7 +150,7 @@ class App extends Component {
 		} else if (currentPage === "projects") {
 			display = (
 				<Projects
-					projectsData={this.state}
+					projectsData={this.state.behanceData}
 					projectsCardClass={this.state.projectCardClass}
 					projectsHClass={this.state.hClass}
 					projectsPClass={this.state.projectPClass}
@@ -163,13 +163,18 @@ class App extends Component {
 			altDisplay = <Search searchState={this.state} />;
 		} else if (currentPage === "modal") {
 			display = "";
-			altDisplay = <Modal modalState={this.state} />;
+			altDisplay = (
+				<Modal
+					modalState={this.state.behanceData}
+					changePageFromModal={this.changePage}
+				/>
+			);
 		}
 
 		if (this.state.loaded === false) {
 			return (
 				<div id="methodLoader">
-				<div className="circle"></div>
+					<div className="circle" />
 					<img
 						className="methodLoaderImg"
 						src={require("./icons/logo/methodCreamTrans.svg")}

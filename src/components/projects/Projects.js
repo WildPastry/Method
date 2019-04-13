@@ -14,7 +14,7 @@ class Projects extends Component {
 	}
 
 	render() {
-		var projectDetails = this.props.projectsData.behanceData;
+		var projectDetails = this.props.projectsData;
 
 		return projectDetails.map(projectDetailsMapped => (
 			<div
