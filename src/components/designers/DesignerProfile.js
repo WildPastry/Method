@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import FallbackImage from "../../images/fallback.jpg";
 
 var designerBar;
 
@@ -6,11 +7,9 @@ class DesignerProfile extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			currentDesignerProfile: this.props.designerProfileState["currentDesigner"]
+			currentDesignerProfile: this.props.designerProfileData["currentDesigner"]
 		};
 		this.changeDesigner = this.changeDesigner.bind(this);
-		console.log("THE CURRENT DESIGNER IS");
-		console.log(this.state.currentDesignerProfile);
 	}
 
 	changeDesigner() {
@@ -20,6 +19,7 @@ class DesignerProfile extends Component {
 	}
 
 	render() {
+		var designerProfileDetails = this.props.designerProfileData.behanceData;
 		if (this.state.currentDesignerProfile === "washe") {
 			designerBar = 0;
 		} else if (this.state.currentDesignerProfile === "bogdan_aksonenko") {
@@ -48,82 +48,62 @@ class DesignerProfile extends Component {
 
 		return (
 			<div>
-				<div className="row designerBar bgLightPink">
+				<div className={this.props.designerProfileBarClass}>
 					<div className="col-2 imageBox">
 						<img
 							className="designerBar__image"
-							src={
-								this.props.designerProfileState.behanceData[designerBar].user
-									.images[276]
-							}
-							alt="loading...."
+							src={designerProfileDetails[designerBar].user.images[276]}
+							alt="Profile Thumbnail"
 						/>
 					</div>
 
-					<div className="col-10 designerBar__info">
-						<h5 className="textBold textDark designerBar__info--user">
-							{
-								this.props.designerProfileState.behanceData[designerBar].user
-									.username
-							}
+					<div className="wrapperCol col-10">
+						<h5 className={this.props.designerProfileHClass}>
+							{designerProfileDetails[designerBar].user.username}
 						</h5>
-						<p className="textDark">
+						<p className={this.props.designerProfilePClass}>
 							Total Project Views:{" "}
-							{
-								this.props.designerProfileState.behanceData[designerBar].user
-									.stats.views
-							}
+							{designerProfileDetails[designerBar].user.stats.views}
 						</p>
-						<p className="textDark">
+						<p className={this.props.designerProfilePClass}>
 							Total Project Appreciations:{" "}
 							{
-								this.props.designerProfileState.behanceData[designerBar].user
-									.stats.appreciations
+								designerProfileDetails[designerBar].user.stats
+									.appreciations
 							}
 						</p>
-						<p className="textDark">
+						<p className={this.props.designerProfilePClass}>
 							Followers:{" "}
-							{
-								this.props.designerProfileState.behanceData[designerBar].user
-									.stats.followers
-							}
+							{designerProfileDetails[designerBar].user.stats.followers}
 						</p>
-						<p className="textDark">
+						<p className={this.props.designerProfilePClass}>
 							Fields:{" "}
-							{
-								this.props.designerProfileState.behanceData[designerBar].user
-									.fields[0]
-							}{" "}
-							|{" "}
-							{
-								this.props.designerProfileState.behanceData[designerBar].user
-									.fields[1]
-							}{" "}
-							|{" "}
-							{
-								this.props.designerProfileState.behanceData[designerBar].user
-									.fields[2]
-							}
+							{designerProfileDetails[designerBar].user.fields[0]} |{" "}
+							{designerProfileDetails[designerBar].user.fields[1]} |{" "}
+							{designerProfileDetails[designerBar].user.fields[2]}
 						</p>
 					</div>
 				</div>
 
 				<div className="row projectImageRow">
-					{this.props.designerProfileState.behanceData[
-						designerBar
-					].projects.map(designerProfileImages => (
-						<div
-							key={designerProfileImages.id}
-							className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
-						>
-							{" "}
-							<img
-								className="projectImage"
-								src={designerProfileImages.covers[404]}
-								alt="Thumbnail oading..."
-							/>{" "}
-						</div>
-					))}
+					{designerProfileDetails[designerBar].projects.map(
+						designerProfileImages => (
+							<div
+								key={designerProfileImages.id}
+								className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
+							>
+								{" "}
+								<img
+									className="projectImage"
+									src={designerProfileImages.covers[404]}
+									onError={e => {
+										e.target.src = FallbackImage;
+									}}
+									alt="Project Thumbnail"
+								/>{" "}
+							</div>
+						)
+					)}
 					;
 				</div>
 			</div>

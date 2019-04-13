@@ -36,20 +36,20 @@ class App extends Component {
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
 			projectCardClass: "bgLightPink cardProject",
-			projectpClass: "textDark textBold",
+			projectPClass: "textDark textBold",
 			pClass: "textDark",
 			hClass: "textDark textBold",
 			mClass: "textLight",
-			captionClass: "caption textDark"
-		};
+			captionClass: "caption textDark",
+			designerBarClass: "row designerBar bgLightPink",
+			designersCaptionClass: "caption textDark text-center"
+};
 		this.changePage = this.changePage.bind(this);
 		this.changePageFromMenu = this.changePageFromMenu.bind(this);
 		this.changeTheme = this.changeTheme.bind(this);
 	}
 
 	changePage(value) {
-		console.log("App.js");
-		console.log(value);
 		this.setState({
 			currentPage: value["page"],
 			currentDesigner: value["designer"]
@@ -74,11 +74,13 @@ class App extends Component {
 				headingClass: "textDark text-center",
 				cardClass: "cardDesigner bgDarkGreen",
 				projectCardClass: "bgDarkGreen cardProject",
-				projectpClass: "textLight textBold",
+				projectPClass: "textLight textBold",
 				pClass: "textLight",
 				hClass: "textLight textBold",
 				mClass: "textDark",
-				captionClass: "caption textLight"
+				captionClass: "caption textLight",
+				designerBarClass: "row designerBar bgDarkGreen",
+				designersCaptionClass: "caption textLight text-center"
 			});
 		} else {
 			htmlBody.className = "bgDark";
@@ -89,11 +91,13 @@ class App extends Component {
 				headingClass: "textLight text-center",
 				cardClass: "cardDesigner bgLightPink",
 				projectCardClass: "bgLightPink cardProject",
-				projectpClass: "textDark textBold",
+				projectPClass: "textDark textBold",
 				pClass: "textDark",
 				hClass: "textDark textBold",
 				mClass: "textLight",
-				captionClass: "caption textDark"
+				captionClass: "caption textDark",
+				designerBarClass: "row designerBar bgLightPink",
+				designersCaptionClass: "caption textDark text-center"
 			});
 		}
 	}
@@ -103,33 +107,51 @@ class App extends Component {
 			behanceData: behanceDataFromJSON,
 			loaded: true
 		});
-		for (var i = 0; i < behanceDataFromJSON.length; i++) {
-			this.state.designers.push(behanceDataFromJSON[i]);
-			this.state.projects.push(behanceDataFromJSON[i]);
-		}
 	}
 
 	render() {
+
 		var currentPage = this.state.currentPage;
-		let display;
 		let altDisplay;
-		let projectDisplay;
+		let display;
 
 		if (currentPage === "designers") {
 			display = (
-				<Designers designersState={this.state} changePage={this.changePage} />
+				<Designers
+					designersData={this.state.behanceData}
+					designersCardClass={this.state.cardClass}
+					designersHClass={this.state.hClass}
+					designersCaptionClass={this.state.designersCaptionClass}
+					changePage={this.changePage}
+				/>
 			);
 		} else if (currentPage === "designerProfile") {
-			display = <DesignerProfile designerProfileState={this.state} />;
-		} else if (currentPage === "projects") {
 			display = "";
-			projectDisplay = (
-				<Projects projectsState={this.state} changePage={this.changePage} />
+			altDisplay = (
+				<DesignerProfile
+					designerProfileData={this.state}
+					designerProfilePClass={this.state.pClass}
+					designerProfileHClass={this.state.hClass}
+					designerProfileBarClass={this.state.designerBarClass}
+				/>
+			);
+		} else if (currentPage === "projects") {
+			display = (
+				<Projects
+					projectsData={this.state}
+					projectsCardClass={this.state.projectCardClass}
+					projectsHClass={this.state.hClass}
+					projectsPClass={this.state.projectPClass}
+					projectsCaptionClass={this.state.captionClass}
+					changePageFromProjects={this.changePageFromMenu}
+				/>
 			);
 		} else if (currentPage === "search") {
-			display = <Search searchState={this.state} />;
+			display = "";
+			altDisplay = <Search searchState={this.state} />;
 		} else if (currentPage === "modal") {
-			display = <Modal modalState={this.state} />;
+			display = "";
+			altDisplay = <Modal modalState={this.state} />;
 		}
 
 		if (this.state.loaded === false) {
@@ -146,23 +168,16 @@ class App extends Component {
 			return (
 				<div className={this.state.bgClass}>
 					<div className="container-fluid">
-						{/* <LiveDataClass
-							liveDataStateClass={this.state}
-							changeTheme={this.changeTheme}
-							changeBodyTheme={this.changeBodyTheme}
-						/> */}
 						<Menu
-							menuStateClass={this.state}
+							menuStateIconClass={this.state.menuIcon}
+							menuStateMClass={this.state.mClass}
 							changePageFromMenu={this.changePageFromMenu}
 							changeTheme={this.changeTheme}
 						/>
 
 						{/* CURRENT PAGE*/}
 						<div className="row">{display}</div>
-						{/* <div className= "searchBar">{searchBar}</div> */}
 						<div className="altDisplay">{altDisplay}</div>
-						<div className="row projectDisplay">{projectDisplay}</div>
-
 					</div>
 				</div>
 			);

@@ -55,8 +55,8 @@ p {
 .container-fluid {
 	position: relative;
 	max-width: 1200px;
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 // COL
@@ -83,7 +83,7 @@ p {
 	line-height: 48px;
 }
 
-// MIKES SCSS
+// MIKE
 #methodLogo {
 	width: 50px;
 	height: auto;
@@ -133,14 +133,16 @@ p {
 	fill: $darkGreen;
 }
 
-// Marias
-
-.methodSearchContainer {
-	height: 233px;
-	left: 50%;
-	margin-left: -100px;
-	margin-top: -116.5px;
-	position: absolute;
-	top: 20%;
-	width: 200px;
+// MIKE
+@media screen and (max-width: 500px) {
+	.menuDesigner,
+	.menuProjects,
+	.menuSearch,
+	.menuTheme {
+		margin: 0px 10px;
+		border: 1px solid $methodBlack;
+		width: 100%;
+		margin: 5px auto;
+		padding: 10px;
+	}
 }

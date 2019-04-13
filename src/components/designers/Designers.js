@@ -17,18 +17,17 @@ class Designers extends Component {
 			page: "designerProfile",
 			designer: value
 		};
-		console.log(value);
 		this.props.changePage(options);
 	}
 
 	render() {
-		return this.props.designersState.designers.map(designers => (
+		return this.props.designersData.map(designers => (
 			<div
 				key={designers.user.id}
 				className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
 				<div
-					className={this.props.designersState.cardClass}
+					className={this.props.designersCardClass}
 					onClick={this.changePageFromDesigners.bind(
 						this,
 						designers.user.username
@@ -62,12 +61,12 @@ class Designers extends Component {
 						/>
 						<div className="wrapperDesignerDetails">
 							<div className="paraStyle--DesignerName">
-								<h5 className={this.props.designersState.hClass}>
+								<h5 className={this.props.designersHClass}>
 									{designers.user.username}
 								</h5>
 							</div>
 							<div className="paraStyle--DesignerDiscipline">
-								<p className={this.props.designersState.captionClass}>
+								<p className={this.props.designersCaptionClass}>
 									{designers.user.fields[0] +
 										" | " +
 										designers.user.fields[1] +

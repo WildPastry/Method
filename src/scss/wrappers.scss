@@ -1,9 +1,8 @@
-
 // IMPORT
 @import "variables";
 @import "mixins";
 
-/* WRAPPERS */
+// WRAPPERS
 .wrapper {
 	margin: 10px;
 }
@@ -27,7 +26,7 @@
 	height: 15%;
 }
 
-// MIKES SCSS
+// MIKE
 .wrapperHexagon {
 	height: 200px;
 	left: 50%;
@@ -62,62 +61,76 @@
 	align-items: center;
 }
 
-// daniels css
-.modal-dialog{
-    max-width: 90%;
+// DANIEL
+.modal-dialog {
+	max-width: 90%;
 }
-.close{
-    color: $lightPink;
-    text-shadow: none;
-    opacity: 1;
-    font-size: 2.5rem;
+
+.close {
+	color: $lightPink;
+	text-shadow: none;
+	opacity: 1;
+	font-size: 2.5rem;
 }
-.close:hover{
-    color: $lightPink;
-    opacity: .5;
+
+.close:hover {
+	color: $lightPink;
+	opacity: 0.5;
 }
-.modalProjectName{
-    font-family: $font;
-    font-weight: $bold;
-    letter-spacing: 1px;
+
+.modalProjectName {
+	font-family: $font;
+	font-weight: $bold;
+	letter-spacing: 1px;
 }
-.modal-body{
-    max-width: 100%;
+
+.modal-body {
+	max-width: 100%;
 }
-.modalImage{
-    width: 100%;
+
+.modalImage {
+	width: 100%;
 }
 
 // DANIEL DESIGNER PROFILE
-.designerBar{
+.designerBar {
 	margin: 0px;
 }
-.imageBox{
-	padding: 0px;
 
+.imageBox {
+	padding: 0px;
 }
-.designerBar__image{
-	width: 100%;
-	height: auto;
-}
-.designerBar__info{
+
+.designerBar__image {
 	width: 100%;
 	height: 100%;
 }
-.designerBar__info--user{
+
+.designerBar__info--user {
 	margin-top: 7px;
 }
-.projectImageRow{
+
+.projectImageRow {
 	margin-top: 15px;
 }
-.projectContainer{
-	height: 300px
+
+.projectContainer {
+	height: 300px;
 }
-.projectImage{
+
+.projectImage {
 	height: 100%;
 	width: 100%;
 	cursor: pointer;
 }
 
-
-
+// MIKES MEDIA
+@media screen and (max-width: 500px) {
+	.wrapperMenu {
+		height: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		flex-direction: column;
+		align-items: center;
+	}
+}
