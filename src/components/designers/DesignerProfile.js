@@ -15,11 +15,25 @@ class DesignerProfile extends Component {
 			profileRepeat: "no-repeat"
 		};
 		this.changeDesigner = this.changeDesigner.bind(this);
+		this.changePrev = this.changePrev.bind(this);
+		this.changeNext = this.changeNext.bind(this);
 		this.changePageFromProfiles = this.changePageFromProfiles.bind(this);
 	}
 
 	changePageFromProfiles(value) {
 		this.props.changePageFromProfiles(value);
+	}
+
+	changePrev() {
+		console.log(designerBar);
+		designerBar = designerBar - 1;
+		console.log(designerBar);
+	}
+
+	changeNext() {
+		console.log(designerBar);
+		designerBar = designerBar + 1;
+		console.log(designerBar);
 	}
 
 	changeDesigner() {
@@ -65,6 +79,21 @@ class DesignerProfile extends Component {
 					transitionEnter={false}
 					transitionLeave={false}
 				>
+					{/* <div className="designerProfileButtons">
+						<div
+							className="prevButton textLight"
+							onClick={this.changePrev.bind(this)}
+						>
+							<p>prev</p>
+						</div>
+						<div
+							className="prevButton textLight"
+							onClick={this.changeNext.bind(this)}
+						>
+							<p>next</p>
+						</div>
+					</div> */}
+
 					<div className={this.props.designerProfileBarClass}>
 						<div className="imageBox col-xs-12 col-sm-6 col-md-6 col-lg-6">
 							<div
@@ -178,7 +207,7 @@ class DesignerProfile extends Component {
 									<img
 										onClick={this.changePageFromProfiles.bind(this, "modal")}
 										className="projectImage"
-										src={designerProfileImages.covers[404]}
+										src={designerProfileImages.covers["max_808"]}
 										onError={e => {
 											e.target.src = FallbackImage;
 										}}

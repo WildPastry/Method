@@ -7,17 +7,17 @@ import DesignerProfile from "./components/designers/DesignerProfile";
 import Projects from "./components/projects/Projects";
 import "./scss/main.scss";
 import { CSSTransitionGroup } from "react-transition-group";
-// import axios from "axios";
-// import configData from "./data/config.json";
+import axios from "axios";
+import configData from "./data/config.json";
 import behanceDataFromJSON from "./data/behanceData";
 console.log("Data from JSON loaded...");
 
-// const key = configData.OAUTH;
-// const cors = configData.CORS;
-// const behance = configData.BEHANCE;
-// const scope = configData.SCOPE;
+const key = configData.OAUTH;
+const cors = configData.CORS;
+const behance = configData.BEHANCE;
+const scope = configData.SCOPE;
 
-// const API = cors + behance + key + scope;
+const API = cors + behance + key + scope;
 
 var htmlBody = document.getElementById("bg");
 
@@ -169,6 +169,7 @@ class App extends Component {
 		if (this.state.loaded === false) {
 			return (
 				<div id="methodLoader">
+				<div className="circle"></div>
 					<img
 						className="methodLoaderImg"
 						src={require("./icons/logo/methodCreamTrans.svg")}
@@ -204,47 +205,6 @@ class App extends Component {
 		}
 	}
 }
-
-// class TodoList extends React.Component {
-// 	constructor(props) {
-// 		super(props);
-// 		this.state = { items: ["hello", "world", "click", "me"] };
-// 		this.handleAdd = this.handleAdd.bind(this);
-// 	}
-
-// 	handleAdd() {
-// 		const newItems = this.state.items.concat([prompt("Enter some text")]);
-// 		this.setState({ items: newItems });
-// 	}
-
-// 	handleRemove(i) {
-// 		let newItems = this.state.items.slice();
-// 		newItems.splice(i, 1);
-// 		this.setState({ items: newItems });
-// 	}
-
-// 	render() {
-// 		const items = this.state.items.map((item, i) => (
-// 			<div key={item} onClick={() => this.handleRemove(i)}>
-// 				{item}
-// 			</div>
-// 		));
-
-// 		return (
-// 			<div>
-// 				<CSSTransitionGroup
-// 					transitionName="methodLoad"
-// 					transitionAppear={true}
-// 					transitionAppearTimeout={500}
-// 					transitionEnter={false}
-// 					transitionLeave={false}
-// 				>
-// 					<h1>Fading at Initial Mount</h1>
-// 				</CSSTransitionGroup>
-// 			</div>
-// 		);
-// 	}
-// }
 
 // class LiveDataClass extends React.Component {
 // 	constructor(props) {
