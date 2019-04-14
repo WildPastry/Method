@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import FallbackImage from "../images/fallback.jpg";
-import { CSSTransitionGroup } from "react-transition-group";
 
 class Modal extends Component {
 	constructor(props) {

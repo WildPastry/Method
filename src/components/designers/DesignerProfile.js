@@ -21,7 +21,19 @@ class DesignerProfile extends Component {
 	}
 
 	changePageFromProfiles(value) {
-		this.props.changePageFromProfiles(value);
+		var options = {
+			page: "modal",
+			project: value[0],
+			projectName: value[1],
+			projectUserName: value[2],
+			projectViews: value[3],
+			projectAppreciations: value[4],
+			projectComments: value[5],
+			fieldsOne: value[6],
+			fieldsTwo: value[7],
+			fieldsThree: value[8]
+		};
+		this.props.changePageFromProfiles(options);
 	}
 
 	// changePrev() {
@@ -222,7 +234,17 @@ class DesignerProfile extends Component {
 								>
 									{" "}
 									<img
-										onClick={this.changePageFromProfiles.bind(this, "modal")}
+										onClick={this.changePageFromProfiles.bind(this, [
+											designerProfileImages.covers.max_808,
+											designerProfileImages.name,
+											designerProfileDetails[designerBar].user.username,
+											designerProfileDetails[designerBar].user.stats.views,
+											designerProfileDetails[designerBar].user.stats.appreciations,
+											designerProfileDetails[designerBar].user.stats.comments,
+											designerProfileImages.fields[0],
+											designerProfileImages.fields[1],
+											designerProfileImages.fields[2]
+										])}
 										className="projectImage"
 										src={designerProfileImages.covers["max_808"]}
 										onError={e => {

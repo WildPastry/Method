@@ -87,13 +87,6 @@ class App extends Component {
 			fieldsTwo: value["fieldsTwo"],
 			fieldsThree: value["fieldsThree"]
 		});
-		console.log(value["projectViews"]);
-		console.log(value["projectAppreciations"]);
-		console.log(value["projectComments"]);
-		console.log(value["fieldsOne"]);
-		console.log(value["fieldsTwo"]);
-		console.log(value["fieldsThree"]);
-
 	}
 
 	changePage(value) {
@@ -187,7 +180,7 @@ class App extends Component {
 					designerProfilePClassMargin={this.state.pClassMargin}
 					designerProfileHClass={this.state.hClass}
 					designerProfileBarClass={this.state.designerBarClass}
-					changePageFromProfiles={this.changePage}
+					changePageFromProfiles={this.changePageAndProject}
 				/>
 			);
 		} else if (currentPage === "projects") {
