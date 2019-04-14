@@ -34,6 +34,9 @@ class App extends Component {
 			menuIconProfile: "menuIconGrey",
 			currentPage: "designers",
 			currentDesigner: "",
+			currentProject: "",
+			currentProjectName: "",
+			currentProjectUserName: "",
 			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
@@ -45,10 +48,15 @@ class App extends Component {
 			hClass: "textDark textBold",
 			mClass: "textLight",
 			captionClass: "caption textDark",
+			modalBody: "row bgLightPink textDark methodModal__bottom",
+			modalLeftHClass: "textBold textDark methodModal__bannerLeft--text",
+			modalRightHClass: "textBold textDark methodModal__bannerRight--text",
+			modalClose: "closeModal textLightPink textBold",
 			designerBarClass: "row designerBar bgLightPink",
 			designersCaptionClass: "caption textDark text-center"
 		};
 		this.changePageAndDesigner = this.changePageAndDesigner.bind(this);
+		this.changePageAndProject = this.changePageAndProject.bind(this);
 		this.changePage = this.changePage.bind(this);
 		this.changeTheme = this.changeTheme.bind(this);
 	}
@@ -58,6 +66,20 @@ class App extends Component {
 			currentPage: value["page"],
 			currentDesigner: value["designer"]
 		});
+	}
+
+	changePageAndProject(value) {
+		this.setState({
+			currentPage: value["page"],
+			currentProject: value["project"],
+			currentProjectName: value["projectName"],
+			currentProjectUserName: value["projectUserName"]
+		});
+		// console.log(value);
+		// console.log(value["page"]);
+		// console.log(value["project"]);
+		// console.log(value["projectName"]);
+		// console.log(value["projectUserName"]);
 	}
 
 	changePage(value) {
@@ -84,6 +106,10 @@ class App extends Component {
 				hClass: "textLight textBold",
 				mClass: "textDark",
 				captionClass: "caption textLight",
+				modalBody: "row bgDarkGreen textLight methodModal__bottom",
+				modalLeftHClass: "textBold textLight methodModal__bannerLeft--text",
+				modalRightHClass: "textBold textLight methodModal__bannerRight--text",
+				modalClose: "closeModal textLightGreen textBold",
 				designerBarClass: "row designerBar bgDarkGreen",
 				designersCaptionClass: "caption textLight text-center"
 			});
@@ -104,6 +130,10 @@ class App extends Component {
 				hClass: "textDark textBold",
 				mClass: "textLight",
 				captionClass: "caption textDark",
+				modalBody: "row bgLightPink textDark methodModal__bottom",
+				modalLeftHClass: "textBold textDark methodModal__bannerLeft--text",
+				modalRightHClass: "textBold textDark methodModal__bannerRight--text",
+				modalClose: "closeModal textLightPink textBold",
 				designerBarClass: "row designerBar bgLightPink",
 				designersCaptionClass: "caption textDark text-center"
 			});
@@ -118,7 +148,6 @@ class App extends Component {
 	}
 
 	render() {
-		// console.log(this.state.behanceData)
 		var currentPage = this.state.currentPage;
 		let altDisplay;
 		let display;
@@ -155,7 +184,7 @@ class App extends Component {
 					projectsHClass={this.state.hClass}
 					projectsPClass={this.state.projectPClass}
 					projectsCaptionClass={this.state.captionClass}
-					changePageFromProjects={this.changePage}
+					changePageFromProjects={this.changePageAndProject}
 				/>
 			);
 		} else if (currentPage === "search") {
@@ -166,6 +195,13 @@ class App extends Component {
 			altDisplay = (
 				<Modal
 					modalState={this.state.behanceData}
+					modalLeftHClass={this.state.modalLeftHClass}
+					modalRightHClass={this.state.modalRightHClass}
+					modalStateCurrentProject={this.state.currentProject}
+					modalStateCurrentProjectName={this.state.currentProjectName}
+					modalStateCurrentProjectUserName={this.state.currentProjectUserName}
+					modalClose={this.state.modalClose}
+					modalBody={this.state.modalBody}
 					changePageFromModal={this.changePage}
 				/>
 			);

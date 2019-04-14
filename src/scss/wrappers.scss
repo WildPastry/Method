@@ -66,17 +66,19 @@
 }
 
 // DANIEL MODAL
-.closeModal{
-right: 0%;
-margin-right: 20px;
-margin-top: 10px;
-position: absolute;
-opacity: 0.75;
-cursor: pointer;
+.closeModal {
+	right: 0%;
+	margin-right: 20px;
+	margin-top: 10px;
+	position: absolute;
+	opacity: 0.75;
+	cursor: pointer;
 }
-.closeModal:hover{
-opacity: 1;
+
+.closeModal:hover {
+	opacity: 1;
 }
+
 .methodModal {
 	top: 50%;
 	left: 50%;
@@ -85,147 +87,174 @@ opacity: 1;
 	margin-left: -320px;
 	margin-top: -375px;
 	position: absolute;
-
 }
-.methodModal__top{
+
+.methodModal__top {
 	height: 65%;
 	width: 100%;
 }
-.methodModal__top--image{
+
+.methodModal__top--image {
 	height: 100%;
 	width: 100%;
 }
-.methodModal__bottom{
+
+.methodModal__bottom {
 	height: 35%;
 	margin: 0px;
 }
-.methodModal__bannerLeft{
+
+.methodModal__bannerLeft {
 	height: 20%;
 	border-bottom: solid $grey 0.5px;
 }
-.methodModal__bannerRight{
+
+.methodModal__bannerRight {
 	height: 20%;
 	border-bottom: solid $grey 0.5px;
 	text-align: right;
 }
-.methodModal__bottomLeft{
+
+.methodModal__bottomLeft {
 	height: 65%;
 	text-align: center;
 }
-.methodModal__bottomMiddle{
+
+.methodModal__bottomMiddle {
 	height: 65%;
 	text-align: center;
 }
-.methodModal__bottomRight{
+
+.methodModal__bottomRight {
 	height: 65%;
 	text-align: center;
 }
-.methodModal__bannerBottom{
+
+.methodModal__bannerBottom {
 	height: 15%;
 	padding-top: 5px;
 	text-align: center;
 }
-.methodModal__icons{
+
+.methodModal__icons {
 	height: 65%;
 	margin-bottom: 12px;
 	margin-top: 20px;
 }
-.methodModal__icons--grey{
+
+.methodModal__icons--grey {
 	fill: $grey;
 }
 
 // MEDIA QUERY
-@media only screen and (max-width : 500px) {
+@media only screen and (max-width: 500px) {
+	.closeModal {
+		right: 0%;
+		margin-right: 20px;
+		margin-top: 10px;
+		position: absolute;
+		opacity: 0.75;
+		cursor: pointer;
+	}
 
-.closeModal{
-right: 0%;
-margin-right: 20px;
-margin-top: 10px;
-position: absolute;
-opacity: 0.75;
-cursor: pointer;
-}
-.closeModal:hover{
-opacity: 1;
-}
-.methodModal {
-	width: 340px;
-	height: 500px;
-	margin-left: -170px;
-	margin-top: -250px;
-}
-.methodModal__top{
-	height: 60%;
-	width: 100%;
-}
-.methodModal__top--image{
-	height: 100%;
-	width: 100%;
-}
-.methodModal__bottom{
-	height: 40%;
-	margin: 0px;
-}
-.methodModal__bannerLeft{
-	height: 20%;
-	border-bottom: solid $grey 0.5px;
-}
-.methodModal__bannerLeft--text{
-	font-size: .85em
-}
-.methodModal__bannerRight{
-	height: 20%;
-	border-bottom: solid $grey 0.5px;
-	text-align: right;
-}
-.methodModal__bannerRight--text{
-	font-size: .85em
-}
-.methodModal__bottomLeft{
-	height: 65%;
-	text-align: center;
-}
-.methodModal__bottomLeft--text{
-	font-size: 1em;
-}
-.methodModal__bottomMiddle{
-	height: 65%;
-	text-align: center;
-}
-.methodModal__bottomMiddle--text{
-	font-size: 1em;
-}
-.methodModal__bottomRight{
-	height: 65%;
-	text-align: center;
-}
-.methodModal__bottomRight--text{
-	font-size: 1em;
-}
-.methodModal__bannerBottom{
-	height: 15%;
-	padding-top: 5px;
-	text-align: center;
-}
-.methodModal__bannerBottom--text{
-	font-size: .8em
-}
-.methodModal__icons{
-	height: 50%;
-	margin-bottom: 12px;
-	margin-top: 15px;
-}
-.methodModal__icons--grey{
-	fill: $grey;
-}
-}
+	.closeModal:hover {
+		opacity: 1;
+	}
 
+	.methodModal {
+		width: 340px;
+		height: 500px;
+		margin-left: -170px;
+		margin-top: -250px;
+	}
+
+	.methodModal__top {
+		height: 60%;
+		width: 100%;
+	}
+
+	.methodModal__top--image {
+		height: 100%;
+		width: 100%;
+	}
+
+	.methodModal__bottom {
+		height: 40%;
+		margin: 0px;
+	}
+
+	.methodModal__bannerLeft {
+		height: 20%;
+		border-bottom: solid $grey 0.5px;
+	}
+
+	.methodModal__bannerLeft--text {
+		font-size: 0.85em;
+	}
+
+	.methodModal__bannerRight {
+		height: 20%;
+		border-bottom: solid $grey 0.5px;
+		text-align: right;
+	}
+
+	.methodModal__bannerRight--text {
+		font-size: 0.85em;
+	}
+
+	.methodModal__bottomLeft {
+		height: 65%;
+		text-align: center;
+	}
+
+	.methodModal__bottomLeft--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bottomMiddle {
+		height: 65%;
+		text-align: center;
+	}
+
+	.methodModal__bottomMiddle--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bottomRight {
+		height: 65%;
+		text-align: center;
+	}
+
+	.methodModal__bottomRight--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bannerBottom {
+		height: 15%;
+		padding-top: 5px;
+		text-align: center;
+	}
+	.methodModal__bannerBottom--text {
+		font-size: 0.8em;
+	}
+
+	.methodModal__icons {
+		height: 50%;
+		margin-bottom: 12px;
+		margin-top: 15px;
+	}
+
+	.methodModal__icons--grey {
+		fill: $grey;
+	}
+}
 
 // DANIEL DESIGNER PROFILE
 .designerBar {
 	margin: 0px;
 }
-.imageBox{
+
+.imageBox {
 	padding: 0px;
 }
 

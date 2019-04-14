@@ -5,7 +5,12 @@ var projectDeets = 0;
 class Modal extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {
+			currentProject: this.props.modalStateCurrentProject,
+			currentProjectName: this.props.modalStateCurrentProjectName,
+			currentProjectUserName: this.props.modalStateCurrentProjectUserName
+		};
+		this.changeProject = this.changeProject.bind(this);
 		this.changePageFromModal = this.changePageFromModal.bind(this);
 	}
 
@@ -13,11 +18,34 @@ class Modal extends Component {
 		this.props.changePageFromModal(value);
 	}
 
+	changeProject() {
+		this.setState({
+			currentProject: "",
+			currentProjectName: "",
+			currentProjectUserName: ""
+		});
+		// console.log(this.props.modalStateCurrentProject);
+		// console.log(this.state.currentProject)
+	}
+
 	render() {
+		// console.log(this.props.modalState)
+		var currentProjectImage = this.props.modalStateCurrentProject
+		var currentProjectName = this.props.modalStateCurrentProjectName
+		var currentProjectUserName = this.props.modalStateCurrentProjectUserName
+		// console.log(currentProjectUserName)
+		// console.log(currentProjectName)
+
+		// console.log(this.props.modalStateCurrentProject);
+		// console.log(this.state.currentProject)
+		// console.log(this.props.changePageFromProjects)
 		return (
-			<div id="methodLoader">
+			<div
+				id="methodModal"
+				onClick={this.changePageFromModal.bind(this, "projects")}
+			>
 				<div
-					className="closeModal textLightPink textBold"
+					className={this.props.modalClose}
 					onClick={this.changePageFromModal.bind(this, "projects")}
 				>
 					<h1>X</h1>
@@ -26,19 +54,19 @@ class Modal extends Component {
 					<div className="methodModal__top">
 						<img
 							className="methodModal__top--image"
-							src={this.props.modalState[projectDeets].projects[0].covers[808]}
-							alt="loading...."
+							src={currentProjectImage}
+							alt="Project Cover"
 						/>
 					</div>
-					<div className="row bgLightPink textDark methodModal__bottom">
+					<div className={this.props.modalBody}>
 						<div className="col-7 wrapperCol methodModal__bannerLeft">
-							<h4 className="textBold methodModal__bannerLeft--text">
-								{this.props.modalState[projectDeets].projects[0].name}
+							<h4 className={this.props.modalLeftHClass}>
+								{currentProjectName}
 							</h4>
 						</div>
 						<div className="col-5 wrapperCol methodModal__bannerRight">
-							<h4 className="textBold methodModal__bannerRight--text">
-								{this.props.modalState[projectDeets].user.username}
+							<h4 className={this.props.modalRightHClass}>
+								{currentProjectUserName}
 							</h4>
 						</div>
 						<div className="col-4 methodModal__bottomLeft">
@@ -65,12 +93,12 @@ class Modal extends Component {
 							<svg className="methodModal__icons" viewBox="0 0 87.6 70.4">
 								<g>
 									<path
-										class="methodModal__icons--grey"
+										className="methodModal__icons--grey"
 										d="M65.5,0H22.1L0,35.2l22,35.2h42h1.5l22-35.2L65.5,0z M62.6,64.6H43.8H25L6.6,35.2L25,5.8h37.5L81,35.2
 		L62.6,64.6z"
 									/>
 									<path
-										class="methodModal__icons--grey"
+										className="methodModal__icons--grey"
 										d="M67.1,26.4c-1.2-1.5-3-2.3-4.9-2.4h-8.6c1.3-3.9,2.5-9.1,0.6-11.9C53.4,10.8,52,10,50.4,10
 		c-3.9-0.2-6.5,4.8-8.5,10.2c-1.1,2.8-3.4,4.7-5.1,5.7c-0.3-0.8-1.1-1.4-2.1-1.4h-11c-2.7,0-4.9,2.2-5,4.9v17.9
 		c0.1,2.7,2.3,4.9,5,4.9h8.2c1.7,0,3.2-0.8,4.1-2.1c7.7,1.7,10.9,2.3,17.2,2.3c1.4,0,2.9,0,4.7,0c5.6-0.2,8.3-6.9,10.5-16.8
@@ -94,23 +122,23 @@ class Modal extends Component {
 								<g id="Layer_2" data-name="Layer 2">
 									<g id="Layer_1-2" data-name="Layer 1">
 										<path
-											class="methodModal__icons--grey"
+											className="methodModal__icons--grey"
 											d="M43.78,64.6H62.56L81,35.18,62.55,5.77H25L6.57,35.18,25,64.6ZM64,70.38h-42L0,35.18,22.06,0H65.51l22,35.18L65.5,70.38Z"
 										/>
 										<path
-											class="methodModal__icons--grey"
+											className="methodModal__icons--grey"
 											d="M61.46,60.73,47.31,49.51H25.87A5.92,5.92,0,0,1,20,43.6V21.75a5.92,5.92,0,0,1,5.91-5.91H61.72a5.92,5.92,0,0,1,5.91,5.91V43.6a5.92,5.92,0,0,1-5.91,5.91h-.26ZM25.87,19.84A1.92,1.92,0,0,0,24,21.75V43.6a1.92,1.92,0,0,0,1.91,1.91H48.71l8.75,6.94V45.51h4.26a1.92,1.92,0,0,0,1.91-1.91V21.75a1.92,1.92,0,0,0-1.91-1.91Z"
 										/>
 										<path
-											class="methodModal__icons--grey"
+											className="methodModal__icons--grey"
 											d="M52.59,27.13H33a1.5,1.5,0,0,1,0-3H52.59a1.5,1.5,0,0,1,0,3Z"
 										/>
 										<path
-											class="methodModal__icons--grey"
+											className="methodModal__icons--grey"
 											d="M55.84,33.76H36.21a1.5,1.5,0,1,1,0-3H55.84a1.5,1.5,0,1,1,0,3Z"
 										/>
 										<path
-											class="methodModal__icons--grey"
+											className="methodModal__icons--grey"
 											d="M51.46,40.38H31.84a1.5,1.5,0,1,1,0-3H51.46a1.5,1.5,0,0,1,0,3Z"
 										/>
 									</g>

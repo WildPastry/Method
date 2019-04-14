@@ -110,6 +110,16 @@ p {
 	width: 200px;
 }
 
+#methodModal {
+	background: $methodBlack--trans;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 30;
+}
+
 .menu {
 	height: 35px;
 	width: 120px;

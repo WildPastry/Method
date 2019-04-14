@@ -10,7 +10,17 @@ class Projects extends Component {
 	}
 
 	changePageFromProjects(value) {
-		this.props.changePageFromProjects(value);
+		var options = {
+			page: "modal",
+			project: value[0],
+			projectName: value[1],
+			projectUserName: value[2]
+		};
+		// console.log(value);
+		// console.log(value[0]);
+		// console.log(value[1]);
+		// console.log(value[2]);
+		this.props.changePageFromProjects(options);
 	}
 
 	render() {
@@ -19,7 +29,6 @@ class Projects extends Component {
 		return projectDetails.map(projectDetailsMapped => (
 			<div
 				key={projectDetailsMapped.user.id}
-				onClick={this.changePageFromProjects.bind(this, "modal")}
 				className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
 				<CSSTransitionGroup
@@ -34,7 +43,14 @@ class Projects extends Component {
 							key={singleProject.id}
 							className={this.props.projectsCardClass}
 						>
-							<div className="cardProject--Img">
+							<div
+								className="cardProject--Img"
+								onClick={this.changePageFromProjects.bind(this, [
+									singleProject.covers.max_808,
+									singleProject.name,
+									projectDetailsMapped.user.username
+								])}
+							>
 								<img
 									className="designerProject--Img"
 									src={singleProject.covers["max_808"]}
