@@ -36,10 +36,10 @@ class Projects extends Component {
 						return true;
 					}
 
-					var lowerCaseFields = x.fields.map(y => y.toLowerCase());
-					if (lowerCaseFields.indexOf(this.state.search) !== -1) {
-						return true;
-					}
+					// var lowerCaseFields = x.fields.map(y => y.toLowerCase());
+					// if (lowerCaseFields.indexOf(this.state.search) !== -1) {
+					// 	return true;
+					// }
 					
 					return false;
 				});

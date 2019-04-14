@@ -62,8 +62,6 @@ class App extends Component {
 		});
 	}
 
-	//searchBar
-
 	changeTheme() {
 		if (this.state.light === false) {
 			htmlBody.className = "bgLight";
@@ -144,7 +142,7 @@ class App extends Component {
 					projectsPClass={this.state.projectPClass}
 					projectsCaptionClass={this.state.captionClass}
 					changePageFromProjects={this.changePageFromMenu}
-				/>
+				/>	
 			);
 		} else if (currentPage === "search") {
 			display = "";
@@ -177,7 +175,7 @@ class App extends Component {
 
 						{/* CURRENT PAGE*/}
 						<div className="row">{display}</div>
-						<div className="altDisplay">{altDisplay}</div>
+						<div className="altDisplay">{altDisplay}</div>			
 					</div>
 				</div>
 			);
