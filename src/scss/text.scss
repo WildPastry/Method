@@ -50,7 +50,7 @@
   font-weight: $regular;
 }
 
-// MIKES SCSS
+// MIKE
 .paraStyle--DesignerName {
 	margin-top: 50px;
 }
@@ -74,7 +74,16 @@
   transition: opacity 1s ease-in;
 }
 
-// MARIAS SCSS
+.methodModal-appear {
+  opacity: 0.01;
+}
+
+.methodModal-appear.methodLoad-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+// MARIA
 .paraStyle--DesignerProject {
 	display: flex;
 	flex-direction: row;

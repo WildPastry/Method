@@ -146,6 +146,38 @@
 	fill: $grey;
 }
 
+// DANIEL DESIGNER PROFILE
+.designerBar {
+	margin: 0px;
+}
+
+.imageBox {
+	padding: 0px;
+}
+
+.designerBar__image {
+	height: 100%;
+	width: 100%;
+}
+
+.designerBar__info--user {
+	margin-top: 7px;
+}
+
+.projectImageRow {
+	margin-top: 15px;
+}
+
+.projectContainer {
+	height: 300px;
+}
+
+.projectImage {
+	cursor: pointer;
+	height: 100%;
+	width: 100%;
+}
+
 // MEDIA QUERY
 @media only screen and (max-width: 500px) {
 	.closeModal {
@@ -247,38 +279,6 @@
 	.methodModal__icons--grey {
 		fill: $grey;
 	}
-}
-
-// DANIEL DESIGNER PROFILE
-.designerBar {
-	margin: 0px;
-}
-
-.imageBox {
-	padding: 0px;
-}
-
-.designerBar__image {
-	height: 100%;
-	width: 100%;
-}
-
-.designerBar__info--user {
-	margin-top: 7px;
-}
-
-.projectImageRow {
-	margin-top: 15px;
-}
-
-.projectContainer {
-	height: 300px;
-}
-
-.projectImage {
-	cursor: pointer;
-	height: 100%;
-	width: 100%;
 }
 
 // MIKES MEDIA

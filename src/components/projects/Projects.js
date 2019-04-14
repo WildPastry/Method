@@ -14,12 +14,14 @@ class Projects extends Component {
 			page: "modal",
 			project: value[0],
 			projectName: value[1],
-			projectUserName: value[2]
+			projectUserName: value[2],
+			projectViews: value[3],
+			projectAppreciations: value[4],
+			projectComments: value[5],
+			fieldsOne: value[6],
+			fieldsTwo: value[7],
+			fieldsThree: value[8]
 		};
-		// console.log(value);
-		// console.log(value[0]);
-		// console.log(value[1]);
-		// console.log(value[2]);
 		this.props.changePageFromProjects(options);
 	}
 
@@ -48,7 +50,13 @@ class Projects extends Component {
 								onClick={this.changePageFromProjects.bind(this, [
 									singleProject.covers.max_808,
 									singleProject.name,
-									projectDetailsMapped.user.username
+									projectDetailsMapped.user.username,
+									singleProject.stats.views,
+									singleProject.stats.appreciations,
+									singleProject.stats.comments,
+									singleProject.fields[0],
+									singleProject.fields[1],
+									singleProject.fields[2]
 								])}
 							>
 								<img

@@ -37,6 +37,12 @@ class App extends Component {
 			currentProject: "",
 			currentProjectName: "",
 			currentProjectUserName: "",
+			currentProjectViews: "",
+			currentProjectAppreciations: "",
+			currentProjectComments: "",
+			fieldsOne: "",
+			fieldsTwo: "",
+			fieldsThree: "",
 			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
@@ -73,13 +79,21 @@ class App extends Component {
 			currentPage: value["page"],
 			currentProject: value["project"],
 			currentProjectName: value["projectName"],
-			currentProjectUserName: value["projectUserName"]
+			currentProjectUserName: value["projectUserName"],
+			currentProjectViews: value["projectViews"],
+			currentProjectAppreciations: value["projectAppreciations"],
+			currentProjectComments: value["projectComments"],
+			fieldsOne: value["fieldsOne"],
+			fieldsTwo: value["fieldsTwo"],
+			fieldsThree: value["fieldsThree"]
 		});
-		// console.log(value);
-		// console.log(value["page"]);
-		// console.log(value["project"]);
-		// console.log(value["projectName"]);
-		// console.log(value["projectUserName"]);
+		console.log(value["projectViews"]);
+		console.log(value["projectAppreciations"]);
+		console.log(value["projectComments"]);
+		console.log(value["fieldsOne"]);
+		console.log(value["fieldsTwo"]);
+		console.log(value["fieldsThree"]);
+
 	}
 
 	changePage(value) {
@@ -200,6 +214,12 @@ class App extends Component {
 					modalStateCurrentProject={this.state.currentProject}
 					modalStateCurrentProjectName={this.state.currentProjectName}
 					modalStateCurrentProjectUserName={this.state.currentProjectUserName}
+					modalStateViews={this.state.currentProjectViews}
+					modalStateAppreciations={this.state.currentProjectAppreciations}
+					modalStateComments={this.state.currentProjectComments}
+					modalStateFieldsOne={this.state.fieldsOne}
+					modalStateFieldsTwo={this.state.fieldsTwo}
+					modalStateFieldsThree={this.state.fieldsThree}
 					modalClose={this.state.modalClose}
 					modalBody={this.state.modalBody}
 					changePageFromModal={this.changePage}
