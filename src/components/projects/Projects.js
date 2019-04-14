@@ -24,22 +24,20 @@ class Projects extends Component {
 	render() {
 		var projectDetails = this.props.projectsData.behanceData;
 		console.log(this.props.projectsData.behanceData);
-		//todo: maybe use an es6 polyfill or lodash to flatten this
 		var projects =  projectDetails.map(x => x.projects);
 		projects = [].concat.apply([], projects);
 
 		if (this.state.search) {
-			//todo: maybe use es6 polyfill for .includes() instead of indexOf
 			projects = projects
 				.filter(x => {
 					if (x.name.toLowerCase().indexOf(this.state.search) !== -1) {
 						return true;
 					}
 
-					// var lowerCaseFields = x.fields.map(y => y.toLowerCase());
-					// if (lowerCaseFields.indexOf(this.state.search) !== -1) {
-					// 	return true;
-					// }
+					var lowerCaseFields = x.fields.map(y => y.toLowerCase());
+					if (lowerCaseFields.indexOf(this.state.search) !== -1) {
+						return true;
+					}
 					
 					return false;
 				});
