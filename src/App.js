@@ -10,7 +10,6 @@ import { CSSTransitionGroup } from "react-transition-group";
 // import axios from "axios";
 // import configData from "./data/config.json";
 import behanceDataFromJSON from "./data/behanceData";
-console.log("Data from JSON loaded...");
 
 // const key = configData.OAUTH;
 // const cors = configData.CORS;
@@ -152,6 +151,7 @@ class App extends Component {
 			behanceData: behanceDataFromJSON,
 			loaded: true
 		});
+		console.log("Data from JSON loaded...");
 	}
 
 	render() {
@@ -280,6 +280,7 @@ class App extends Component {
 // 					isLoaded: true,
 // 					behanceDataFromAPI
 // 				});
+// 				console.log("Live data loaded...");
 // 			})
 // 			.catch(error => {
 // 				if (error.res) {
@@ -305,13 +306,7 @@ class App extends Component {
 // 				</div>
 // 			);
 // 		} else {
-// 			var dataLive = this.state.behanceDataFromAPI;
-// 			console.log("Live data loaded...");
-// 			console.log(dataLive);
-// 			return (
-// 				<div>
-// 				</div>
-// 			);
+// 			return <React.Fragment />;
 // 		}
 // 	}
 // }
