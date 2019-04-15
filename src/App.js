@@ -45,6 +45,8 @@ class App extends Component {
 			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
+			inputIconClass: "menuIconPink",
+			inputTextClass: "textLight",
 			projectCardClass: "bgLightPink cardProject",
 			projectPClass: "textDark textBold",
 			pClass: "textDark",
@@ -106,6 +108,8 @@ class App extends Component {
 				cardClass: "cardDesigner bgDarkGreen",
 				projectCardClass: "bgDarkGreen cardProject",
 				projectPClass: "textLight textBold",
+				inputIconClass: "menuIconGreen",
+				inputTextClass: "textDark",
 				pClass: "textLight",
 				pClassThin: "textLight textThin",
 				pClassMargin: "textLight textMargin",
@@ -130,6 +134,8 @@ class App extends Component {
 				cardClass: "cardDesigner bgLightPink",
 				projectCardClass: "bgLightPink cardProject",
 				projectPClass: "textDark textBold",
+				inputIconClass: "menuIconPink",
+				inputTextClass: "textLight",
 				pClass: "textDark",
 				pClassThin: "textDark textThin",
 				pClassMargin: "textDark textMargin",
@@ -192,6 +198,8 @@ class App extends Component {
 					projectsPClass={this.state.projectPClass}
 					projectsCaptionClass={this.state.captionClass}
 					changePageFromProjects={this.changePageAndProject}
+					inputIconClass = {this.state.inputIconClass}
+					inputTextClass = {this.state.inputTextClass}
 				/>
 			);
 		} else if (currentPage === "search") {

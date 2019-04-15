@@ -192,3 +192,15 @@ p {
 		line-height: 25px;
 	}
 }
+
+@media screen and (max-width: 500px) {
+	input {
+		width: 160px;
+	}
+}
+
+@media screen and (max-width: 310px) {
+	input {
+		width: 110px;
+	}
+}
