@@ -5,8 +5,13 @@ import { CSSTransitionGroup } from "react-transition-group";
 class Projects extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+
+		this.state = {
+			search: ""
+		};
+
 		this.changePageFromProjects = this.changePageFromProjects.bind(this);
+		this.updateSearch = this.updateSearch.bind(this);
 	}
 
 	changePageFromProjects(value) {
@@ -23,6 +28,10 @@ class Projects extends Component {
 			fieldsThree: value[8]
 		};
 		this.props.changePageFromProjects(options);
+	}
+
+	updateSearch(event) {
+		this.setState({ search: event.target.value });
 	}
 
 	render() {

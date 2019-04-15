@@ -47,6 +47,8 @@ class App extends Component {
 			cardClass: "cardDesigner bgLightPink",
 			projectCardClass: "bgLightPink cardProject",
 			projectPClass: "textDark textBold",
+			inputIconClass: "menuIconPink",
+			inputTextClass: "textLight",
 			pClass: "textDark",
 			pClassThin: "textDark textThin",
 			pClassMargin: "textDark textMargin",
@@ -106,6 +108,8 @@ class App extends Component {
 				cardClass: "cardDesigner bgDarkGreen",
 				projectCardClass: "bgDarkGreen cardProject",
 				projectPClass: "textLight textBold",
+				inputIconClass: "menuIconGreen",
+				inputTextClass: "textDark",
 				pClass: "textLight",
 				pClassThin: "textLight textThin",
 				pClassMargin: "textLight textMargin",
@@ -130,6 +134,8 @@ class App extends Component {
 				cardClass: "cardDesigner bgLightPink",
 				projectCardClass: "bgLightPink cardProject",
 				projectPClass: "textDark textBold",
+				inputIconClass: "menuIconPink",
+				inputTextClass: "textLight",
 				pClass: "textDark",
 				pClassThin: "textDark textThin",
 				pClassMargin: "textDark textMargin",
@@ -184,7 +190,8 @@ class App extends Component {
 				/>
 			);
 		} else if (currentPage === "projects") {
-			display = (
+			display = ""
+			altDisplay = (
 				<Projects
 					projectsData={this.state.behanceData}
 					projectsCardClass={this.state.projectCardClass}
@@ -252,7 +259,7 @@ class App extends Component {
 						</CSSTransitionGroup>
 						{/* CURRENT PAGE*/}
 						<div className="row">{display}</div>
-						<div className="altDisplay">{altDisplay}</div>
+						<div className="altDisplay">{altDisplay}</div>			
 					</div>
 				</div>
 			);
