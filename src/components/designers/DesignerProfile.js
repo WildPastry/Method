@@ -190,7 +190,7 @@ console.log(designerProfileDetails)
 								// 	designerProfileDetails.projects[0].fields[1],
 								// 	designerProfileDetails.projects[0].fields[2]
 								// ])}
-								className="projectImage"
+								className="projectImageNoPointer"
 								src={currentProfileProjectCover}
 								onError={e => {
 									e.target.src = FallbackImage;
@@ -200,35 +200,35 @@ console.log(designerProfileDetails)
 						</div>
 						<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
 							<img
-								className="projectImage"
+								className="projectImageNoPointer"
 								src={FallbackImage}
 								alt="Project Thumbnail"
 							/>
 						</div>
 						<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
 							<img
-								className="projectImage"
+								className="projectImageNoPointer"
 								src={FallbackImage}
 								alt="Project Thumbnail"
 							/>
 						</div>
 						<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
 							<img
-								className="projectImage"
+								className="projectImageNoPointer"
 								src={FallbackImage}
 								alt="Project Thumbnail"
 							/>
 						</div>
 						<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
 							<img
-								className="projectImage"
+								className="projectImageNoPointer"
 								src={FallbackImage}
 								alt="Project Thumbnail"
 							/>
 						</div>
 						<div className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4">
 							<img
-								className="projectImage"
+								className="projectImageNoPointer"
 								src={FallbackImage}
 								alt="Project Thumbnail"
 							/>
