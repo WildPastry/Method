@@ -7,7 +7,6 @@ class Projects extends Component {
 		super(props);
 		this.state = { search: "" };
 		this.changePageFromProjects = this.changePageFromProjects.bind(this);
-		// this.updateSearch = this.updateSearch.bind(this);
 	}
 
 	changePageFromProjects(value) {
@@ -26,16 +25,11 @@ class Projects extends Component {
 		this.props.changePageFromProjects(options);
 	}
 
-	// updateSearch(event) {
-	// 	this.setState({ search: event.target.value });
-	// }
-
 	render() {
 		var projectDetails = this.props.projectsData;
 		return projectDetails.projects.map(projectDetailsMapped => (
 			<div
 				key={projectDetailsMapped.id}
-				onClick={this.changePageFromProjects.bind(this, "modal")}
 				className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
 				<CSSTransitionGroup
@@ -48,6 +42,17 @@ class Projects extends Component {
 					<div className={this.props.projectsCardClass}>
 						<div className="cardProject--Img">
 							<img
+								onClick={this.changePageFromProjects.bind(this, [
+									projectDetailsMapped.covers.max_808,
+									projectDetailsMapped.name,
+									projectDetailsMapped.owners[0].username,
+									projectDetailsMapped.stats.views,
+									projectDetailsMapped.stats.appreciations,
+									projectDetailsMapped.stats.comments,
+									projectDetailsMapped.fields[0],
+									projectDetailsMapped.fields[1],
+									projectDetailsMapped.fields[2]
+								])}
 								className="designerProject--Img"
 								src={projectDetailsMapped.covers["max_808"]}
 								onError={e => {

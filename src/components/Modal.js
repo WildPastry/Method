@@ -47,6 +47,7 @@ class Modal extends Component {
 		var fieldsOne = this.state.fieldsOne;
 		var fieldsTwo = this.state.fieldsTwo;
 		var fieldsThree = this.state.fieldsThree;
+
 		return (
 			<React.Fragment>
 					<div

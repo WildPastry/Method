@@ -16,7 +16,15 @@ class Designers extends Component {
 	changePageFromDesigners(value) {
 		var options = {
 			page: "designerProfile",
-			designer: value
+			profileImage: value[0],
+			profileUserName: value[1],
+			profileFieldsOne: value[2],
+			profileFieldsTwo: value[3],
+			profileFieldsThree: value[4],
+			profileViews: value[5],
+			profileAppreciations: value[6],
+			profileFollowers: value[7],
+			profileProjectCover: value[8]
 		};
 		this.props.changePageFromDesigners(options);
 	}
@@ -36,10 +44,17 @@ class Designers extends Component {
 				>
 					<div
 						className={this.props.designersCardClass}
-						onClick={this.changePageFromDesigners.bind(
-							this,
-							designers.owners[0].username
-						)}
+						onClick={this.changePageFromDesigners.bind(this, [
+							designers.owners[0].images[276] ,
+							designers.owners[0].username,
+							designers.owners[0].fields[0],
+							designers.owners[0].fields[1],
+							designers.owners[0].fields[2],
+							designers.owners[0].stats.views,
+							designers.owners[0].stats.appreciations,
+							designers.owners[0].stats.followers,
+							designers.covers.max_808
+						])}
 					>
 						<div className="wrapperHexagon">
 							<div className="hexagonDesigner">

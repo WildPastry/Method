@@ -59,7 +59,16 @@ class App extends Component {
 			modalRightHClass: "textBold textDark methodModal__bannerRight--text",
 			modalClose: "closeModal textLightPink textBold",
 			designerBarClass: "row designerBar bgLightPink",
-			designersCaptionClass: "caption textDark text-center"
+			designersCaptionClass: "caption textDark text-center",
+			currentProfileImage: "",
+			currentProfileUserName: "",
+			currentProfileFieldsOne: "",
+			currentProfileFieldsTwo: "",
+			currentProfileFieldsThree: "",
+			currentProfileViews: "",
+			currentProfileAppreciations: "",
+			currentProfileFollowers: "",
+			currentProfileProjectCover: ""
 		};
 		this.changePageAndDesigner = this.changePageAndDesigner.bind(this);
 		this.changePageAndProject = this.changePageAndProject.bind(this);
@@ -70,7 +79,15 @@ class App extends Component {
 	changePageAndDesigner(value) {
 		this.setState({
 			currentPage: value["page"],
-			currentDesigner: value["designer"]
+			currentProfileImage: value["profileImage"],
+			currentProfileUserName: value["profileUserName"],
+			currentProfileFieldsOne: value["profileFieldsOne"],
+			currentProfileFieldsTwo: value["profileFieldsTwo"],
+			currentProfileFieldsThree: value["profileFieldsThree"],
+			currentProfileViews: value["profileViews"],
+			currentProfileAppreciations: value["profileAppreciations"],
+			currentProfileFollowers: value["profileFollowers"],
+			currentProfileProjectCover: value["profileProjectCover"]
 		});
 	}
 
@@ -185,7 +202,6 @@ class App extends Component {
 				</div>
 			);
 		} else {
-
 			var currentPage = this.state.currentPage;
 			let altDisplay;
 			let display;
@@ -204,13 +220,22 @@ class App extends Component {
 				display = "";
 				altDisplay = (
 					<DesignerProfile
-						designerProfileData={this.state}
+						designerProfileData={this.state.behanceData}
 						designerProfileIconClass={this.state.menuIconProfile}
 						designerProfilePClass={this.state.pClass}
 						designerProfilePClassThin={this.state.pClassThin}
 						designerProfilePClassMargin={this.state.pClassMargin}
 						designerProfileHClass={this.state.hClass}
 						designerProfileBarClass={this.state.designerBarClass}
+						designersCurrentProfileImage={this.state.currentProfileImage}
+						designersCurrentProfileUserName={this.state.currentProfileUserName}
+						designersCurrentProfileFieldsOne={this.state.currentProfileFieldsOne}
+						designersCurrentProfileFieldsTwo={this.state.currentProfileFieldsTwo}
+						designersCurrentProfileFieldsThree={this.state.currentProfileFieldsThree}
+						designersCurrentProfileViews={this.state.currentProfileViews}
+						designersCurrentProfileAppreciations={this.state.currentProfileAppreciations}
+						designersCurrentProfileFollowers={this.state.currentProfileFollowers}
+						designersCurrentProfileProjectCover={this.state.currentProfileProjectCover}
 						changePageFromProfiles={this.changePage}
 					/>
 				);
@@ -222,7 +247,7 @@ class App extends Component {
 						projectsHClass={this.state.hClass}
 						projectsPClass={this.state.projectPClass}
 						projectsCaptionClass={this.state.captionClass}
-						changePageFromProjects={this.changePage}
+						changePageFromProjects={this.changePageAndProject}
 					/>
 				);
 			} else if (currentPage === "search") {
@@ -230,7 +255,25 @@ class App extends Component {
 				altDisplay = <Search searchState={this.state} />;
 			} else if (currentPage === "modal") {
 				display = "";
-				altDisplay = <Modal modalState={this.state} />;
+				altDisplay = (
+					<Modal
+						modalState={this.state.behanceData}
+						modalLeftHClass={this.state.modalLeftHClass}
+						modalRightHClass={this.state.modalRightHClass}
+						modalStateCurrentProject={this.state.currentProject}
+						modalStateCurrentProjectName={this.state.currentProjectName}
+						modalStateCurrentProjectUserName={this.state.currentProjectUserName}
+						modalStateViews={this.state.currentProjectViews}
+						modalStateAppreciations={this.state.currentProjectAppreciations}
+						modalStateComments={this.state.currentProjectComments}
+						modalStateFieldsOne={this.state.fieldsOne}
+						modalStateFieldsTwo={this.state.fieldsTwo}
+						modalStateFieldsThree={this.state.fieldsThree}
+						modalClose={this.state.modalClose}
+						modalBody={this.state.modalBody}
+						changePageFromModal={this.changePage}
+					/>
+				);
 			}
 
 			if (this.state.loaded === false) {
