@@ -221,7 +221,7 @@
 }
 
 // MEDIA QUERY
-@media only screen and (max-width: 575px) {
+@media only screen and (max-width: 680px) {
 	.closeModal {
 		margin-right: 10px;
 		margin-top: 5px;
@@ -229,10 +229,95 @@
 	}
 
 	.methodModal {
-		width: 340px;
-		height: 500px;
-		margin-left: -170px;
-		margin-top: -250px;
+		width: 540px;
+		height: 633px;
+		margin-left: -270px;
+		margin-top: -316.5px;
+	}
+
+	.methodModal__top {
+		height: 58%;
+	}
+
+	.methodModal__bottom {
+		height: 42%;
+		margin: 0px;
+	}
+
+	.methodModal__bannerLeft {
+		height: 32%;
+	}
+
+	.methodModal__bannerLeft--text {
+		font-size: 0.9em;
+		margin-top: 1px;
+	}
+
+	.methodModal__bannerRight {
+		height: 32%;
+		text-align: right;
+	}
+
+	.methodModal__bannerRight--text {
+		font-size: 0.9em;
+		margin-top: 5px;
+	}
+
+	.methodModal__bottomLeft {
+		height: 53%;
+	}
+
+	.methodModal__bottomLeft--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bottomMiddle {
+		height: 53%;
+	}
+
+	.methodModal__bottomMiddle--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bottomRight {
+		height: 53%;
+	}
+
+	.methodModal__bottomRight--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bannerBottom {
+		height: 15%;
+		padding-top: 9px;
+	}
+	.methodModal__bannerBottom--text {
+		font-size: 0.8em;
+	}
+
+	.methodModal__icons {
+		height: 50%;
+		margin-bottom: 8px;
+		margin-top: 12px;
+	}
+
+	.methodModal__icons--grey {
+		fill: $grey;
+	}
+}
+
+@media only screen and (max-width: 590px) {
+	.closeModal {
+		margin-right: 10px;
+		margin-top: 5px;
+		position: absolute;
+	}
+
+	.methodModal {
+		width: 500px;
+		height: 586px;
+		margin-left: -250px;
+		margin-top: -294px;
 	}
 
 	.methodModal__top {
@@ -303,6 +388,28 @@
 
 	.methodModal__icons--grey {
 		fill: $grey;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.methodModal {
+		width: 400px;
+		height: 469px;
+		margin-left: -200px;
+		margin-top: -235.5px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.methodModal {
+		width: 330px;
+		height: 440px;
+		margin-left: -165px;
+		margin-top: -220px;
+	}
+	.methodModal__bottom {
+		height: 52%;
+		margin: 0px;
 	}
 }
 
