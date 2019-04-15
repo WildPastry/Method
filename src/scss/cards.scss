@@ -43,10 +43,11 @@
 
 // MARIA
 .designerProject--Img {
+	cursor: pointer;
 	width: 100%;
 	background-position: center;
 	background-size: cover;
-	background-repeat: no-repeat
+	background-repeat: no-repeat;
 }
 
 // MIKE
@@ -56,8 +57,7 @@
 }
 
 .cardProject {
-	cursor: pointer;
 	width: 100%;
-	margin-bottom:30px;
+	margin-bottom: 30px;
 	margin-top: 15px;
 }

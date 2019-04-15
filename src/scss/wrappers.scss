@@ -45,16 +45,21 @@
 .wrapperMenu {
 	display: flex;
 	flex-direction: row;
-	height: 24px;
+	height: 35px;
+	line-height: 35px;
 	justify-content: center;
-	margin-bottom: 25px;
+	margin-bottom: 15px;
 	margin-top: 20px;
 }
 
 .wrapperMenu svg {
 	height: auto;
 	margin-right: 5px;
-	width: 17px;
+	width: 25px;
+}
+
+.wrapperMenu p {
+	font-size: 18px;
 }
 
 .wrapperDesignerDetails {
@@ -65,35 +70,89 @@
 	justify-content: center;
 }
 
-// DANIEL
-.modal-dialog {
-	max-width: 90%;
+// DANIEL MODAL
+.closeModal {
+	right: 0%;
+	margin-right: 20px;
+	margin-top: 10px;
+	position: absolute;
+	opacity: 0.75;
+	cursor: pointer;
 }
 
-.close {
-	color: $lightPink;
-	font-size: 2.5rem;
+.closeModal:hover {
 	opacity: 1;
-	text-shadow: none;
 }
 
-.close:hover {
-	color: $lightPink;
-	opacity: 0.5;
+.methodModal {
+	top: 50%;
+	left: 50%;
+	width: 640px;
+	height: 750px;
+	margin-left: -320px;
+	margin-top: -375px;
+	position: absolute;
 }
 
-.modalProjectName {
-	font-family: $font;
-	font-weight: $bold;
-	letter-spacing: 1px;
-}
-
-.modal-body {
-	max-width: 100%;
-}
-
-.modalImage {
+.methodModal__top {
+	height: 62%;
 	width: 100%;
+}
+
+.methodModal__top--image {
+	height: 100%;
+	width: 100%;
+}
+
+.methodModal__bottom {
+	height: 38%;
+	margin: 0px;
+}
+
+.methodModal__bannerLeft {
+	height: 23%;
+	border-bottom: solid $grey 0.5px;
+	padding-top: 20px;
+	display: flex;
+	align-items: center;
+}
+
+.methodModal__bannerRight {
+	height: 23%;
+	border-bottom: solid $grey 0.5px;
+	padding-top: 19px;
+	text-align: right;
+}
+
+.methodModal__bottomLeft {
+	height: 65%;
+	text-align: center;
+}
+
+.methodModal__bottomMiddle {
+	height: 65%;
+	text-align: center;
+}
+
+.methodModal__bottomRight {
+	height: 65%;
+	text-align: center;
+}
+
+.methodModal__bannerBottom {
+	height: 12%;
+	padding-top: 3px;
+	text-align: center;
+}
+
+.methodModal__icons {
+	height: 65%;
+	margin-bottom: 12px;
+	margin-top: 20px;
+}
+
+.methodModal__icons--grey {
+	fill: $grey;
 }
 
 // DANIEL DESIGNER PROFILE
@@ -126,6 +185,232 @@
 	cursor: pointer;
 	height: 100%;
 	width: 100%;
+}
+
+// MARIA
+.wrapperInput {
+	width: 100%;
+	height: auto;
+	margin: 0 auto 10px auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	line-height: 25px;
+}
+
+.wrapperInput input {
+	border-radius: 5px;
+}
+
+.inputContent {
+	display: flex;
+	flex-direction: row;
+}
+
+.wrapperInput svg {
+	width: auto;
+	height: 25px;
+	margin-right: 5px;
+}
+
+.wrapperInput p {
+	margin-right: 1em;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+// MEDIA QUERY
+@media only screen and (max-width: 680px) {
+	.closeModal {
+		margin-right: 10px;
+		margin-top: 5px;
+		position: absolute;
+	}
+
+	.methodModal {
+		width: 540px;
+		height: 633px;
+		margin-left: -270px;
+		margin-top: -316.5px;
+	}
+
+	.methodModal__top {
+		height: 58%;
+	}
+
+	.methodModal__bottom {
+		height: 42%;
+		margin: 0px;
+	}
+
+	.methodModal__bannerLeft {
+		height: 32%;
+	}
+
+	.methodModal__bannerLeft--text {
+		font-size: 0.9em;
+		margin-top: 1px;
+	}
+
+	.methodModal__bannerRight {
+		height: 32%;
+		text-align: right;
+	}
+
+	.methodModal__bannerRight--text {
+		font-size: 0.9em;
+		margin-top: 5px;
+	}
+
+	.methodModal__bottomLeft {
+		height: 53%;
+	}
+
+	.methodModal__bottomLeft--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bottomMiddle {
+		height: 53%;
+	}
+
+	.methodModal__bottomMiddle--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bottomRight {
+		height: 53%;
+	}
+
+	.methodModal__bottomRight--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bannerBottom {
+		height: 15%;
+		padding-top: 9px;
+	}
+	.methodModal__bannerBottom--text {
+		font-size: 0.8em;
+	}
+
+	.methodModal__icons {
+		height: 50%;
+		margin-bottom: 8px;
+		margin-top: 12px;
+	}
+
+	.methodModal__icons--grey {
+		fill: $grey;
+	}
+}
+
+@media only screen and (max-width: 590px) {
+	.closeModal {
+		margin-right: 10px;
+		margin-top: 5px;
+		position: absolute;
+	}
+
+	.methodModal {
+		width: 500px;
+		height: 586px;
+		margin-left: -250px;
+		margin-top: -294px;
+	}
+
+	.methodModal__top {
+		height: 58%;
+	}
+
+	.methodModal__bottom {
+		height: 42%;
+		margin: 0px;
+	}
+
+	.methodModal__bannerLeft {
+		height: 32%;
+	}
+
+	.methodModal__bannerLeft--text {
+		font-size: 0.85em;
+		margin-top: 1px;
+	}
+
+	.methodModal__bannerRight {
+		height: 32%;
+		text-align: right;
+	}
+
+	.methodModal__bannerRight--text {
+		font-size: 0.85em;
+		margin-top: 5px;
+	}
+
+	.methodModal__bottomLeft {
+		height: 53%;
+	}
+
+	.methodModal__bottomLeft--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bottomMiddle {
+		height: 53%;
+	}
+
+	.methodModal__bottomMiddle--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bottomRight {
+		height: 53%;
+	}
+
+	.methodModal__bottomRight--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bannerBottom {
+		height: 15%;
+		padding-top: 9px;
+	}
+	.methodModal__bannerBottom--text {
+		font-size: 0.8em;
+	}
+
+	.methodModal__icons {
+		height: 50%;
+		margin-bottom: 8px;
+		margin-top: 12px;
+	}
+
+	.methodModal__icons--grey {
+		fill: $grey;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.methodModal {
+		width: 400px;
+		height: 469px;
+		margin-left: -200px;
+		margin-top: -235.5px;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	.methodModal {
+		width: 330px;
+		height: 440px;
+		margin-left: -165px;
+		margin-top: -220px;
+	}
+	.methodModal__bottom {
+		height: 52%;
+		margin: 0px;
+	}
 }
 
 // MIKES MEDIA

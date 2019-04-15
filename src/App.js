@@ -32,9 +32,20 @@ class App extends Component {
 			menuIconProfile: "menuIconGrey",
 			currentPage: "designers",
 			currentDesigner: "",
+			currentProject: "",
+			currentProjectName: "",
+			currentProjectUserName: "",
+			currentProjectViews: "",
+			currentProjectAppreciations: "",
+			currentProjectComments: "",
+			fieldsOne: "",
+			fieldsTwo: "",
+			fieldsThree: "",
 			mainHeadingClass: "textLightPink text-center",
 			headingClass: "textLight text-center",
 			cardClass: "cardDesigner bgLightPink",
+			inputIconClass: "menuIconPink",
+			inputTextClass: "textLight",
 			projectCardClass: "bgLightPink cardProject",
 			projectPClass: "textDark textBold",
 			pClass: "textDark",
@@ -43,10 +54,15 @@ class App extends Component {
 			hClass: "textDark textBold",
 			mClass: "textLight",
 			captionClass: "caption textDark",
+			modalBody: "row bgLightPink textDark methodModal__bottom",
+			modalLeftHClass: "textBold textDark methodModal__bannerLeft--text",
+			modalRightHClass: "textBold textDark methodModal__bannerRight--text",
+			modalClose: "closeModal textLightPink textBold",
 			designerBarClass: "row designerBar bgLightPink",
 			designersCaptionClass: "caption textDark text-center"
 		};
 		this.changePageAndDesigner = this.changePageAndDesigner.bind(this);
+		this.changePageAndProject = this.changePageAndProject.bind(this);
 		this.changePage = this.changePage.bind(this);
 		this.changeTheme = this.changeTheme.bind(this);
 	}
@@ -55,6 +71,21 @@ class App extends Component {
 		this.setState({
 			currentPage: value["page"],
 			currentDesigner: value["designer"]
+		});
+	}
+
+	changePageAndProject(value) {
+		this.setState({
+			currentPage: value["page"],
+			currentProject: value["project"],
+			currentProjectName: value["projectName"],
+			currentProjectUserName: value["projectUserName"],
+			currentProjectViews: value["projectViews"],
+			currentProjectAppreciations: value["projectAppreciations"],
+			currentProjectComments: value["projectComments"],
+			fieldsOne: value["fieldsOne"],
+			fieldsTwo: value["fieldsTwo"],
+			fieldsThree: value["fieldsThree"]
 		});
 	}
 
@@ -76,12 +107,18 @@ class App extends Component {
 				cardClass: "cardDesigner bgDarkGreen",
 				projectCardClass: "bgDarkGreen cardProject",
 				projectPClass: "textLight textBold",
+				inputIconClass: "menuIconGreen",
+				inputTextClass: "textDark",
 				pClass: "textLight",
 				pClassThin: "textLight textThin",
 				pClassMargin: "textLight textMargin",
 				hClass: "textLight textBold",
 				mClass: "textDark",
 				captionClass: "caption textLight",
+				modalBody: "row bgDarkGreen textLight methodModal__bottom",
+				modalLeftHClass: "textBold textLight methodModal__bannerLeft--text",
+				modalRightHClass: "textBold textLight methodModal__bannerRight--text",
+				modalClose: "closeModal textLightGreen textBold",
 				designerBarClass: "row designerBar bgDarkGreen",
 				designersCaptionClass: "caption textLight text-center"
 			});
@@ -96,12 +133,18 @@ class App extends Component {
 				cardClass: "cardDesigner bgLightPink",
 				projectCardClass: "bgLightPink cardProject",
 				projectPClass: "textDark textBold",
+				inputIconClass: "menuIconPink",
+				inputTextClass: "textLight",
 				pClass: "textDark",
 				pClassThin: "textDark textThin",
 				pClassMargin: "textDark textMargin",
 				hClass: "textDark textBold",
 				mClass: "textLight",
 				captionClass: "caption textDark",
+				modalBody: "row bgLightPink textDark methodModal__bottom",
+				modalLeftHClass: "textBold textDark methodModal__bannerLeft--text",
+				modalRightHClass: "textBold textDark methodModal__bannerRight--text",
+				modalClose: "closeModal textLightPink textBold",
 				designerBarClass: "row designerBar bgLightPink",
 				designersCaptionClass: "caption textDark text-center"
 			});
@@ -142,9 +185,6 @@ class App extends Component {
 				</div>
 			);
 		} else {
-			// var dataLive = this.state.behanceData;
-			// console.log("Live data loaded...");
-			// console.log(dataLive);
 
 			var currentPage = this.state.currentPage;
 			let altDisplay;

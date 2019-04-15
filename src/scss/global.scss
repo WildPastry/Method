@@ -110,6 +110,16 @@ p {
 	width: 200px;
 }
 
+#methodModal {
+	background: $methodBlack;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 30;
+}
+
 .menu {
 	height: 35px;
 	width: 120px;
@@ -122,7 +132,7 @@ p {
 	cursor: pointer;
 	display: flex;
 	flex-direction: row;
-	margin: 0px 10px;
+	margin: 0px 15px;
 }
 
 .menuIconPink {
@@ -179,5 +189,18 @@ p {
 		margin: 10px auto;
 		padding: 10px;
 		width: 100%;
+		line-height: 25px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	input {
+		width: 160px;
+	}
+}
+
+@media screen and (max-width: 310px) {
+	input {
+		width: 110px;
 	}
 }
