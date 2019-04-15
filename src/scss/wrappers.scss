@@ -90,7 +90,7 @@
 }
 
 .methodModal__top {
-	height: 65%;
+	height: 62%;
 	width: 100%;
 }
 
@@ -100,18 +100,23 @@
 }
 
 .methodModal__bottom {
-	height: 35%;
+	height: 38%;
 	margin: 0px;
 }
 
 .methodModal__bannerLeft {
-	height: 20%;
+	height: 23%;
 	border-bottom: solid $grey 0.5px;
+	padding-top: 20px;
+	display: flex;
+	align-items: center;
 }
 
+
 .methodModal__bannerRight {
-	height: 20%;
+	height: 23%;
 	border-bottom: solid $grey 0.5px;
+	padding-top: 19px;
 	text-align: right;
 }
 
@@ -131,8 +136,8 @@
 }
 
 .methodModal__bannerBottom {
-	height: 15%;
-	padding-top: 5px;
+	height: 12%;
+	padding-top: 3px;
 	text-align: center;
 }
 
@@ -179,18 +184,11 @@
 }
 
 // MEDIA QUERY
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 575px) {
 	.closeModal {
-		right: 0%;
-		margin-right: 20px;
-		margin-top: 10px;
+		margin-right: 10px;
+		margin-top: 5px;
 		position: absolute;
-		opacity: 0.75;
-		cursor: pointer;
-	}
-
-	.closeModal:hover {
-		opacity: 1;
 	}
 
 	.methodModal {
@@ -201,42 +199,35 @@
 	}
 
 	.methodModal__top {
-		height: 60%;
-		width: 100%;
-	}
-
-	.methodModal__top--image {
-		height: 100%;
-		width: 100%;
+		height: 58%;
 	}
 
 	.methodModal__bottom {
-		height: 40%;
+		height: 42%;
 		margin: 0px;
 	}
 
 	.methodModal__bannerLeft {
-		height: 20%;
-		border-bottom: solid $grey 0.5px;
+		height: 32%;
 	}
 
 	.methodModal__bannerLeft--text {
 		font-size: 0.85em;
+		margin-top: 1px;
 	}
 
 	.methodModal__bannerRight {
-		height: 20%;
-		border-bottom: solid $grey 0.5px;
+		height: 32%;
 		text-align: right;
 	}
 
 	.methodModal__bannerRight--text {
 		font-size: 0.85em;
+		margin-top: 5px;
 	}
 
 	.methodModal__bottomLeft {
-		height: 65%;
-		text-align: center;
+		height: 53%;
 	}
 
 	.methodModal__bottomLeft--text {
@@ -244,8 +235,7 @@
 	}
 
 	.methodModal__bottomMiddle {
-		height: 65%;
-		text-align: center;
+		height: 53%;
 	}
 
 	.methodModal__bottomMiddle--text {
@@ -253,8 +243,7 @@
 	}
 
 	.methodModal__bottomRight {
-		height: 65%;
-		text-align: center;
+		height: 53%;
 	}
 
 	.methodModal__bottomRight--text {
@@ -263,8 +252,7 @@
 
 	.methodModal__bannerBottom {
 		height: 15%;
-		padding-top: 5px;
-		text-align: center;
+		padding-top: 9px;
 	}
 	.methodModal__bannerBottom--text {
 		font-size: 0.8em;
@@ -272,8 +260,8 @@
 
 	.methodModal__icons {
 		height: 50%;
-		margin-bottom: 12px;
-		margin-top: 15px;
+		margin-bottom: 8px;
+		margin-top: 12px;
 	}
 
 	.methodModal__icons--grey {
