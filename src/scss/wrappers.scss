@@ -302,39 +302,3 @@
 		margin-top: 20px;
 	}
 }
-
-
-// MARRIA
-
-.wrapperInput {
-	width: 100%;
-	height: auto;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	line-height: 25px;
-
-}
-
-.wrapperInput input {
-	border-radius: 5px;
-}
-
-.inputContent {
-	display: flex;
-	flex-direction: row;
-}
-
-.wrapperInput svg {
-	width: auto;
-	height: 25px;
-	margin-right: 5px;
-}
-
-.wrapperInput p {
-	margin-right: 1em;
-	font-size: 20px;
-	text-transform: uppercase;
-}
