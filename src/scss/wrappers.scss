@@ -45,7 +45,8 @@
 .wrapperMenu {
 	display: flex;
 	flex-direction: row;
-	height: 24px;
+	height: 35px;
+	line-height: 35px;
 	justify-content: center;
 	margin-bottom: 25px;
 	margin-top: 20px;
@@ -54,7 +55,11 @@
 .wrapperMenu svg {
 	height: auto;
 	margin-right: 5px;
-	width: 17px;
+	width: 25px;
+}
+
+.wrapperMenu p {
+	font-size: 18px;
 }
 
 .wrapperDesignerDetails {

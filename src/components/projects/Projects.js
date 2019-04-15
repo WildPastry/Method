@@ -5,7 +5,7 @@ import { CSSTransitionGroup } from "react-transition-group";
 class Projects extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {};
+		this.state = {isShowing: false};
 		this.changePageFromProjects = this.changePageFromProjects.bind(this);
 	}
 

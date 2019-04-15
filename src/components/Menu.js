@@ -69,7 +69,7 @@ class Menu extends Component {
 					</svg>
 					<p className={this.props.menuStateMClass}>PROJECTS</p>
 				</div>
-				<div
+				{/* <div
 					className="menuSearch"
 					onClick={this.changePageFromMenu.bind(this, "search")}
 				>
@@ -88,7 +88,7 @@ class Menu extends Component {
 						</g>
 					</svg>
 					<p className={this.props.menuStateMClass}>SEARCH</p>
-				</div>
+				</div> */}
 
 				<div className="menuTheme" onClick={this.props.changeTheme}>
 					<svg viewBox="0 0 87.6 70.4">
