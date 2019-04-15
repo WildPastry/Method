@@ -134,7 +134,8 @@ class App extends Component {
 				/>
 			);
 		} else if (currentPage === "projects") {
-			display = (
+			display = ""
+			altDisplay = (
 				<Projects
 					projectsData={this.state}
 					projectsCardClass={this.state.projectCardClass}
