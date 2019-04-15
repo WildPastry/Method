@@ -57,7 +57,7 @@ class Modal extends Component {
 							className={this.props.modalClose}
 							onClick={this.changePageFromModal.bind(this, "projects")}
 						>
-							<h1>X</h1>
+							<h2>X</h2>
 						</div>
 						<div className="methodModal bgDark">
 							<div className="methodModal__top">
