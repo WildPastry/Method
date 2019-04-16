@@ -1,22 +1,21 @@
 import React, { Component } from "react";
 import Menu from "./components/Menu";
 import Modal from "./components/Modal";
-import Search from "./components/Search";
 import Designers from "./components/designers/Designers";
 import DesignerProfile from "./components/designers/DesignerProfile";
 import Projects from "./components/projects/Projects";
 import "./scss/main.scss";
 import { CSSTransitionGroup } from "react-transition-group";
-// import axios from "axios";
-// import configData from "./data/config.json";
+import axios from "axios";
+import configData from "./data/config.json";
 import behanceDataFromJSON from "./data/behanceData";
 
-// const key = configData.OAUTH;
-// const cors = configData.CORS;
-// const behance = configData.BEHANCE;
-// const scope = configData.SCOPE;
+const key = configData.OAUTH;
+const cors = configData.CORS;
+const behance = configData.BEHANCE;
+const scope = configData.SCOPE;
 
-// const API = cors + behance + key + scope;
+const API = cors + behance + key + scope;
 
 var htmlBody = document.getElementById("bg");
 
@@ -202,9 +201,6 @@ class App extends Component {
 					inputTextClass = {this.state.inputTextClass}
 				/>
 			);
-		} else if (currentPage === "search") {
-			display = "";
-			altDisplay = <Search searchState={this.state} />;
 		} else if (currentPage === "modal") {
 			display = "";
 			altDisplay = (
@@ -243,7 +239,7 @@ class App extends Component {
 			return (
 				<div className={this.state.bgClass}>
 					<div className="container-fluid">
-						{/* <LiveDataClass /> */}
+						<LiveDataClass />
 						<CSSTransitionGroup
 							transitionName="menuLoad"
 							transitionAppear={true}
@@ -268,55 +264,55 @@ class App extends Component {
 	}
 }
 
-// class LiveDataClass extends React.Component {
-// 	constructor(props) {
-// 		super(props);
-// 		this.state = {
-// 			behanceDataFromAPI: [],
-// 			designersFromAPI: [],
-// 			projectsFromAPI: [],
-// 			isLoaded: false
-// 		};
-// 	}
+class LiveDataClass extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			behanceDataFromAPI: [],
+			designersFromAPI: [],
+			projectsFromAPI: [],
+			isLoaded: false
+		};
+	}
 
-// 	componentDidMount() {
-// 		axios
-// 			.get(API)
-// 			.then(res => {
-// 				const behanceDataFromAPI = res.data;
-// 				this.setState({
-// 					isLoaded: true,
-// 					behanceDataFromAPI
-// 				});
-// 				console.log("Live data loaded...");
-// 			})
-// 			.catch(error => {
-// 				if (error.res) {
-// 				} else if (error.request) {
-// 					console.log(error.request);
-// 				} else {
-// 					console.log("Error", error.message);
-// 				}
-// 				console.log(error.config);
-// 			});
-// 	}
+	componentDidMount() {
+		axios
+			.get(API)
+			.then(res => {
+				const behanceDataFromAPI = res.data;
+				this.setState({
+					isLoaded: true,
+					behanceDataFromAPI
+				});
+				console.log("Live data loaded...");
+			})
+			.catch(error => {
+				if (error.res) {
+				} else if (error.request) {
+					console.log(error.request);
+				} else {
+					console.log("Error", error.message);
+				}
+				console.log(error.config);
+			});
+	}
 
-// 	render() {
-// 		var { isLoaded } = this.state;
-// 		if (!isLoaded) {
-// 			return (
-// 				<div id="methodLoader">
-// 					<img
-// 						className="methodLoaderImg"
-// 						src={require("./icons/logo/methodCreamTrans.svg")}
-// 						alt="Method Loader"
-// 					/>
-// 				</div>
-// 			);
-// 		} else {
-// 			return <React.Fragment />;
-// 		}
-// 	}
-// }
+	render() {
+		var { isLoaded } = this.state;
+		if (!isLoaded) {
+			return (
+				<div id="methodLoader">
+					<img
+						className="methodLoaderImg"
+						src={require("./icons/logo/methodCreamTrans.svg")}
+						alt="Method Loader"
+					/>
+				</div>
+			);
+		} else {
+			return <React.Fragment />;
+		}
+	}
+}
 
 export default App;

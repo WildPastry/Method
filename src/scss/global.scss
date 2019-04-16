@@ -40,6 +40,34 @@ p {
 	margin: 0;
 }
 
+// METHOD LOADING TRANSITIONS
+.methodLoad-appear {
+	opacity: 0.01;
+  }
+  
+  .methodLoad-appear.methodLoad-appear-active {
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
+  }
+  
+  .menuLoad-appear {
+	opacity: 0.01;
+  }
+  
+  .menuLoad-appear.menuLoad-appear-active {
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
+  }
+  
+  .methodModal-appear {
+	opacity: 0.01;
+  }
+  
+  .methodModal-appear.methodLoad-appear-active {
+	opacity: 1;
+	transition: opacity 0.5s ease-in;
+  }
+
 // TYPOGRAPHY MODIFICATIONS
 .pSmall {
 	font-size: 0.9em;
@@ -83,58 +111,7 @@ p {
 	width: 100%;
 }
 
-// MIKE
-#methodLogo {
-	height: auto;
-	margin-top: 12px;
-	width: 50px;
-}
-
-#methodLoader {
-	background: $methodBlack--trans;
-	bottom: 0;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: 50;
-}
-
-.methodLoaderImg {
-	height: 233px;
-	left: 50%;
-	margin-left: -100px;
-	margin-top: -116.5px;
-	position: absolute;
-	top: 50%;
-	width: 200px;
-}
-
-#methodModal {
-	background: $methodBlack;
-	bottom: 0;
-	left: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	z-index: 30;
-}
-
-.menu {
-	height: 35px;
-	width: 120px;
-}
-
-.menuDesigner,
-.menuProjects,
-.menuSearch,
-.menuTheme {
-	cursor: pointer;
-	display: flex;
-	flex-direction: row;
-	margin: 0px 15px;
-}
-
+// MENU ICONS
 .menuIconPink {
 	fill-rule: evenodd;
 	fill: $lightPink;
@@ -155,28 +132,59 @@ p {
 	fill: $grey;
 }
 
-.totalViews,
-.totalAppreciations {
-	display: flex;
-	flex-direction: row;
-	margin: 20px auto;
+// MIKE LOGO
+#methodLogo {
+	height: auto;
+	margin-top: 12px;
+	width: 50px;
 }
 
-.totalFollowers {
-	display: flex;
-	flex-direction: row;
-	margin-top: 20px;
+// MIKE LOADER PAGE
+#methodLoader {
+	background: $methodBlack--trans;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 50;
 }
 
-.designerBar svg {
-	height: 25px;
-	margin-right: 5px;
-	width: 30px;
+.methodLoaderImg {
+	height: 233px;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: -116.5px;
+	position: absolute;
+	top: 50%;
+	width: 200px;
 }
 
-.nextButton,
-.prevButton {
+// DANIEL MODAL BACKGROUND
+#methodModal {
+	background: $methodBlack;
+	bottom: 0;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 30;
+}
+
+// MIKE MENU
+.menu {
+	height: 35px;
+	width: 120px;
+}
+
+.menuDesigner,
+.menuProjects,
+.menuSearch,
+.menuTheme {
 	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	margin: 0px 15px;
 }
 
 @media screen and (max-width: 500px) {

@@ -30,7 +30,7 @@
 	height: 15%;
 }
 
-// MIKE
+// MIKE PROFILE PAGE
 .wrapperHexagon {
 	height: 200px;
 	left: 50%;
@@ -187,7 +187,13 @@
 	width: 100%;
 }
 
-// MARIA
+.designerBar svg {
+	height: 25px;
+	margin-right: 5px;
+	width: 30px;
+}
+
+// MARIA SEARCH BAR
 .wrapperInput {
 	width: 100%;
 	height: auto;
@@ -220,7 +226,7 @@
 	text-transform: uppercase;
 }
 
-// MEDIA QUERY
+// MEDIA QUERY DANIEL MODAL
 @media only screen and (max-width: 680px) {
 	.closeModal {
 		margin-right: 10px;
@@ -413,7 +419,7 @@
 	}
 }
 
-// MIKES MEDIA
+// MIKES MEDIA FOR DESIGNER PROFILE
 @media screen and (max-width: 800px) {
 	.wrapperColBig {
 		padding: 15px;
