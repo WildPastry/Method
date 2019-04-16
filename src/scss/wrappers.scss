@@ -11,15 +11,19 @@
 	padding: 15px;
 }
 
+.wrapperColBig {
+	padding: 30px 30px 30px 50px;
+}
+
 .wrapperLogo {
-	width: 30px;
 	margin: 0 auto;
+	width: 30px;
 }
 
 .wrapperCard {
-	width: 100%;
 	height: 100%;
 	position: relative;
+	width: 100%;
 }
 
 .wrapperProject--Details {
@@ -30,8 +34,8 @@
 .wrapperHexagon {
 	height: 200px;
 	left: 50%;
-	margin-top: -105px;
 	margin-left: -50px;
+	margin-top: -105px;
 	position: absolute;
 	top: 60%;
 	width: 100px;
@@ -39,57 +43,107 @@
 }
 
 .wrapperMenu {
-	height: 24px;
-	margin-top: 20px;
-	margin-bottom: 20px;
 	display: flex;
 	flex-direction: row;
+	height: 24px;
 	justify-content: center;
+	margin-bottom: 25px;
+	margin-top: 20px;
 }
 
 .wrapperMenu svg {
-	width: 17px;
 	height: auto;
 	margin-right: 5px;
+	width: 17px;
 }
 
 .wrapperDesignerDetails {
-	height: 40%;
+	align-items: center;
 	display: flex;
 	flex-direction: column;
+	height: 40%;
 	justify-content: center;
-	align-items: center;
 }
 
-// DANIEL
-.modal-dialog {
-	max-width: 90%;
+// DANIEL MODAL
+.closeModal {
+	right: 0%;
+	margin-right: 20px;
+	margin-top: 10px;
+	position: absolute;
+	opacity: 0.75;
+	cursor: pointer;
 }
 
-.close {
-	color: $lightPink;
-	text-shadow: none;
+.closeModal:hover {
 	opacity: 1;
-	font-size: 2.5rem;
 }
 
-.close:hover {
-	color: $lightPink;
-	opacity: 0.5;
+.methodModal {
+	top: 50%;
+	left: 50%;
+	width: 640px;
+	height: 750px;
+	margin-left: -320px;
+	margin-top: -375px;
+	position: absolute;
 }
 
-.modalProjectName {
-	font-family: $font;
-	font-weight: $bold;
-	letter-spacing: 1px;
-}
-
-.modal-body {
-	max-width: 100%;
-}
-
-.modalImage {
+.methodModal__top {
+	height: 65%;
 	width: 100%;
+}
+
+.methodModal__top--image {
+	height: 100%;
+	width: 100%;
+}
+
+.methodModal__bottom {
+	height: 35%;
+	margin: 0px;
+}
+
+.methodModal__bannerLeft {
+	height: 20%;
+	border-bottom: solid $grey 0.5px;
+}
+
+.methodModal__bannerRight {
+	height: 20%;
+	border-bottom: solid $grey 0.5px;
+	text-align: right;
+}
+
+.methodModal__bottomLeft {
+	height: 65%;
+	text-align: center;
+}
+
+.methodModal__bottomMiddle {
+	height: 65%;
+	text-align: center;
+}
+
+.methodModal__bottomRight {
+	height: 65%;
+	text-align: center;
+}
+
+.methodModal__bannerBottom {
+	height: 15%;
+	padding-top: 5px;
+	text-align: center;
+}
+
+.methodModal__icons {
+	height: 65%;
+	margin-bottom: 12px;
+	margin-top: 20px;
+}
+
+.methodModal__icons--grey {
+	fill: $grey;
 }
 
 // DANIEL DESIGNER PROFILE
@@ -102,8 +156,8 @@
 }
 
 .designerBar__image {
-	width: 100%;
 	height: 100%;
+	width: 100%;
 }
 
 .designerBar__info--user {
@@ -119,50 +173,125 @@
 }
 
 .projectImage {
+	cursor: pointer;
 	height: 100%;
 	width: 100%;
-	cursor: pointer;
 }
 
-// MIKES MEDIA
-@media screen and (max-width: 500px) {
-	.wrapperMenu {
-		height: auto;
-		margin-top: 20px;
-		margin-bottom: 20px;
-		flex-direction: column;
-		align-items: center;
+// MEDIA QUERY
+@media only screen and (max-width: 500px) {
+	.closeModal {
+		right: 0%;
+		margin-right: 20px;
+		margin-top: 10px;
+		position: absolute;
+		opacity: 0.75;
+		cursor: pointer;
+	}
+
+	.closeModal:hover {
+		opacity: 1;
+	}
+
+	.methodModal {
+		width: 340px;
+		height: 500px;
+		margin-left: -170px;
+		margin-top: -250px;
+	}
+
+	.methodModal__top {
+		height: 60%;
+		width: 100%;
+	}
+
+	.methodModal__top--image {
+		height: 100%;
+		width: 100%;
+	}
+
+	.methodModal__bottom {
+		height: 40%;
+		margin: 0px;
+	}
+
+	.methodModal__bannerLeft {
+		height: 20%;
+		border-bottom: solid $grey 0.5px;
+	}
+
+	.methodModal__bannerLeft--text {
+		font-size: 0.85em;
+	}
+
+	.methodModal__bannerRight {
+		height: 20%;
+		border-bottom: solid $grey 0.5px;
+		text-align: right;
+	}
+
+	.methodModal__bannerRight--text {
+		font-size: 0.85em;
+	}
+
+	.methodModal__bottomLeft {
+		height: 65%;
+		text-align: center;
+	}
+
+	.methodModal__bottomLeft--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bottomMiddle {
+		height: 65%;
+		text-align: center;
+	}
+
+	.methodModal__bottomMiddle--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bottomRight {
+		height: 65%;
+		text-align: center;
+	}
+
+	.methodModal__bottomRight--text {
+		font-size: 1em;
+	}
+
+	.methodModal__bannerBottom {
+		height: 15%;
+		padding-top: 5px;
+		text-align: center;
+	}
+	.methodModal__bannerBottom--text {
+		font-size: 0.8em;
+	}
+
+	.methodModal__icons {
+		height: 50%;
+		margin-bottom: 12px;
+		margin-top: 15px;
+	}
+
+	.methodModal__icons--grey {
+		fill: $grey;
 	}
 }
 
-
-// MARRIA
-
-.wrapperInput {
-	width: 100%;
-	height: auto;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	line-height: 25px;
-
+// MIKES MEDIA
+@media screen and (max-width: 800px) {
+	.wrapperColBig {
+		padding: 15px;
+	}
 }
 
-.wrapperInput input {
-	border-radius: 5px;
-}
-
-.inputContent {
-	display: flex;
-	flex-direction: row;
-}
-
-.wrapperInput svg {
-	width: auto;
-	height: 25px;
-	margin-right: 5px;
+@media screen and (max-width: 575px) {
+	.designerBar__image {
+		height: 250px;
+	}
 }
 
 .wrapperInput p {

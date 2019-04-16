@@ -4,42 +4,89 @@
 
 // TEXT
 .textLight {
-  color: $cream;
+	color: $cream;
 }
 
 .textDark {
-  color: $grey;
+	color: $grey;
 }
 
 .textLightPink {
-  color: $lightPink;
+	color: $lightPink;
 }
 
 .textDarkPink {
-  color: $darkPink;
+	color: $darkPink;
 }
 
 .textLightGreen {
-  color: $lightGreen;
+	color: $lightGreen;
 }
 
 .textDarkGreen {
-  color: $darkGreen;
+	color: $darkGreen;
 }
 
 .textBold {
-  font-weight: $bold;
+	font-weight: $bold;
 }
 
-// MIKES SCSS
-.paraStyle--DesignerName{
-  margin-top: 50px;
+.textThin {
+	font-weight: $light;
 }
 
-// MARIAS SCSS
+.textReg {
+	font-weight: $regular;
+}
+
+.textMargin {
+	margin-top: 7px;
+	margin-bottom: 7px;
+}
+.textThin {
+  font-weight: $light;
+}
+.textReg {
+  font-weight: $regular;
+}
+
+// MIKE
+.paraStyle--DesignerName {
+	margin-top: 50px;
+}
+
+// METHOD TRANSITIONS
+.methodLoad-appear {
+  opacity: 0.01;
+}
+
+.methodLoad-appear.methodLoad-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.menuLoad-appear {
+  opacity: 0.01;
+}
+
+.menuLoad-appear.menuLoad-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+.methodModal-appear {
+  opacity: 0.01;
+}
+
+.methodModal-appear.methodLoad-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
+}
+
+// MARIA
 .paraStyle--DesignerProject {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	height: 3em;
 }
