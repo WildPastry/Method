@@ -80,7 +80,7 @@ class Projects extends Component {
 				{projects.map(project => (
 					<div
 						key={project.id}
-						className="col-xs-12 col-sm-6 col-md-4 col-lg-4"
+						className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
 					>
 						<CSSTransitionGroup
 							transitionName="methodLoad"
