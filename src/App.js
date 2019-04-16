@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Menu from "./components/Menu";
 import Modal from "./components/Modal";
-import Search from "./components/Search";
 import Designers from "./components/designers/Designers";
 import DesignerProfile from "./components/designers/DesignerProfile";
 import Projects from "./components/projects/Projects";
@@ -250,9 +249,6 @@ class App extends Component {
 						changePageFromProjects={this.changePageAndProject}
 					/>
 				);
-			} else if (currentPage === "search") {
-				display = "";
-				altDisplay = <Search searchState={this.state} />;
 			} else if (currentPage === "modal") {
 				display = "";
 				altDisplay = (
