@@ -3,8 +3,6 @@ Portfolio display using React framework and the Behance API
 
 Functionality and design are combined to bring you a simple yet powerful portfolio App powered by the Behance API. 
 
-[Live site](http://method.mykdesign.co.nz/)
-
 ## Available Scripts
 
 Clone to your machine and /cd in
