@@ -15,16 +15,16 @@ Run the following:
 
 Files not essential to the project must be added to the .gitignore
 
-Never work on or push to the master branch
+Never work on or push to main
 
-Create your local version of the master-dev `git checkout -b master-dev`
+Create your local version of main `git checkout -b main`
 
-Once you have finished 'milestone' sections of code and components: first push to your remote branch, then switch to master-dev `pull >> merge >> push` then switch back to your branch
+Once you have finished 'milestone' sections of code and components: first push to your remote branch, then switch to main `pull >> merge >> push` then switch back to your branch
 
-Every time you merge to the master-dev branch, let the other team members know.
-<br> They MUST switch to the master-dev branch and pull `git checkout master-dev` + `git pull` then switch back
+Every time you merge to the main branch, let the other team members know.
+<br> They MUST switch to the main branch and pull `git checkout main` + `git pull` then switch back
 
-**Merge to master-dev often to keep conflicts resolved**
+**Merge to main often to keep conflicts resolved**
 
 # Design and Development
 Method is a collaborative project designed and developed by **Michael Parker, Maria Rose and Daniel Clarke** `@ Yoobee School of Design`
