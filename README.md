@@ -26,10 +26,10 @@ Every time you merge to the main branch, let the other team members know.
 
 **Merge to main often to keep conflicts resolved**
 
-# Design and Development
+## Design and Development
 Method is a collaborative project designed and developed by **Michael Parker, Maria Rose and Daniel Clarke** `@ Yoobee School of Design`
 
-# Copyrights
+## Copyrights
 Data and API service provided by [Behance](https://www.behance.net/)
 
 Grid framework using [Bootstrap](https://getbootstrap.com/)
