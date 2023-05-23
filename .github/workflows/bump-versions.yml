@@ -1,0 +1,75 @@
+name: Bump versions
+run-name: Bump versions | ${{ github.actor }} | ${{ github.ref_name }}
+
+on:
+  workflow_dispatch:
+    branch:
+      default: "develop"
+
+jobs:
+  bump-versions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+
+      - name: Git config
+        run: |
+          git config --global user.email "${{ secrets.GH_ADMIN_EMAIL }}"
+          git config --global user.name "${{ secrets.GH_ADMIN_USERNAME }}"
+
+      - name: Install dependencies
+        run: |
+          npm install -g npm-check-updates
+
+      - name: Check for updates
+        run: |
+          ncu -u
+
+      - name: Check working directory
+        id: check_dir
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "Files ready to commit, run the next job."
+            echo "::set-output name=status::true"
+          else
+            echo "Working directory clean, exit the job."
+            echo "::set-output name=status::false"
+          fi
+
+      - name: Bump versions
+        if: "${{ steps.check_dir.outputs.status == 'true' }}"
+        run: |
+          npm i
+          git add .
+          git commit -m "Automated version control"
+          git push origin ${{ github.ref_name }}
+          GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}"
+            REPO_OWNER="${{ github.repository_owner }}"
+            REPO_NAME="${{ github.event.repository.name }}"
+
+            PR_LIST=$(curl -s -X GET \
+              -H "Authorization: Bearer $GITHUB_TOKEN" \
+              -H "Accept: application/vnd.github.v3+json" \
+              "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/pulls?state=open&labels=dependencies")
+
+            for PR in $(echo "$PR_LIST" | jq -r '.[].number'); do
+              curl -s -X POST \
+                -H "Authorization: Bearer $GITHUB_TOKEN" \
+                -H "Accept: application/vnd.github.v3+json" \
+                -d '{"state": "closed"}' \
+                "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/pulls/$PR"
+            done
+
+      - name: Skipping version bump
+        if: "${{ steps.check_dir.outputs.status == 'false' }}"
+        run: echo Skipping version bump
