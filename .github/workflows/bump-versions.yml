@@ -40,16 +40,16 @@ jobs:
         run: |
           if [[ -n $(git status --porcelain) ]]; then
             echo "Files ready to commit, run the next job."
-            echo "::set-output name=status::true"
+            echo "status=true" >> $GITHUB_OUTPUT
           else
             echo "Working directory clean, exit the job."
-            echo "::set-output name=status::false"
+            echo "status=false" >> $GITHUB_OUTPUT
           fi
 
       - name: Bump versions
         if: "${{ steps.check_dir.outputs.status == 'true' }}"
         run: |
-          npm i
+          npm i --force
           git add .
           git commit -m "Automated version control"
           git push origin ${{ github.ref_name }}
