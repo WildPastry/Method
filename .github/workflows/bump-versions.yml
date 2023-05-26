@@ -1,11 +1,8 @@
 name: Bump versions
-run-name: Bump versions | ${{ github.actor }} | ${{ github.ref_name }}
+run-name: Bump versions | ${{ github.run_id }} | branch - ${{ github.ref_name }}
 
 on:
   workflow_dispatch:
-    branch:
-      default: "develop"
-
 jobs:
   bump-versions:
     runs-on: ubuntu-latest
