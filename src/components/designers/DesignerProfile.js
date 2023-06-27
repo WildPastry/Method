@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FallbackImage from "../../images/fallback.jpg";
-import { CSSTransitionGroup } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 
 var designerBar;
 
@@ -101,7 +101,7 @@ class DesignerProfile extends Component {
 
 		return (
 			<React.Fragment>
-				<CSSTransitionGroup
+				<CSSTransition
 					transitionName="methodLoad"
 					transitionAppear={true}
 					transitionAppearTimeout={500}
@@ -257,7 +257,7 @@ class DesignerProfile extends Component {
 						)}
 						;
 					</div>
-				</CSSTransitionGroup>
+				</CSSTransition>
 			</React.Fragment>
 		);
 	}
