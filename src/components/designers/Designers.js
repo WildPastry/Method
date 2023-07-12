@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CSSTransitionGroup } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 
 class Designers extends Component {
 	constructor(props) {
@@ -27,7 +27,7 @@ class Designers extends Component {
 				key={designers.user.id}
 				className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
 			>
-				<CSSTransitionGroup
+				<CSSTransition
 					transitionName="methodLoad"
 					transitionAppear={true}
 					transitionAppearTimeout={500}
@@ -86,7 +86,7 @@ class Designers extends Component {
 							</div>
 						</div>
 					</div>
-				</CSSTransitionGroup>
+				</CSSTransition>
 			</div>
 		));
 	}

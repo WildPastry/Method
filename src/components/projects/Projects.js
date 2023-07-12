@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FallbackImage from "../../images/fallback.jpg";
-import { CSSTransitionGroup } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 
 class Projects extends Component {
 	constructor(props) {
@@ -82,7 +82,7 @@ class Projects extends Component {
 						key={project.id}
 						className="wrapperCol col-xs-12 col-sm-6 col-md-4 col-lg-4"
 					>
-						<CSSTransitionGroup
+						<CSSTransition
 							transitionName="methodLoad"
 							transitionAppear={true}
 							transitionAppearTimeout={500}
@@ -121,7 +121,7 @@ class Projects extends Component {
 									</div>
 								</div>
 							</div>
-						</CSSTransitionGroup>
+						</CSSTransition>
 					</div>
 				))}
 			</React.Fragment>

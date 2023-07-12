@@ -5,7 +5,7 @@ import Designers from "./components/designers/Designers";
 import DesignerProfile from "./components/designers/DesignerProfile";
 import Projects from "./components/projects/Projects";
 import "./scss/main.scss";
-import { CSSTransitionGroup } from "react-transition-group";
+import { CSSTransition } from "react-transition-group";
 import axios from "axios";
 import configData from "./data/config.json";
 import behanceDataFromJSON from "./data/behanceData";
@@ -240,7 +240,7 @@ class App extends Component {
 				<div className={this.state.bgClass}>
 					<div className="container-fluid">
 						<LiveDataClass />
-						<CSSTransitionGroup
+						<CSSTransition
 							transitionName="menuLoad"
 							transitionAppear={true}
 							transitionAppearTimeout={500}
@@ -253,7 +253,7 @@ class App extends Component {
 								changePageFromMenu={this.changePage}
 								changeTheme={this.changeTheme}
 							/>
-						</CSSTransitionGroup>
+						</CSSTransition>
 						{/* CURRENT PAGE*/}
 						<div className="row">{display}</div>
 						<div className="altDisplay">{altDisplay}</div>
